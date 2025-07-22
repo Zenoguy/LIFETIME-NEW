@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifetime - Mind Management Solutions</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0066cc',
+                        secondary: '#00a8ff',
+                        accent: '#ff6b35',
+                        dark: '#1a1a1a',
+                        light: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Prevent horizontal overflow */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+        
+        /* Custom animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 168, 255, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(0, 168, 255, 0.6); }
+        }
+        
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        .float-animation { animation: float 6s ease-in-out infinite; }
+        .glow-animation { animation: pulse-glow 2s ease-in-out infinite; }
+        .slide-animation { animation: slide 20s linear infinite; }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #00a8ff, #ff6b35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans bg-white">
+    
+    <!-- Loading Screen -->
+    <div id="pageLoader" class="fixed inset-0 bg-gradient-to-br from-primary to-secondary z-50 flex items-center justify-center">
+        <div class="text-center text-white">
+            <div class="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <h2 class="text-2xl font-bold">Loading...</h2>
+            <p class="text-sm opacity-80 mt-2">Preparing your mind management experience</p>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="fixed top-0 left-0 w-full h-1 bg-gray-200 z-40">
+        <div id="scrollProgress" class="h-full bg-gradient-to-r from-primary to-secondary transition-all duration-300 w-0"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 w-full z-30 transition-all duration-300 bg-white/80 backdrop-blur-sm shadow-sm">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <img src="assets/LIFETIME LOGO.jpg" alt="Lifetime Logo" class="h-12 w-auto rounded-lg shadow-md">
+                    <div>
+                        <h1 class="text-xl font-bold text-dark">Lifetime</h1>
+                        <p class="text-sm text-gray-600">Mind Management</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium">About</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium">Services</a>
+                    <a href="#branches" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium">Branches</a>
+                    <a href="#gallery" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium">Gallery</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium">Contact</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden lg:block">
+                    <a href="#contact" class="bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600 transition-all duration-300 transform hover:scale-105 shadow-lg glow-animation">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="lg:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="lg:hidden hidden glass-effect rounded-lg mt-4 p-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">About</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-primary font-medium">Services</a>
+                    <a href="#branches" class="nav-link text-gray-700 hover:text-primary font-medium">Branches</a>
+                    <a href="#gallery" class="nav-link text-gray-700 hover:text-primary font-medium">Gallery</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary font-medium">Contact</a>
+                    <a href="#contact" class="bg-yellow-500 text-white px-6 py-2 rounded-lg text-center hover:bg-yellow-600 transition-colors">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center bg-gradient-to-br from-dark via-gray-900 to-primary overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-20 w-64 h-64 bg-secondary/20 rounded-full blur-3xl float-animation"></div>
+            <div class="absolute bottom-20 right-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl float-animation" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary/30 rounded-full blur-3xl float-animation" style="animation-delay: 4s;"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Content -->
+                <div class="text-white">
+                    <div class="mb-6">
+                        <span class="inline-block glass-effect text-secondary px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-brain mr-2"></i>Mind Management Experts Since 2005
+                        </span>
+                    </div>
+                    
+                    <h1 class="text-5xl lg:text-7xl font-black mb-6 leading-tight">
+                        Transform Your 
+                        <span class="gradient-text">Mind</span>
+                    </h1>
+                    
+                    <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                        Professional mental health solutions and mind management services. 
+                        Empowering individuals and organizations with evidence-based approaches.
+                    </p>
+
+                    <!-- Founder Intro -->
+                    <div class="glass-effect rounded-2xl p-6 mb-8">
+                        <div class="flex items-center space-x-4">
+                            <img src="assets/SOMENATH DEY PHOTO.jpg" alt="Somenath Dey" class="w-16 h-16 rounded-full object-cover border-2 border-secondary">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Somenath Dey</h3>
+                                <p class="text-sm text-gray-300 mt-1">Founder & Chief Mind Architect</p>
+                                <p class="text-sm text-gray-300 mt-1">19+ years of transforming minds</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                        <a href="#contact" class="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg text-center glow-animation">
+                            <i class="fas fa-rocket mr-2"></i>Start Your Journey
+                        </a>
+                        <a href="#about" class="glass-effect text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all duration-300 text-center">
+                            <i class="fas fa-info-circle mr-2"></i>Learn More
+                        </a>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-secondary">19+</div>
+                            <div class="text-gray-300 text-sm">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent">500+</div>
+                            <div class="text-gray-300 text-sm">Lives Transformed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-secondary">3</div>
+                            <div class="text-gray-300 text-sm">Branch Locations</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Element -->
+                <div class="relative">
+                    <div class="glass-effect rounded-3xl p-8 float-animation">
+                        <img src="assets\gallery3.jpg" alt="Mind Management" class="w-full h-auto rounded-2xl">
+                    </div>
+                    <!-- Floating Elements -->
+                    <div class="absolute -top-6 -right-6 w-24 h-24 bg-secondary/30 rounded-full blur-xl animate-pulse"></div>
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-accent/30 rounded-full blur-xl animate-pulse" style="animation-delay: 1s;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+            <div class="animate-bounce">
+                <i class="fas fa-chevron-down text-white text-xl"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-light">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-4">About Lifetime</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Pioneering mental health solutions and mind management services for nearly two decades
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Content -->
+                <div>
+                    <h3 class="text-3xl font-bold text-dark mb-6">Our Journey Since 2005</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Lifetime has been at the forefront of mental health and mind management solutions, 
+                        helping individuals and organizations unlock their full potential through innovative 
+                        therapeutic approaches and evidence-based practices.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-700">Expert mental health professionals</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-700">Evidence-based treatment approaches</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-700">Personalized mind management programs</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-700">24/7 support and guidance</span>
+                        </div>
+                    </div>
+
+                    <!-- Mission & Vision -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover-lift">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-bullseye text-primary text-xl"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-dark mb-2">Our Mission</h4>
+                            <p class="text-gray-600 text-sm">To provide accessible, effective mental health solutions that empower individuals to achieve optimal well-being.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover-lift">
+                            <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-eye text-secondary text-xl"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-dark mb-2">Our Vision</h4>
+                            <p class="text-gray-600 text-sm">To create a world where mental wellness is prioritized and accessible to everyone, everywhere.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Founder Profile -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 hover-lift">
+                    <div class="text-center mb-6">
+                        <img src="assets/SOMENATH DEY PHOTO.jpg" alt="Somenath Dey" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-4 border-primary/20">
+                        <h3 class="text-2xl font-bold text-dark">Somenath Dey</h3>
+                        <p class="text-primary font-medium">Founder & Chief Mind Architect</p>
+                    </div>
+                    
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        With over 35 years of multi-faceted experience spanning financial advisory, 
+                        mind management, and public speaking, Somenath has guided 500,000+ clients 
+                        from diverse backgrounds towards financial growth and mental wellness.
+                    </p>
+
+                    <!-- Timeline Highlights -->
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                                <span class="text-primary font-bold text-sm">1988</span>
+                            </div>
+                            <span class="text-gray-600">Started Financial Advisory Services</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-secondary/10 rounded-full flex items-center justify-center">
+                                <span class="text-secondary font-bold text-sm">1999</span>
+                            </div>
+                            <span class="text-gray-600">Joined LIC as Wealth Manager</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center">
+                                <span class="text-accent font-bold text-sm">2009</span>
+                            </div>
+                            <span class="text-gray-600">Best Speaker Award - Netaji Stadium</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                                <span class="text-primary font-bold text-sm">2024</span>
+                            </div>
+                            <span class="text-gray-600">Serving 500,000+ clients nationwide</span>
+                        </div>
+                    </div>
+
+                    <!-- Key Achievements -->
+                    <div class="mb-6">
+                        <h4 class="text-lg font-bold text-dark mb-4">Key Achievements</h4>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <span class="text-gray-600">35+ Years Financial Advisory Excellence</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                                <span class="text-gray-600">LIC Wealth Manager: 25+ Years Service</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                                <span class="text-gray-600">Portfolio Manager: 12+ Years Expertise</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <span class="text-gray-600">NISM & IRDA Certified Professional</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                                <span class="text-gray-600">Certified Graphology & Mind Management Expert</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gradient-to-br from-primary to-secondary text-white p-4 rounded-lg text-center">
+                            <div class="text-2xl font-bold">35+</div>
+                            <div class="text-xs opacity-90">Years Experience</div>
+                        </div>
+                        <div class="bg-gradient-to-br from-secondary to-accent text-white p-4 rounded-lg text-center">
+                            <div class="text-2xl font-bold">500K+</div>
+                            <div class="text-xs opacity-90">Clients Served</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Our Services</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive mental health solutions tailored to your unique needs
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Cards -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-brain text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">Mind Management</h3>
+                    <p class="text-gray-600 mb-6">Advanced techniques to optimize mental performance, focus, and cognitive abilities.</p>
+                    <button class="service-popup-btn text-primary font-semibold hover:text-secondary transition-colors" data-service="mind-management">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+
+                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-secondary to-accent rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-heart text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">Stress Management</h3>
+                    <p class="text-gray-600 mb-6">Effective strategies to manage and reduce stress in personal and professional life.</p>
+                    <button class="service-popup-btn text-primary font-semibold hover:text-secondary transition-colors" data-service="stress-management">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+
+                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">Group Therapy</h3>
+                    <p class="text-gray-600 mb-6">Supportive group sessions for shared healing and community building.</p>
+                    <button class="service-popup-btn text-primary font-semibold hover:text-secondary transition-colors" data-service="group-therapy">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+
+                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-user text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">Individual Counseling</h3>
+                    <p class="text-gray-600 mb-6">One-on-one sessions tailored to your specific mental health needs.</p>
+                    <button class="service-popup-btn text-primary font-semibold hover:text-secondary transition-colors" data-service="individual-counseling">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+
+                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-secondary to-accent rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-building text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">Corporate Wellness</h3>
+                    <p class="text-gray-600 mb-6">Mental health programs designed for organizations and their employees.</p>
+                    <button class="service-popup-btn text-primary font-semibold hover:text-secondary transition-colors" data-service="corporate-wellness">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+
+                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-phone text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">24/7 Support</h3>
+                    <p class="text-gray-600 mb-6">Round-the-clock crisis intervention and emergency mental health support.</p>
+                    <button class="service-popup-btn text-primary font-semibold hover:text-secondary transition-colors" data-service="support">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Service Popups -->
+        <div id="servicePopupOverlay" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center">
+            <!-- Mind Management Popup -->
+            <div id="mind-management-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+                <div class="p-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-brain text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-dark">Mind Management</h3>
+                        </div>
+                        <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <img src="assets/gallery.jpg" alt="Mind Management" class="w-full h-64 object-cover rounded-xl">
+                    </div>
+                    
+                    <div class="space-y-4 text-gray-600">
+                        <p>Our Mind Management program is a comprehensive approach to optimizing mental performance and cognitive abilities. Through a combination of evidence-based techniques and personalized strategies, we help you achieve peak mental clarity, focus, and emotional balance.</p>
+                        
+                        <h4 class="text-lg font-bold text-primary mt-6">Key Benefits:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Enhanced focus and concentration abilities</li>
+                            <li>Improved memory and cognitive processing</li>
+                            <li>Better emotional regulation and stress resilience</li>
+                            <li>Increased mental clarity and decision-making skills</li>
+                            <li>Optimized performance in professional and personal contexts</li>
+                        </ul>
+                        
+                        <h4 class="text-lg font-bold text-primary mt-6">Our Approach:</h4>
+                        <p>We begin with a comprehensive assessment of your current mental patterns, challenges, and goals. Our expert practitioners then create a tailored program that may include cognitive training exercises, mindfulness practices, neurofeedback sessions, and strategic mental frameworks to help you achieve optimal mental performance.</p>
+                        
+                        <h4 class="text-lg font-bold text-primary mt-6">Who Can Benefit:</h4>
+                        <p>Mind Management is ideal for professionals seeking peak performance, students aiming to optimize learning, individuals experiencing cognitive challenges, and anyone looking to enhance their mental capabilities and emotional balance.</p>
+                    </div>
+                    
+                    <div class="mt-8 flex justify-end">
+                        <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+                            Schedule a Consultation
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Stress Management Popup -->
+            <div id="stress-management-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+                <div class="p-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-heart text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-dark">Stress Management</h3>
+                        </div>
+                        <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <img src="assets/gallery5.jpg" alt="Stress Management" class="w-full h-64 object-cover rounded-xl">
+                    </div>
+                    
+                    <div class="space-y-4 text-gray-600">
+                        <p>Our Stress Management program provides effective strategies and techniques to help you reduce stress, build resilience, and maintain balance in both personal and professional life. We focus on sustainable practices that address the root causes of stress while providing immediate relief tools.</p>
+                        
+                        <h4 class="text-lg font-bold text-primary mt-6">Key Benefits:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Reduced physical symptoms of stress (headaches, tension, fatigue)</li>
+                            <li>Improved sleep quality and patterns</li>
+                            <li>Enhanced ability to respond to stressors calmly</li>
+                            <li>Better work-life balance and boundary setting</li>
+                            <li>Increased overall sense of wellbeing and life satisfaction</li>
+                        </ul>
+                        
+                        <h4 class="text-lg font-bold text-primary mt-6">Our Approach:</h4>
+                        <p>We begin with a comprehensive stress assessment to identify your unique stress triggers, patterns, and current coping mechanisms. Our experts then develop a personalized stress management plan that may include mindfulness practices, cognitive reframing techniques, lifestyle adjustments, breathing exercises, and progressive relaxation methods.</p>
+                        
+                        <h4 class="text-lg font-bold text-primary mt-6">Who Can Benefit:</h4>
+                        <p>This program is ideal for busy professionals, parents, caregivers, individuals in high-pressure environments, those experiencing major life transitions, and anyone seeking to reduce stress and improve their quality of life.</p>
+                    </div>
+                    
+                    <div class="mt-8 flex justify-end">
+                        <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+                            Schedule a Consultation
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Group Therapy Popup -->
+            <div id="group-therapy-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+                <div class="p-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-users text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-dark">Group Therapy</h3>
+                        </div>
+                        <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <img src="assets/gallery1.jpg" alt="Group Therapy" class="w-full h-64 object-cover rounded-xl">
+                    </div>
+                    
+                    <div class="space-y-4 text-gray-600">
+                        <p>Our Group Therapy sessions provide a supportive and collaborative environment where individuals can share experiences, gain insights, and develop coping strategies together. Led by experienced facilitators, these sessions harness the power of community and shared understanding to promote healing and growth.</p>
+                        
+                        <h4 class="text-lg font-bold text-primary mt-6">Key Benefits:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Reduced feelings of isolation through shared experiences</li>
+                            <li>Multiple perspectives and feedback on personal challenges</li>
+                            <li>Development of social skills and interpersonal effectiveness</li>
+                            <li>Cost-effective therapeutic support</li>
+                            <li>Accountability and motivation through group dynamics</li>
+                        </ul>
+                        
+                        <h4 class="text-lg font-bold text-primary mt-6">Our Approach:</h4>
+                        <p>We offer various specialized therapy groups focused on specific concerns or demographics. Each group is carefully structured with clear guidelines to ensure a safe, respectful environment. Our facilitators use evidence-based approaches including CBT, DBT, and mindfulness techniques within the group setting to maximize benefits for all participants.</p>
+                        
+                        <h4 class="text-lg font-bold text-primary mt-6">Available Groups:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Anxiety Management Group</li>
+                            <li>Grief and Loss Support</li>
+                            <li>Professional Burnout Recovery</li>
+                            <li>Mindfulness Practice Group</li>
+                            <li>Young Adult Transition Support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-8 flex justify-end">
+                        <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+                            Join a Group
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Individual Counseling Popup -->
+            <div id="individual-counseling-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+                <div class="p-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-user text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-dark">Individual Counseling</h3>
+                        </div>
+                        <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <img src="assets/gallery4.jpg" alt="Individual Counseling" class="w-full h-64 object-cover rounded-xl">
+                    </div>
+                    
+                    <div class="space-y-4 text-gray-600">
+                        <p>Our Individual Counseling service provides one-on-one therapeutic support tailored specifically to your unique needs, challenges, and goals. Working with a dedicated counselor, you'll receive personalized guidance and evidence-based interventions in a confidential, supportive environment.</p>
+                        
+                        <h4 class="text-lg font-bold text-primary mt-6">Key Benefits:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Completely personalized approach to your specific situation</li>
+                            <li>Private, confidential setting to discuss sensitive concerns</li>
+                            <li>Flexible scheduling to accommodate your needs</li>
+                            <li>Targeted interventions for your particular challenges</li>
+                            <li>One-on-one attention and support throughout your journey</li>
+                        </ul>
+                        
+                        <h4 class="text-lg font-bold text-primary mt-6">Our Approach:</h4>
+                        <p>We begin with a comprehensive initial assessment to understand your history, current challenges, and therapeutic goals. Your counselor will then work collaboratively with you to develop a treatment plan drawing from various evidence-based approaches such as Cognitive Behavioral Therapy, Mindfulness-Based Interventions, Solution-Focused Therapy, and other modalities as appropriate for your needs.</p>
+                        
+                        <h4 class="text-lg font-bold text-primary mt-6">Areas We Address:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Anxiety and stress management</li>
+                            <li>Depression and mood disorders</li>
+                            <li>Relationship challenges</li>
+                            <li>Life transitions and adjustment</li>
+                            <li>Trauma recovery and resilience building</li>
+                            <li>Self-esteem and personal growth</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-8 flex justify-end">
+                        <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+                            Book a Session
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Corporate Wellness Popup -->
+            <div id="corporate-wellness-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+                <div class="p-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-building text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-dark">Corporate Wellness</h3>
+                        </div>
+                        <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <img src="assets/gallery3.jpg" alt="Corporate Wellness" class="w-full h-64 object-cover rounded-xl">
+                    </div>
+                    
+                    <div class="space-y-4 text-gray-600">
+                        <p>Our Corporate Wellness programs are designed to enhance workplace mental health, boost employee wellbeing, and improve organizational performance. We offer customized solutions that address the specific needs and challenges of your organization and workforce.</p>
+                        
+                        <h4 class="text-lg font-bold text-primary mt-6">Key Benefits:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Reduced employee stress and burnout</li>
+                            <li>Improved workplace morale and engagement</li>
+                            <li>Decreased absenteeism and presenteeism</li>
+                            <li>Enhanced team cohesion and communication</li>
+                            <li>Increased productivity and innovation</li>
+                            <li>Better retention of top talent</li>
+                        </ul>
+                        
+                        <h4 class="text-lg font-bold text-primary mt-6">Our Services Include:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><strong>Workplace Mental Health Assessments:</strong> Evaluating organizational strengths and areas for improvement</li>
+                            <li><strong>Employee Wellness Workshops:</strong> Interactive sessions on stress management, resilience, work-life balance, and more</li>
+                            <li><strong>Leadership Training:</strong> Equipping managers with skills to support team mental health</li>
+                            <li><strong>Employee Assistance Programs:</strong> Confidential counseling services for staff</li>
+                            <li><strong>Organizational Consulting:</strong> Strategic guidance on creating mentally healthy workplace cultures</li>
+                        </ul>
+                        
+                        <h4 class="text-lg font-bold text-primary mt-6">Our Approach:</h4>
+                        <p>We begin with a thorough needs assessment to understand your organization's unique challenges and goals. Our team then develops a customized wellness strategy that aligns with your company culture and objectives. Implementation includes a combination of workshops, training, individual support, and organizational development initiatives, with ongoing evaluation to measure impact and ROI.</p>
+                    </div>
+                    
+                    <div class="mt-8 flex justify-end">
+                        <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+                            Request Corporate Consultation
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 24/7 Support Popup -->
+            <div id="support-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+                <div class="p-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-phone text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-dark">24/7 Support</h3>
+                        </div>
+                        <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <img src="assets/galler2.jpg" alt="24/7 Support" class="w-full h-64 object-cover rounded-xl">
+                    </div>
+                    
+                    <div class="space-y-4 text-gray-600">
+                        <p>Our 24/7 Support service ensures that professional mental health assistance is available to you whenever you need it, day or night. We provide round-the-clock crisis intervention, emergency mental health support, and immediate guidance during challenging moments.</p>
+                        
+                        <h4 class="text-lg font-bold text-primary mt-6">Key Benefits:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Immediate access to professional support whenever needed</li>
+                            <li>Crisis de-escalation and stabilization</li>
+                            <li>Peace of mind knowing help is always available</li>
+                            <li>Continuity of care between regular sessions</li>
+                            <li>Reduced emergency room visits through timely intervention</li>
+                        </ul>
+                        
+                        <h4 class="text-lg font-bold text-primary mt-6">Our Support Includes:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><strong>24/7 Crisis Hotline:</strong> Staffed by trained mental health professionals</li>
+                            <li><strong>Emergency Video Consultations:</strong> Face-to-face support when needed</li>
+                            <li><strong>Text-Based Support:</strong> For situations where voice communication isn't possible</li>
+                            <li><strong>Crisis Assessment and Intervention:</strong> Professional evaluation and immediate action plans</li>
+                            <li><strong>Coordination with Treatment Team:</strong> Ensuring your regular providers are informed</li>
+                        </ul>
+                        
+                        <h4 class="text-lg font-bold text-primary mt-6">How It Works:</h4>
+                        <p>Clients enrolled in our 24/7 Support program receive access to our secure support platform and dedicated emergency contact numbers. When you reach out, you'll be connected with a qualified mental health professional who can provide immediate assistance, de-escalation techniques, coping strategies, and if necessary, coordination with emergency services or your regular treatment providers.</p>
+                        
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-6">
+                            <p class="text-red-700 font-medium">Important Note: If you are experiencing a life-threatening emergency, please call emergency services (100) immediately. Our 24/7 Support is not a substitute for emergency medical services in cases of immediate danger.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex justify-end">
+                        <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+                            Enroll in 24/7 Support
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get all elements
+        const serviceButtons = document.querySelectorAll('.service-popup-btn');
+        const overlay = document.getElementById('servicePopupOverlay');
+        const popups = document.querySelectorAll('.service-popup-content');
+        const closeButtons = document.querySelectorAll('.close-popup');
+        const closeAndScrollButtons = document.querySelectorAll('.close-and-scroll');
+        
+        // Open popup when service button is clicked
+        serviceButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const service = this.getAttribute('data-service');
+                const popup = document.getElementById(`${service}-popup`);
+                
+                // Hide all popups first
+                popups.forEach(p => p.classList.add('hidden'));
+                
+                // Show overlay and the specific popup
+                overlay.classList.remove('hidden');
+                popup.classList.remove('hidden');
+                
+                // Prevent body scrolling
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Close popup function
+        function closePopup() {
+            overlay.classList.add('hidden');
+            popups.forEach(popup => popup.classList.add('hidden'));
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close when X button is clicked
+        closeButtons.forEach(button => {
+            button.addEventListener('click', closePopup);
+        });
+        
+        // Close when clicking outside the popup
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) {
+                closePopup();
+            }
+        });
+        
+        // Close and scroll to contact section
+        closeAndScrollButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                closePopup();
+                
+                // Small delay to ensure popup is closed before scrolling
+                setTimeout(() => {
+                    const contactSection = document.getElementById('contact');
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            });
+        });
+        
+        // Close with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePopup();
+            }
+        });
+    });
+    </script>
+
+    <!-- Branches Section -->
+    <section id="branches" class="py-20 bg-gradient-to-br from-light to-white">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Our Branches</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Conveniently located across multiple cities to serve you better
+                </p>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="text-center bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-primary text-2xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold text-primary mb-2">3+</div>
+                    <div class="text-gray-600">Branch Locations</div>
+                </div>
+                <div class="text-center bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
+                    <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user-md text-secondary text-2xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold text-secondary mb-2">50+</div>
+                    <div class="text-gray-600">Expert Staff</div>
+                </div>
+                <div class="text-center bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
+                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-accent text-2xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold text-accent mb-2">24/7</div>
+                    <div class="text-gray-600">Customer Support</div>
+                </div>
+            </div>
+
+            <!-- Branches Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Main Branch with Real Photo -->
+                <div class="branch-card bg-white rounded-2xl shadow-lg border border-gray-100 hover-lift overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/branch1.jpg" alt="Main Branch Office" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-building text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-dark">Main Branch</h3>
+                                <p class="text-sm text-gray-500">Headquarters</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Our flagship location with comprehensive services and consultation rooms</p>
+                        
+                        <div class="space-y-2">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-map-marker-alt text-primary text-sm"></i>
+                                <span class="text-sm text-gray-600">Park Street, Kolkata</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-phone text-primary text-sm"></i>
+                                <span class="text-sm text-gray-600">+91 98765 43210</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-clock text-primary text-sm"></i>
+                                <span class="text-sm text-gray-600">Mon-Sat 9AM-8PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Training Center with Real Photo -->
+                <div class="branch-card bg-white rounded-2xl shadow-lg border border-gray-100 hover-lift overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/branch2.jpg" alt="Training Center" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-users text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-dark">Training Center</h3>
+                                <p class="text-sm text-gray-500">Group Sessions</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Specialized in group therapy, workshops and corporate training programs</p>
+                        
+                        <div class="space-y-2">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-map-marker-alt text-secondary text-sm"></i>
+                                <span class="text-sm text-gray-600">Salt Lake, Kolkata</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-phone text-secondary text-sm"></i>
+                                <span class="text-sm text-gray-600">+91 98765 43211</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-clock text-secondary text-sm"></i>
+                                <span class="text-sm text-gray-600">Mon-Sat 10AM-7PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consultation Branch -->
+                <div class="branch-card bg-white rounded-2xl shadow-lg border border-gray-100 hover-lift overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-user-md text-6xl text-accent mb-4"></i>
+                            <h4 class="text-lg font-bold text-dark">Individual Counseling</h4>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-heart text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-dark">Wellness Center</h3>
+                                <p class="text-sm text-gray-500">Personal Care</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Focus on individual counseling, stress management and personal development</p>
+                        
+                        <div class="space-y-2">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-map-marker-alt text-accent text-sm"></i>
+                                <span class="text-sm text-gray-600">New Town, Kolkata</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-phone text-accent text-sm"></i>
+                                <span class="text-sm text-gray-600">+91 98765 43212</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-clock text-accent text-sm"></i>
+                                <span class="text-sm text-gray-600">Mon-Sat 9AM-6PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coming Soon Branch -->
+                <div class="branch-card bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl shadow-lg border-2 border-dashed border-primary/30 hover-lift overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative">
+                        <div class="text-center">
+                            <i class="fas fa-plus-circle text-6xl text-primary mb-4 animate-pulse"></i>
+                            <h4 class="text-lg font-bold text-primary">Opening Soon</h4>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-xs font-bold">
+                            NEW
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-rocket text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-dark">New Branches</h3>
+                                <p class="text-sm text-secondary font-medium">Expanding Soon</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">We're expanding to serve you better with new locations across West Bengal</p>
+                        
+                        <div class="space-y-2">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-map-marker-alt text-primary text-sm"></i>
+                                <span class="text-sm text-gray-600">Howrah, Durgapur & More</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-calendar text-primary text-sm"></i>
+                                <span class="text-sm text-gray-600">Q3-Q4 2025</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-bell text-primary text-sm"></i>
+                                <span class="text-sm text-gray-600">Get Notified</span>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full mt-4 bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-600 transition-colors font-medium">
+                            <i class="fas fa-envelope mr-2"></i>
+                            Notify Me
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-primary mb-4">Why Choose Lifetime Mind Management?</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    We combine proven therapeutic techniques with personalized care to deliver lasting results 
+                    that transform lives and create sustainable mental wellness.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Key Benefits -->
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span class="text-primary text-xl">🎯</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-primary mb-2">Personalized Treatment Plans</h3>
+                            <p class="text-gray-600">Every client receives a customized approach tailored to their unique needs, goals, and circumstances for maximum effectiveness.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span class="text-secondary text-xl">⭐</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary mb-2">Proven Track Record</h3>
+                            <p class="text-gray-600">19+ years of experience with 95% client satisfaction rate and hundreds of successful transformations across diverse backgrounds.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span class="text-accent text-xl">🏆</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-accent mb-2">Holistic Approach</h3>
+                            <p class="text-gray-600">We address mental, emotional, and behavioral aspects comprehensively, ensuring sustainable long-term wellness and growth.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span class="text-primary text-xl">🤝</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-primary mb-2">24/7 Support System</h3>
+                            <p class="text-gray-600">Continuous care with emergency support, follow-up sessions, and a dedicated team always available when you need us most.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Stats & Testimonial -->
+                <div class="space-y-8">
+                    <!-- Success Stats -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-bold text-primary mb-6 text-center">Our Success Story</h3>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary mb-2">500+</div>
+                                <div class="text-gray-600 text-sm">Lives Transformed</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-secondary mb-2">95%</div>
+                                <div class="text-gray-600 text-sm">Success Rate</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-accent mb-2">19+</div>
+                                <div class="text-gray-600 text-sm">Years Experience</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary mb-2">3</div>
+                                <div class="text-gray-600 text-sm">City Locations</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Testimonial -->
+                    <div class="bg-gradient-to-br from-primary to-secondary text-white rounded-xl p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-300 text-xl mr-2">⭐⭐⭐⭐⭐</div>
+                            <span class="text-sm opacity-90">5.0 Average Rating</span>
+                        </div>
+                        <blockquote class="text-lg mb-4 italic">
+                            "Lifetime Mind Management didn't just help me overcome my challenges – they gave me tools to thrive. The personalized approach and continuous support made all the difference."
+                        </blockquote>
+                        <cite class="text-sm opacity-90">- Sarah M., Corporate Executive</cite>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="text-center">
+                        <a href="#contact" class="inline-block bg-yellow-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">
+                            Start Your Transformation Today
+                        </a>
+                        <p class="text-sm text-gray-600 mt-2">Free consultation • No commitment required</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Gallery</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    A glimpse into our facilities and community events
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
+                    <img src="assets/gallery.jpg" alt="Mind Management Session" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-lg font-bold mb-2">Mind Management Session</h3>
+                        <p class="text-sm">Professional consultation in progress</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
+                    <img src="assets/gallery1.jpg" alt="Group Therapy" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-lg font-bold mb-2">Group Therapy</h3>
+                        <p class="text-sm">Collaborative healing sessions</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
+                    <img src="assets/galler2.jpg" alt="Wellness Workshop" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-lg font-bold mb-2">Wellness Workshop</h3>
+                        <p class="text-sm">Interactive learning experience</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
+                    <img src="assets/gallery3.jpg" alt="Corporate Training" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-lg font-bold mb-2">Corporate Training</h3>
+                        <p class="text-sm">Professional development programs</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
+                    <img src="assets/gallery4.jpg" alt="Individual Counseling" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-lg font-bold mb-2">Individual Counseling</h3>
+                        <p class="text-sm">Personalized therapy sessions</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
+                    <img src="assets/gallery5.jpg" alt="Stress Management" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-lg font-bold mb-2">Stress Management</h3>
+                        <p class="text-sm">Techniques for balanced living</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Success Stories</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Real transformations from our clients and community
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-quote-left text-white"></i>
+                        </div>
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "The mind management techniques taught by Somenath completely transformed my approach to stress and productivity. Highly recommended!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-user text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-dark">Rajesh Kumar</h4>
+                            <p class="text-sm text-gray-500">IT Professional, Bangalore</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-quote-left text-white"></i>
+                        </div>
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Our corporate wellness program with Lifetime has significantly improved employee satisfaction and reduced stress levels across teams."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-user text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-dark">Priya Sharma</h4>
+                            <p class="text-sm text-gray-500">HR Director, Tech Corp</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Founder Message -->
+                <div class="bg-gradient-to-br from-primary to-secondary p-8 rounded-2xl shadow-lg text-white hover-lift">
+                    <div class="text-center mb-6">
+                        <img src="assets/SOMENATH DEY PHOTO.jpg" alt="Somenath Dey" class="w-20 h-20 rounded-full object-cover mx-auto mb-4 border-3 border-white/30">
+                        <h3 class="text-xl font-bold">Message from Founder</h3>
+                        <p class="text-secondary-100 opacity-90">Somenath Dey</p>
+                    </div>
+                    <p class="text-center italic mb-4">
+                        "Every mind has infinite potential. Our mission is to unlock that potential through personalized, evidence-based approaches to mental wellness."
+                    </p>
+                    <div class="text-center">
+                        <div class="inline-flex items-center space-x-2 bg-white/20 rounded-full px-4 py-2">
+                            <i class="fas fa-heart text-accent"></i>
+                            <span class="text-sm">19+ Years of Service</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="py-20 bg-light">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Our Valued Clients</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Trusted by leading organizations and institutions across diverse sectors for over 35 years
+                </p>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="grid md:grid-cols-3 gap-6 mb-16">
+                <div class="text-center bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover-lift">
+                    <div class="text-4xl font-bold text-primary mb-2">500K+</div>
+                    <div class="text-gray-700 font-medium">Individual Clients</div>
+                </div>
+                <div class="text-center bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover-lift">
+                    <div class="text-4xl font-bold text-secondary mb-2">35+</div>
+                    <div class="text-gray-700 font-medium">Years of Service</div>
+                </div>
+                <div class="text-center bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover-lift">
+                    <div class="text-4xl font-bold text-accent mb-2">100+</div>
+                    <div class="text-gray-700 font-medium">Corporate Clients</div>
+                </div>
+            </div>
+
+            <!-- Institutional Clients -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-center text-dark mb-8">Esteemed Institutional Partners</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover-lift text-center">
+                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-industry text-primary text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-dark mb-1">Damodar Valley Corporation</h4>
+                        <p class="text-gray-600 text-sm">Power & Energy Sector</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover-lift text-center">
+                        <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-shield-alt text-secondary text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-dark mb-1">Kolkata Police</h4>
+                        <p class="text-gray-600 text-sm">Law Enforcement</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover-lift text-center">
+                        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-city text-accent text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-dark mb-1">Kolkata Municipal Corporation</h4>
+                        <p class="text-gray-600 text-sm">Municipal Administration</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover-lift text-center">
+                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-university text-primary text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-dark mb-1">United Bank of India</h4>
+                        <p class="text-gray-600 text-sm">Banking & Finance</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover-lift text-center">
+                        <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-heartbeat text-secondary text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-dark mb-1">World Federation of Homeopathy</h4>
+                        <p class="text-gray-600 text-sm">Healthcare Organization</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover-lift text-center">
+                        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-newspaper text-accent text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-dark mb-1">Press Club Kolkata</h4>
+                        <p class="text-gray-600 text-sm">Media & Journalism</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Partners -->
+            <div class="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl p-8">
+                <div class="text-center">
+                    <h3 class="text-xl font-bold text-dark mb-4">Additional Valued Partners</h3>
+                    <div class="flex flex-wrap justify-center gap-4 text-gray-700">
+                        <span class="bg-white px-4 py-2 rounded-lg shadow">LIC of India</span>
+                        <span class="bg-white px-4 py-2 rounded-lg shadow">Ambition Group, Sealdah</span>
+                        <span class="bg-white px-4 py-2 rounded-lg shadow">Kolkata Art and Craft Club</span>
+                        <span class="bg-white px-4 py-2 rounded-lg shadow">Dr. Agarwal Society</span>
+                    </div>
+                    <p class="text-gray-600 mt-4 italic">
+                        "Serving diverse clients from school students to senior professionals across multiple sectors"
+                    </p>
+                </div>
+            </div>
+
+            <!-- Trusted Clients Slider -->
+            <div class="overflow-hidden">
+                <div class="flex space-x-8 slide-animation">
+                    <div class="flex-shrink-0 bg-white p-6 rounded-xl shadow-lg border border-gray-100 w-64">
+                        <div class="text-center">
+                            <i class="fas fa-industry text-4xl text-blue-700 mb-4"></i>
+                            <h3 class="font-bold text-dark">Damodar Valley Corporation</h3>
+                            <p class="text-sm text-gray-600">(D.V.C.)</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 bg-white p-6 rounded-xl shadow-lg border border-gray-100 w-64">
+                        <div class="text-center">
+                            <i class="fas fa-shield-alt text-4xl text-blue-800 mb-4"></i>
+                            <h3 class="font-bold text-dark">Kolkata Police</h3>
+                            <p class="text-sm text-gray-600">Law Enforcement</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 bg-white p-6 rounded-xl shadow-lg border border-gray-100 w-64">
+                        <div class="text-center">
+                            <i class="fas fa-city text-4xl text-orange-600 mb-4"></i>
+                            <h3 class="font-bold text-dark">Kolkata Municipal Corporation</h3>
+                            <p class="text-sm text-gray-600">Municipal Services</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 bg-white p-6 rounded-xl shadow-lg border border-gray-100 w-64">
+                        <div class="text-center">
+                            <i class="fas fa-university text-4xl text-green-700 mb-4"></i>
+                            <h3 class="font-bold text-dark">United Bank of India</h3>
+                            <p class="text-sm text-gray-600">(UBI)</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 bg-white p-6 rounded-xl shadow-lg border border-gray-100 w-64">
+                        <div class="text-center">
+                            <i class="fas fa-heartbeat text-4xl text-purple-600 mb-4"></i>
+                            <h3 class="font-bold text-dark">World Federation of Homeopathy</h3>
+                            <p class="text-sm text-gray-600">Healthcare Organization</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 bg-white p-6 rounded-xl shadow-lg border border-gray-100 w-64">
+                        <div class="text-center">
+                            <i class="fas fa-building text-4xl text-blue-600 mb-4"></i>
+                            <h3 class="font-bold text-dark">Ambition Group</h3>
+                            <p class="text-sm text-gray-600">Sealdah</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 bg-white p-6 rounded-xl shadow-lg border border-gray-100 w-64">
+                        <div class="text-center">
+                            <i class="fas fa-shield text-4xl text-red-600 mb-4"></i>
+                            <h3 class="font-bold text-dark">LIC of India</h3>
+                            <p class="text-sm text-gray-600">Life Insurance</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 bg-white p-6 rounded-xl shadow-lg border border-gray-100 w-64">
+                        <div class="text-center">
+                            <i class="fas fa-newspaper text-4xl text-indigo-600 mb-4"></i>
+                            <h3 class="font-bold text-dark">Press Club Kolkata</h3>
+                            <p class="text-sm text-gray-600">Media & Journalism</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 bg-white p-6 rounded-xl shadow-lg border border-gray-100 w-64">
+                        <div class="text-center">
+                            <i class="fas fa-palette text-4xl text-pink-600 mb-4"></i>
+                            <h3 class="font-bold text-dark">Kolkata Art and Craft Club</h3>
+                            <p class="text-sm text-gray-600">Arts & Culture</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 bg-white p-6 rounded-xl shadow-lg border border-gray-100 w-64">
+                        <div class="text-center">
+                            <i class="fas fa-home text-4xl text-teal-600 mb-4"></i>
+                            <h3 class="font-bold text-dark">Dr. Agarwal Society</h3>
+                            <p class="text-sm text-gray-600">Residential Community</p>
+                        </div>
+                    </div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="flex-shrink-0 bg-white p-6 rounded-xl shadow-lg border border-gray-100 w-64">
+                        <div class="text-center">
+                            <i class="fas fa-industry text-4xl text-blue-700 mb-4"></i>
+                            <h3 class="font-bold text-dark">Damodar Valley Corporation</h3>
+                            <p class="text-sm text-gray-600">(D.V.C.)</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 bg-white p-6 rounded-xl shadow-lg border border-gray-100 w-64">
+                        <div class="text-center">
+                            <i class="fas fa-shield-alt text-4xl text-blue-800 mb-4"></i>
+                            <h3 class="font-bold text-dark">Kolkata Police</h3>
+                            <p class="text-sm text-gray-600">Law Enforcement</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 bg-white p-6 rounded-xl shadow-lg border border-gray-100 w-64">
+                        <div class="text-center">
+                            <i class="fas fa-city text-4xl text-orange-600 mb-4"></i>
+                            <h3 class="font-bold text-dark">Kolkata Municipal Corporation</h3>
+                            <p class="text-sm text-gray-600">Municipal Services</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-dark to-primary">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4">Get In Touch</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-secondary to-accent mx-auto mb-6"></div>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Ready to transform your mental wellness? Let's start your journey together.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3 class="text-2xl font-bold text-white mb-8">Contact Information</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold mb-1">Address</h4>
+                                <p class="text-gray-300">123 Wellness Street, Mental Health District, Kolkata, WB 700001</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold mb-1">Phone</h4>
+                                <p class="text-gray-300">+91 98765 43210</p>
+                                <p class="text-gray-300">+91 98765 43211</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold mb-1">Email</h4>
+                                <p class="text-gray-300">info@lifetime-mind.com</p>
+                                <p class="text-gray-300">support@lifetime-mind.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold mb-1">Working Hours</h4>
+                                <p class="text-gray-300">Monday - Saturday: 9:00 AM - 8:00 PM</p>
+                                <p class="text-gray-300">Sunday: Emergency only</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="mt-8">
+                        <h4 class="text-white font-semibold mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-all duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-all duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-all duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-all duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <!-- Quick Consultation Booking -->
+                    <div class="bg-gradient-to-r from-secondary to-accent rounded-xl p-6 mb-8">
+                        <div class="text-center text-white">
+                            <h3 class="text-xl font-bold mb-2">Free 15-Minute Consultation</h3>
+                            <p class="text-sm opacity-90 mb-4">Book a quick call to discuss your needs and learn how we can help</p>
+                            <div class="flex flex-wrap justify-center gap-3">
+                                <button class="consultation-slot bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg text-sm transition-colors" data-time="9:00 AM">9:00 AM</button>
+                                <button class="consultation-slot bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg text-sm transition-colors" data-time="11:00 AM">11:00 AM</button>
+                                <button class="consultation-slot bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg text-sm transition-colors" data-time="2:00 PM">2:00 PM</button>
+                                <button class="consultation-slot bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg text-sm transition-colors" data-time="4:00 PM">4:00 PM</button>
+                                <button class="consultation-slot bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg text-sm transition-colors" data-time="6:00 PM">6:00 PM</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form glass-effect p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold text-white mb-6">Send us a Message</h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div class="form-group">
+                                <label class="block text-white font-medium mb-2">First Name</label>
+                                <input type="text" class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="Your first name">
+                            </div>
+                            <div class="form-group">
+                                <label class="block text-white font-medium mb-2">Last Name</label>
+                                <input type="text" class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="Your last name">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-6">
+                            <label class="block text-white font-medium mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="your.email@example.com">
+                        </div>
+
+                        <div class="form-group mb-6">
+                            <label class="block text-white font-medium mb-2">Phone</label>
+                            <input type="tel" class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="+91 98765 43210">
+                        </div>
+
+                        <div class="form-group mb-6">
+                            <label class="block text-white font-medium mb-2">Service Interested In</label>
+                            <select class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-secondary">
+                                <option value="">Select a service</option>
+                                <option class="text-black"value="mind-management">Mind Management</option>
+                                <option class="text-black" value="stress-management">Stress Management</option>
+                                <option class="text-black" value="group-therapy">Group Therapy</option>
+                                <option class="text-black" value="individual-counseling">Individual Counseling</option>
+                                <option class="text-black" value="corporate-wellness">Corporate Wellness</option>
+                                <option class="text-black" value="24-7-support">24/7 Support</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-6">
+                            <label class="block text-white font-medium mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="Tell us about your needs and how we can help you..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-[1.02] shadow-lg glow-animation">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src="assets/LIFETIME LOGO.jpg" alt="Lifetime Logo" class="h-10 w-auto rounded-lg">
+                        <div>
+                            <h3 class="text-xl font-bold">Lifetime</h3>
+                            <p class="text-sm text-gray-400">Mind Management</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Transforming lives through innovative mental health solutions and mind management services since 2005.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-secondary hover:text-white transition-all duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-secondary hover:text-white transition-all duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-secondary hover:text-white transition-all duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-secondary hover:text-white transition-all duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-secondary transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-secondary transition-colors">About Us</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-secondary transition-colors">Services</a></li>
+                        <li><a href="#branches" class="text-gray-400 hover:text-secondary transition-colors">Branches</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-secondary transition-colors">Gallery</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-secondary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-section">
+                    <h3 class="text-lg font-bold mb-6">Our Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">Mind Management</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">Stress Management</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">Group Therapy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">Individual Counseling</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">Corporate Wellness</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">24/7 Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-section">
+                    <h3 class="text-lg font-bold mb-6">Contact Info</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-secondary mt-1"></i>
+                            <p class="text-gray-400">123 Wellness Street, Kolkata, WB 700001</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-secondary"></i>
+                            <p class="text-gray-400">+91 98765 43210</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-secondary"></i>
+                            <p class="text-gray-400">info@lifetime-mind.com</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-clock text-secondary"></i>
+                            <p class="text-gray-400">Mon-Sat 9AM-8PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                        © 2025 Lifetime Mind Management. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-secondary transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-secondary transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-secondary transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Contact Buttons -->
+    <div class="floating-contact fixed bottom-24 right-8 flex flex-col space-y-4 z-30">
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/919876543210?text=Hi! I'm interested in learning more about your mind management services." 
+           class="whatsapp-float bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110" 
+           target="_blank" rel="noopener" title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp text-xl"></i>
+        </a>
+        
+        <!-- Call Button -->
+        <a href="tel:+919876543210" 
+           class="call-float bg-primary hover:bg-blue-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+           title="Call Now">
+            <i class="fas fa-phone text-xl"></i>
+        </a>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-primary hover:bg-secondary text-white rounded-full shadow-lg transition-all duration-300 z-30 opacity-0 scale-0">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Script -->
+    <script src="animations-new.js"></script>
+    
+</body>
+</html>
