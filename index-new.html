@@ -107,14 +107,14 @@
 
     <!-- Header -->
     <header id="header" class="fixed top-0 w-full z-30 transition-all duration-300 bg-white/80 backdrop-blur-sm shadow-sm">
-        <nav class="container mx-auto px-6 py-4">
+        <nav class="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
-                <div class="flex items-center space-x-3">
-                    <img src="assets/LIFETIME LOGO.jpg" alt="Lifetime Logo" class="h-12 w-auto rounded-lg shadow-md">
+                <div class="flex items-center space-x-2 sm:space-x-3">
+                    <img src="assets/LIFETIME LOGO.jpg" alt="Lifetime Logo" class="h-10 sm:h-12 w-auto rounded-lg shadow-md">
                     <div>
-                        <h1 class="text-xl font-bold text-dark">Lifetime</h1>
-                        <p class="text-sm text-gray-600">Mind Management</p>
+                        <h1 class="text-lg sm:text-xl font-bold text-dark">Lifetime</h1>
+                        <p class="text-xs sm:text-sm text-gray-600">Mind Management</p>
                     </div>
                 </div>
 
@@ -136,23 +136,25 @@
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn" class="lg:hidden text-gray-700 focus:outline-none">
+                <button id="mobileMenuBtn" class="lg:hidden text-gray-700 focus:outline-none p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
 
             <!-- Mobile Menu -->
-            <div id="mobileMenu" class="lg:hidden hidden glass-effect rounded-lg mt-4 p-4">
+            <div id="mobileMenu" class="lg:hidden hidden bg-white/95 backdrop-blur-sm rounded-lg mt-4 p-4 shadow-lg absolute left-4 right-4 z-50">
                 <div class="flex flex-col space-y-4">
-                    <a href="#home" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
-                    <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">About</a>
-                    <a href="#services" class="nav-link text-gray-700 hover:text-primary font-medium">Services</a>
-                    <a href="#branches" class="nav-link text-gray-700 hover:text-primary font-medium">Branches</a>
-                    <a href="#gallery" class="nav-link text-gray-700 hover:text-primary font-medium">Gallery</a>
-                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary font-medium">Contact</a>
-                    <a href="#contact" class="bg-yellow-500 text-white px-6 py-2 rounded-lg text-center hover:bg-yellow-600 transition-colors">
-                        Get Started
-                    </a>
+                    <a href="#home" class="nav-link text-gray-700 hover:text-primary font-medium py-2 px-3 rounded-lg hover:bg-gray-100">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium py-2 px-3 rounded-lg hover:bg-gray-100">About</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-primary font-medium py-2 px-3 rounded-lg hover:bg-gray-100">Services</a>
+                    <a href="#branches" class="nav-link text-gray-700 hover:text-primary font-medium py-2 px-3 rounded-lg hover:bg-gray-100">Branches</a>
+                    <a href="#gallery" class="nav-link text-gray-700 hover:text-primary font-medium py-2 px-3 rounded-lg hover:bg-gray-100">Gallery</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary font-medium py-2 px-3 rounded-lg hover:bg-gray-100">Contact</a>
+                    <div class="pt-2 mt-2 border-t border-gray-200">
+                        <a href="#contact" class="block bg-yellow-500 text-white px-6 py-3 rounded-lg text-center hover:bg-yellow-600 transition-colors font-medium">
+                            <i class="fas fa-rocket mr-2"></i>Get Started
+                        </a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -229,7 +231,13 @@
                 <!-- Visual Element -->
                 <div class="relative">
                     <div class="glass-effect rounded-3xl p-8 float-animation">
-                        <img src="assets\gallery3.jpg" alt="Mind Management" class="w-full h-auto rounded-2xl">
+                        <div id="videoContainer" class="relative w-full pb-[56.25%] overflow-hidden rounded-2xl">
+                            <!-- Video content will be loaded by JavaScript based on device type -->
+                            <!-- Loading indicator -->
+                            <div class="absolute inset-0 flex items-center justify-center bg-gray-900 rounded-2xl">
+                                <div class="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+                            </div>
+                        </div>
                     </div>
                     <!-- Floating Elements -->
                     <div class="absolute -top-6 -right-6 w-24 h-24 bg-secondary/30 rounded-full blur-xl animate-pulse"></div>
@@ -922,7 +930,7 @@
                             </div>
                             <div class="flex items-center space-x-2">
                                 <i class="fas fa-phone text-primary text-sm"></i>
-                                <a href="tel:+919876543210" class="text-sm text-gray-600 hover:text-primary transition-colors">+91 98765 43210</a>
+                                <a href="tel:+918981012776" class="text-sm text-gray-600 hover:text-primary transition-colors">+91 8981 012 776</a>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <i class="fas fa-clock text-primary text-sm"></i>
@@ -956,7 +964,7 @@
                             </div>
                             <div class="flex items-center space-x-2">
                                 <i class="fas fa-phone text-secondary text-sm"></i>
-                                <a href="tel:+919876543211" class="text-sm text-gray-600 hover:text-secondary transition-colors">+91 98765 43211</a>
+                                <a href="tel:+918981012776" class="text-sm text-gray-600 hover:text-secondary transition-colors">+91 8981 012 776</a>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <i class="fas fa-clock text-secondary text-sm"></i>
@@ -993,7 +1001,7 @@
                             </div>
                             <div class="flex items-center space-x-2">
                                 <i class="fas fa-phone text-accent text-sm"></i>
-                                <a href="tel:+919876543212" class="text-sm text-gray-600 hover:text-accent transition-colors">+91 98765 43212</a>
+                                <a href="tel:+918981012776" class="text-sm text-gray-600 hover:text-accent transition-colors">+91 8981 012 776</a>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <i class="fas fa-clock text-accent text-sm"></i>
@@ -1553,8 +1561,7 @@
                             </a>
                             <div>
                                 <h4 class="text-white font-semibold mb-1">Phone</h4>
-                                <a href="tel:+919876543210" class="text-gray-300 hover:text-white transition-colors block">+91 98765 43210</a>
-                                <a href="tel:+919876543211" class="text-gray-300 hover:text-white transition-colors block">+91 98765 43211</a>
+                                <a href="tel:+918981012776" class="text-gray-300 hover:text-white transition-colors block">+91 8981 012 776</a>
                             </div>
                         </div>
 
@@ -1564,8 +1571,7 @@
                             </a>
                             <div>
                                 <h4 class="text-white font-semibold mb-1">Email</h4>
-                                <a href="mailto:info@lifetime-mind.com" class="text-gray-300 hover:text-white transition-colors block">info@lifetime-mind.com</a>
-                                <a href="mailto:support@lifetime-mind.com" class="text-gray-300 hover:text-white transition-colors block">support@lifetime-mind.com</a>
+                                <a href="mailto:lifetimeworld@gmail.com" class="text-gray-300 hover:text-white transition-colors block">lifetimeworld@gmail.com</a>
                             </div>
                         </div>
 
@@ -1618,35 +1624,35 @@
                         </div>
                     </div>
 
-                    <form class="contact-form glass-effect p-8 rounded-2xl">
+                    <form id="contactForm" class="contact-form glass-effect p-8 rounded-2xl">
                         <h3 class="text-2xl font-bold text-white mb-6">Send us a Message</h3>
                         
                         <div class="grid md:grid-cols-2 gap-6 mb-6">
                             <div class="form-group">
-                                <label class="block text-white font-medium mb-2">First Name</label>
-                                <input type="text" class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="Your first name">
+                                <label class="block text-white font-medium mb-2">First Name <span class="text-red-400">*</span></label>
+                                <input type="text" name="firstName" required class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="Your first name">
                             </div>
                             <div class="form-group">
                                 <label class="block text-white font-medium mb-2">Last Name</label>
-                                <input type="text" class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="Your last name">
+                                <input type="text" name="lastName" class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="Your last name">
                             </div>
                         </div>
 
                         <div class="form-group mb-6">
-                            <label class="block text-white font-medium mb-2">Email</label>
-                            <input type="email" class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="your.email@example.com">
+                            <label class="block text-white font-medium mb-2">Email <span class="text-red-400">*</span></label>
+                            <input type="email" name="email" required class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="your.email@example.com">
                         </div>
 
                         <div class="form-group mb-6">
                             <label class="block text-white font-medium mb-2">Phone</label>
-                            <input type="tel" class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="+91 98765 43210">
+                            <input type="tel" name="phone" class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="+91 8981 012 776">
                         </div>
 
                         <div class="form-group mb-6">
                             <label class="block text-white font-medium mb-2">Service Interested In</label>
-                            <select class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-secondary">
+                            <select name="service" class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-secondary">
                                 <option value="">Select a service</option>
-                                <option class="text-black"value="mind-management">Mind Management</option>
+                                <option class="text-black" value="mind-management">Mind Management</option>
                                 <option class="text-black" value="stress-management">Stress Management</option>
                                 <option class="text-black" value="group-therapy">Group Therapy</option>
                                 <option class="text-black" value="individual-counseling">Individual Counseling</option>
@@ -1656,13 +1662,22 @@
                         </div>
 
                         <div class="form-group mb-6">
-                            <label class="block text-white font-medium mb-2">Message</label>
-                            <textarea rows="4" class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="Tell us about your needs and how we can help you..."></textarea>
+                            <label class="block text-white font-medium mb-2">Message <span class="text-red-400">*</span></label>
+                            <textarea name="message" rows="4" required class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="Tell us about your needs and how we can help you..."></textarea>
+                        </div>
+
+                        <div class="form-group mb-6">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="consent" name="consent" required class="mr-2">
+                                <label for="consent" class="text-white text-sm">I consent to having my data stored and processed for contact purposes <span class="text-red-400">*</span></label>
+                            </div>
                         </div>
 
                         <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-[1.02] shadow-lg glow-animation">
                             <i class="fas fa-paper-plane mr-2"></i>Send Message
                         </button>
+                        
+                        <p class="text-xs text-gray-400 mt-4 text-center">Your data will be stored securely and weekly reports will be sent to our team.</p>
                     </form>
                 </div>
             </div>
@@ -1737,11 +1752,11 @@
                         </div>
                         <div class="flex items-center space-x-3">
                             <i class="fas fa-phone text-secondary"></i>
-                            <a href="tel:+919876543210" class="text-gray-400 hover:text-secondary transition-colors">+91 98765 43210</a>
+                            <a href="tel:+918981012776" class="text-gray-400 hover:text-secondary transition-colors">+91 8981 012 776</a>
                         </div>
                         <div class="flex items-center space-x-3">
                             <i class="fas fa-envelope text-secondary"></i>
-                            <a href="mailto:info@lifetime-mind.com" class="text-gray-400 hover:text-secondary transition-colors">info@lifetime-mind.com</a>
+                            <a href="mailto:lifetimeworld@gmail.com" class="text-gray-400 hover:text-secondary transition-colors">lifetimeworld@gmail.com</a>
                         </div>
                         <div class="flex items-center space-x-3">
                             <i class="fas fa-clock text-secondary"></i>
@@ -1770,14 +1785,14 @@
     <!-- Floating Contact Buttons -->
     <div class="floating-contact fixed bottom-24 right-8 flex flex-col space-y-4 z-30">
         <!-- WhatsApp Button -->
-        <a href="https://wa.me/919876543210?text=Hi! I'm interested in learning more about your mind management services." 
+        <a href="https://wa.me/918981012776?text=Hi! I'm interested in learning more about your mind management services." 
            class="whatsapp-float bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110" 
            target="_blank" rel="noopener" title="Chat on WhatsApp">
             <i class="fab fa-whatsapp text-xl"></i>
         </a>
         
         <!-- Call Button -->
-        <a href="tel:+919876543210" 
+        <a href="tel:+918981012776" 
            class="call-float bg-primary hover:bg-blue-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
            title="Call Now">
             <i class="fas fa-phone text-xl"></i>
@@ -1789,8 +1804,38 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- Script -->
+    <!-- Scripts -->
     <script src="animations-new.js"></script>
+    <script src="form-handler.js"></script>
+    <script src="video-handler.js"></script>
+    <script src="mobile-menu.js"></script>
+    
+    <script>
+    // Ensure mobile menu is initialized properly
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Page loaded, checking mobile menu');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        if (mobileMenuBtn) {
+            console.log('Mobile menu button found');
+            // Add a direct click handler as a backup
+            mobileMenuBtn.onclick = function(e) {
+                e.preventDefault();
+                const mobileMenu = document.getElementById('mobileMenu');
+                if (mobileMenu) {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (icon) {
+                        if (mobileMenu.classList.contains('hidden')) {
+                            icon.className = 'fas fa-bars text-xl';
+                        } else {
+                            icon.className = 'fas fa-times text-xl';
+                        }
+                    }
+                }
+            };
+        }
+    });
+    </script>
     
 </body>
 </html>
