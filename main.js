@@ -1,5 +1,28 @@
-// Simple, Modern Animation System for Lifetime
-gsap.registerPlugin(ScrollTrigger);
+// Consolidated main JavaScript file for Lifetime website
+
+// Immediately fix service card icons
+(function() {
+    function fixServiceIcons() {
+        const serviceIcons = document.querySelectorAll('.service-card div.w-16');
+        if (serviceIcons.length > 0) {
+            serviceIcons.forEach(icon => {
+                icon.style.opacity = '1';
+                icon.style.visibility = 'visible';
+                icon.style.transform = 'none';
+                icon.style.display = 'flex';
+            });
+        }
+    }
+    
+    // Run immediately
+    fixServiceIcons();
+    
+    // Also run when DOM is loaded
+    document.addEventListener('DOMContentLoaded', fixServiceIcons);
+    
+    // Run again after a short delay
+    setTimeout(fixServiceIcons, 100);
+})();
 
 // Configuration
 const config = {
@@ -61,9 +84,31 @@ const utils = {
     }
 };
 
+// Register GSAP plugins
+document.addEventListener('DOMContentLoaded', function() {
+    // Register plugins if not already registered
+    if (typeof gsap !== 'undefined') {
+        if (typeof ScrollTrigger !== 'undefined' && !gsap.plugins.ScrollTrigger) {
+            gsap.registerPlugin(ScrollTrigger);
+        }
+        if (typeof ScrollToPlugin !== 'undefined' && !gsap.plugins.scrollTo) {
+            gsap.registerPlugin(ScrollToPlugin);
+        }
+    }
+    
+    // Initialize all components
+    initPageLoader();
+    initScrollProgress();
+    initMobileMenu();
+    initAnimations();
+    
+    console.log('✨ Lifetime website initialized');
+});
+
 // Page Loading
-window.addEventListener('load', () => {
+function initPageLoader() {
     const loader = document.getElementById('pageLoader');
+    if (!loader) return;
     
     gsap.to(loader, {
         opacity: 0,
@@ -71,34 +116,59 @@ window.addEventListener('load', () => {
         delay: 0.5,
         onComplete: () => {
             loader.style.display = 'none';
-            ScrollTrigger.refresh();
+            if (typeof ScrollTrigger !== 'undefined') {
+                ScrollTrigger.refresh();
+            }
         }
     });
-});
+}
 
 // Scroll Progress
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const maxHeight = document.body.scrollHeight - window.innerHeight;
-    const progress = (scrolled / maxHeight) * 100;
-    
+function initScrollProgress() {
     const progressBar = document.getElementById('scrollProgress');
-    if (progressBar) {
+    if (!progressBar) return;
+    
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const maxHeight = document.body.scrollHeight - window.innerHeight;
+        const progress = (scrolled / maxHeight) * 100;
         progressBar.style.width = Math.min(progress, 100) + '%';
-    }
-});
+    });
+}
 
 // Mobile Menu Toggle
-document.addEventListener('DOMContentLoaded', () => {
+function initMobileMenu() {
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     
-    if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    }
-
+    if (!mobileMenuBtn || !mobileMenu) return;
+    
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        mobileMenu.classList.toggle('hidden');
+        
+        // Change icon based on menu state
+        const icon = mobileMenuBtn.querySelector('i');
+        if (icon) {
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.className = 'fas fa-bars text-xl';
+            } else {
+                icon.className = 'fas fa-times text-xl';
+            }
+        }
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!mobileMenuBtn.contains(e.target) && 
+            !mobileMenu.contains(e.target) && 
+            !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (icon) icon.className = 'fas fa-bars text-xl';
+        }
+    });
+    
     // Header background on scroll
     gsap.to("#header", {
         backgroundColor: "rgba(255, 255, 255, 0.95)",
@@ -109,12 +179,18 @@ document.addEventListener('DOMContentLoaded', () => {
             scrub: true
         }
     });
+}
 
-    // Initialize animations
-    initAnimations();
-});
-
+// Main animations
 function initAnimations() {
+    // Fix service card icons again
+    const serviceIcons = document.querySelectorAll('.service-card div.w-16');
+    serviceIcons.forEach(icon => {
+        icon.style.opacity = '1';
+        icon.style.visibility = 'visible';
+        icon.style.transform = 'none';
+    });
+
     // Hero section animations
     const heroTl = gsap.timeline();
     
@@ -212,21 +288,13 @@ function initAnimations() {
             start: "top 80%",
             end: "top 30%",
             toggleActions: "play none none reverse"
-        }
-    });
-    
-    // Service card icon animations
-    gsap.from(".service-card .w-16", {
-        opacity: 0,
-        scale: 0,
-        rotate: -45,
-        stagger: 0.15,
-        duration: 1,
-        delay: 0.5,
-        ease: "elastic.out(1, 0.5)",
-        scrollTrigger: {
-            trigger: "#services",
-            start: "top 75%"
+        },
+        onComplete: () => {
+            // Ensure service icons are visible after animation
+            serviceIcons.forEach(icon => {
+                icon.style.opacity = '1';
+                icon.style.visibility = 'visible';
+            });
         }
     });
 
@@ -294,6 +362,12 @@ function initAnimations() {
         stagger: 0.2
     });
 
+    // Initialize interactive elements
+    initInteractiveElements();
+}
+
+// Interactive elements
+function initInteractiveElements() {
     // Smooth scroll for navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -348,9 +422,6 @@ function initAnimations() {
 
     // Improved hover effects for interactive elements
     gsap.utils.toArray('.hover-lift').forEach(element => {
-        // Store original position
-        const originalTransform = element.style.transform || '';
-        
         // Create hover timeline (paused initially)
         const hoverTl = gsap.timeline({paused: true})
             .to(element, {
@@ -452,7 +523,7 @@ function initAnimations() {
     const parallaxElements = [
         { element: "#home .absolute.top-20.left-20", speed: 0.2 },
         { element: "#home .absolute.bottom-20.right-20", speed: 0.3 },
-        { element: "#home .absolute.top-1\/2.left-1\/2", speed: 0.1 },
+        { element: "#home .absolute.top-1/2.left-1/2", speed: 0.1 },
         { element: ".floating-contact", speed: -0.1 }
     ];
     
@@ -470,6 +541,4 @@ function initAnimations() {
             });
         }
     });
-    
-    console.log('✨ Lifetime Mind Management animations initialized');
 }

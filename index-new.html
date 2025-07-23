@@ -14,6 +14,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Fix styles -->
+    <link rel="stylesheet" href="styles-fix.css">
+    
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -80,16 +83,18 @@
         }
         
         .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                        box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform, box-shadow;
+            transform: translateZ(0); /* Force GPU acceleration */
         }
         
-        .hover-lift:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
+        /* We'll handle hover effects with JavaScript for better control */
+        /* This ensures cards return to their exact original position */
     </style>
 </head>
 <body class="font-sans bg-white">
+    <!-- Service card icons are fixed in main.js -->
     
     <!-- Loading Screen -->
     <div id="pageLoader" class="fixed inset-0 bg-gradient-to-br from-primary to-secondary z-50 flex items-center justify-center">
@@ -1804,38 +1809,11 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- Scripts -->
-    <script src="animations-new.js"></script>
+    <!-- Consolidated script file -->
+    <script src="main.js"></script>
+    
+    <!-- Service-specific scripts -->
     <script src="form-handler.js"></script>
     <script src="video-handler.js"></script>
-    <script src="mobile-menu.js"></script>
-    
-    <script>
-    // Ensure mobile menu is initialized properly
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('Page loaded, checking mobile menu');
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        if (mobileMenuBtn) {
-            console.log('Mobile menu button found');
-            // Add a direct click handler as a backup
-            mobileMenuBtn.onclick = function(e) {
-                e.preventDefault();
-                const mobileMenu = document.getElementById('mobileMenu');
-                if (mobileMenu) {
-                    mobileMenu.classList.toggle('hidden');
-                    const icon = mobileMenuBtn.querySelector('i');
-                    if (icon) {
-                        if (mobileMenu.classList.contains('hidden')) {
-                            icon.className = 'fas fa-bars text-xl';
-                        } else {
-                            icon.className = 'fas fa-times text-xl';
-                        }
-                    }
-                }
-            };
-        }
-    });
-    </script>
-    
 </body>
 </html>
