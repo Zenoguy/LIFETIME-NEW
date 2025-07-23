@@ -484,39 +484,31 @@ function initInteractiveElements() {
         });
     });
 
-    // Form validation and submission
+    // Form validation only (submission handled in form-handler.js)
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Basic validation
-            const requiredFields = this.querySelectorAll('input[required], textarea[required]');
-            let isValid = true;
-            
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    field.style.borderColor = '#ef4444';
-                    isValid = false;
+        // Add real-time validation
+        const requiredFields = contactForm.querySelectorAll('input[required], textarea[required]');
+        requiredFields.forEach(field => {
+            field.addEventListener('blur', function() {
+                if (!this.value.trim()) {
+                    this.style.borderColor = '#ef4444';
                 } else {
-                    field.style.borderColor = '';
+                    this.style.borderColor = '';
                 }
             });
-            
-            if (isValid) {
-                // Show success message
-                const submitBtn = this.querySelector('button[type="submit"]');
-                const originalText = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
-                submitBtn.style.background = '#10b981';
-                
-                setTimeout(() => {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.style.background = '';
-                    this.reset();
-                }, 3000);
-            }
         });
+        
+        // Email validation
+        const emailField = contactForm.querySelector('input[type="email"]');
+        if (emailField) {
+            emailField.addEventListener('blur', function() {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (this.value && !emailRegex.test(this.value)) {
+                    this.style.borderColor = '#ef4444';
+                }
+            });
+        }
     }
 
     // Add subtle parallax effects
