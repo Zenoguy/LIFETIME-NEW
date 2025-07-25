@@ -1302,6 +1302,26 @@
                     closePopup();
                 }
             });
+            const footerServiceLinks = document.querySelectorAll('.footer-section ul a[href^="#"][href$="-popup"]'); // Selects links in footer's service list that point to popups
+
+    footerServiceLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default jump to anchor
+            const targetId = this.getAttribute('href').substring(1); // Get the ID (e.g., "mind-management-popup")
+            const popup = document.getElementById(targetId);
+
+            if (popup) {
+                // Re-use existing popup opening logic
+                popups.forEach(p => p.classList.add('hidden')); // Hide all popups first
+                overlay.classList.remove('hidden');
+                popup.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent body scrolling
+            } else {
+                console.warn(`Popup with ID "${targetId}" not found.`);
+            }
+        });
+
+});
         });
         </script>
     <!-- Branches Section -->
@@ -1486,10 +1506,11 @@
                             </div>
                         </div>
                         
-                        <button class="w-full mt-4 bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-600 transition-colors font-medium">
+                    <!-- Imagine needing help for this-->
+                        <a href="#contact" class="w-full mt-4 bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-600 transition-colors font-medium text-center inline-flex items-center justify-center">
                             <i class="fas fa-envelope mr-2"></i>
                             Notify Me
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -2524,17 +2545,24 @@
                 </div>
 
                 <!-- Services -->
-                <div class="footer-section">
-                    <h3 class="text-lg font-bold mb-6">Our Services</h3>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">Mind Management</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">Stress Management</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">Group Therapy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">Individual Counseling</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">Corporate Wellness</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">24/7 Support</a></li>
-                    </ul>
-                </div>
+                    <div class="footer-section">
+                        <h3 class="text-lg font-bold mb-6 text-center">Our Services</h3>
+                        <ul class="grid grid-cols-2 gap-x-4 gap-y-2 list-none p-0 m-0 mx-auto w-fit">
+                            <li><a href="#mind-management-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Mind Management</a></li>
+                            <li><a href="#stress-management-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Stress Management</a></li>
+                            <li><a href="#group-therapy-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Group Therapy</a></li>
+                            <li><a href="#individual-counseling-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Individual Counseling</a></li>
+                            <li><a href="#corporate-wellness-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Corporate Wellness</a></li>
+                            <li><a href="#support-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">24/7 Support</a></li>
+                            <li><a href="#mindfulness-coaching-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Mindfulness Coaching</a></li>
+                            <li><a href="#resilience-building-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Resilience Building</a></li>
+                            <li><a href="#youth-counseling-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Youth Counseling</a></li>
+                            <li><a href="#relationship-counseling-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Relationship Counseling</a></li>
+                            <li><a href="#leadership-coaching-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Leadership Coaching</a></li>
+                            <li><a href="#cbt-therapy-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">CBT Therapy</a></li>
+                        </ul>
+                    </div>
+
 
                 <!-- Contact -->
                 <div class="footer-section">
