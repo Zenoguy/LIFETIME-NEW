@@ -942,6 +942,14 @@ button {
     transition: all 0.3s ease;
 }
 
+/* New: Service Popup Overlay Background Image */
+.popup-overlay-bg {
+    background-image: url('https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); /* Example Pexels image: calm, blurred background */
+    /* The opacity for the image effect is achieved by the bg-dark/70 class on the div itself */
+    /* background-blend-mode can be used if you want to blend the image with the gradient,
+       but for a simple opaque image on top of the existing dark overlay, this is sufficient. */
+}
+
 .service-toggle:hover {
     background: #f59e0b;
     transform: scale(1.1);
