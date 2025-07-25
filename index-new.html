@@ -88,6 +88,18 @@
             will-change: transform, box-shadow;
             transform: translateZ(0); /* Force GPU acceleration */
         }
+
+        /* New: Hero Section Background Image Layer */
+        .hero-subtle-bg-image {
+            background-image: url('https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg'); /* Your chosen Pexels image */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1; /* Adjust this value (e.g., 0.05 to 0.15) for desired subtlety */
+            /* These properties are already handled by `absolute inset-0` in HTML, but good for clarity */
+            /* position: absolute; */
+            /* inset: 0; */
+            /* z-index: 1; */
+        }
         
         /* We'll handle hover effects with JavaScript for better control */
         /* This ensures cards return to their exact original position */
@@ -168,12 +180,18 @@
 
     <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center bg-gradient-to-br from-dark via-gray-900 to-primary overflow-hidden">
-        <!-- Background Elements -->
-        <div class="absolute inset-0">
+        <!-- NEW: Background Image Layer (on top of the gradient, with low opacity) -->
+        <div class="absolute inset-0 hero-subtle-bg-image z-10"></div>
+
+        <!-- Existing Background Elements (Floating Circles) - adjust z-index to be above the new image layer -->
+        <div class="absolute inset-0 z-20">
             <div class="absolute top-20 left-20 w-64 h-64 bg-secondary/20 rounded-full blur-3xl float-animation"></div>
             <div class="absolute bottom-20 right-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl float-animation" style="animation-delay: 2s;"></div>
             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary/30 rounded-full blur-3xl float-animation" style="animation-delay: 4s;"></div>
         </div>
+
+        <div class="container mx-auto px-6 relative z-30"> <!-- Ensure main content is highest -->
+        
 
         <div class="container mx-auto px-6 relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -1637,80 +1655,323 @@
     </section>
 
     <!-- Gallery Section -->
+    
+        <!-- Gallery Section -->
     <section id="gallery" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <!-- Section Header -->
             <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Gallery</h2>
+                <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Our Visual Journey</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    A glimpse into our facilities and community events
+                    A curated collection of moments from our facilities, workshops, and community engagements.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Gallery Item 1 -->
-                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <img src="assets/gallery.jpg" alt="Mind Management Session" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h3 class="text-lg font-bold mb-2">Mind Management Session</h3>
-                        <p class="text-sm">Professional consultation in progress</p>
+            <!-- Gallery Grid with Mixed Sizes -->
+            <!--
+                - grid-cols-1: Single column on extra small screens
+                - sm:grid-cols-2: Two columns on small screens and up
+                - lg:grid-cols-3: Three columns on large screens and up
+                - xl:grid-cols-4: Four columns on extra large screens and up
+                - grid-flow-dense: Allows items to fill in gaps created by spanned items, creating a masonry-like effect.
+            -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 grid-flow-dense">
+                <!-- Gallery Item 1: Large Feature (Mind Management) -->
+                <!--
+                    - md:col-span-2 md:row-span-2: This item will span 2 columns and 2 rows on medium screens and up,
+                      making it a prominent, larger image in the grid.
+                -->
+                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift cursor-pointer md:col-span-2 md:row-span-2"
+                     data-src="assets/gallery.jpg" data-title="Mind Management Session" data-description="Professional consultation in progress.">
+                    <img src="assets/gallery.jpg" alt="Mind Management Session" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <div class="text-white">
+                            <h3 class="text-lg font-bold mb-1">Mind Management Session</h3>
+                            <p class="text-sm opacity-80">Professional consultation in progress.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Gallery Item 2 -->
-                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <img src="assets/gallery1.jpg" alt="Group Therapy" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h3 class="text-lg font-bold mb-2">Group Therapy</h3>
-                        <p class="text-sm">Collaborative healing sessions</p>
+                <!-- Gallery Item 2: Normal Size (Group Therapy) -->
+                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift cursor-pointer"
+                     data-src="assets/gallery1.jpg" data-title="Group Therapy" data-description="Collaborative healing sessions fostering community and support.">
+                    <img src="assets/gallery1.jpg" alt="Group Therapy" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <div class="text-white">
+                            <h3 class="text-lg font-bold mb-1">Group Therapy</h3>
+                            <p class="text-sm opacity-80">Collaborative healing sessions.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Gallery Item 3 -->
-                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <img src="assets/galler2.jpg" alt="Wellness Workshop" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h3 class="text-lg font-bold mb-2">Wellness Workshop</h3>
-                        <p class="text-sm">Interactive learning experience</p>
+                <!-- Gallery Item 3: Wide (Wellness Workshop) -->
+                <!--
+                    - md:col-span-2: This item will span 2 columns on medium screens and up, making it wider.
+                -->
+                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift cursor-pointer md:col-span-2"
+                     data-src="assets/galler2.jpg" data-title="Wellness Workshop" data-description="Interactive learning experience focused on holistic well-being.">
+                    <img src="assets/galler2.jpg" alt="Wellness Workshop" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <div class="text-white">
+                            <h3 class="text-lg font-bold mb-1">Wellness Workshop</h3>
+                            <p class="text-sm opacity-80">Interactive learning experience.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Gallery Item 4 -->
-                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <img src="assets/gallery3.jpg" alt="Corporate Training" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h3 class="text-lg font-bold mb-2">Corporate Training</h3>
-                        <p class="text-sm">Professional development programs</p>
+                <!-- Gallery Item 4: Normal Size (Corporate Training) -->
+                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift cursor-pointer"
+                     data-src="assets/gallery3.jpg" data-title="Corporate Training" data-description="Professional development programs for workplace mental health.">
+                    <img src="assets/gallery3.jpg" alt="Corporate Training" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <div class="text-white">
+                            <h3 class="text-lg font-bold mb-1">Corporate Training</h3>
+                            <p class="text-sm opacity-80">Professional development programs.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Gallery Item 5 -->
-                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <img src="assets/gallery4.jpg" alt="Individual Counseling" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h3 class="text-lg font-bold mb-2">Individual Counseling</h3>
-                        <p class="text-sm">Personalized therapy sessions</p>
+                <!-- Gallery Item 5: Normal Size (Individual Counseling) -->
+                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift cursor-pointer"
+                     data-src="assets/gallery4.jpg" data-title="Individual Counseling" data-description="Personalized therapy sessions tailored to individual needs.">
+                    <img src="assets/gallery4.jpg" alt="Individual Counseling" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <div class="text-white">
+                            <h3 class="text-lg font-bold mb-1">Individual Counseling</h3>
+                            <p class="text-sm opacity-80">Personalized therapy sessions.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Gallery Item 6 -->
-                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <img src="assets/gallery5.jpg" alt="Stress Management" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h3 class="text-lg font-bold mb-2">Stress Management</h3>
-                        <p class="text-sm">Techniques for balanced living</p>
+                <!-- Gallery Item 6: Normal Size (Stress Management Workshop) -->
+                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift cursor-pointer"
+                     data-src="assets/gallery5.jpg" data-title="Stress Management Workshop" data-description="Techniques and strategies for balanced living and stress reduction.">
+                    <img src="assets/gallery5.jpg" alt="Stress Management" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <div class="text-white">
+                            <h3 class="text-lg font-bold mb-1">Stress Management</h3>
+                            <p class="text-sm opacity-80">Techniques for balanced living.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7: Tall (New: Meditation Session) -->
+                <!--
+                    - md:row-span-2: This item will span 2 rows on medium screens and up, making it taller.
+                -->
+                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift cursor-pointer md:row-span-2"
+                     data-src="https://images.pexels.com/photos/3822625/pexels-photo-3822625.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200" data-title="Guided Meditation Session" data-description="Finding inner peace and clarity through guided meditation.">
+                    <img src="https://images.pexels.com/photos/3822625/pexels-photo-3822625.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200" alt="Meditation Session" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <div class="text-white">
+                            <h3 class="text-lg font-bold mb-1">Meditation Session</h3>
+                            <p class="text-sm opacity-80">Guided practice for inner peace.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8: Normal Size (New: Online Session) -->
+                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift cursor-pointer"
+                     data-src="https://images.pexels.com/photos/7176313/pexels-photo-7176313.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" data-title="Online Counseling Session" data-description="Convenient and accessible therapy from anywhere.">
+                    <img src="https://images.pexels.com/photos/7176313/pexels-photo-7176313.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Online Session" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <div class="text-white">
+                            <h3 class="text-lg font-bold mb-1">Online Session</h3>
+                            <p class="text-sm opacity-80">Therapy from anywhere.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 9: Normal Size (New: Youth Program) -->
+                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift cursor-pointer"
+                     data-src="https://images.pexels.com/photos/3862638/pexels-photo-3862638.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" data-title="Youth Empowerment Program" data-description="Building resilience and confidence in young minds.">
+                    <img src="https://images.pexels.com/photos/3862638/pexels-photo-3862638.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Youth Program" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <div class="text-white">
+                            <h3 class="text-lg font-bold mb-1">Youth Program</h3>
+                            <p class="text-sm opacity-80">Empowering young minds.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 10: Normal Size (New: Office Interior) -->
+                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift cursor-pointer"
+                     data-src="https://images.pexels.com/photos/5699475/pexels-photo-5699475.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" data-title="Our Welcoming Office Interior" data-description="A comfortable and private space for your sessions.">
+                    <img src="https://images.pexels.com/photos/5699475/pexels-photo-5699475.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Office Interior" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <div class="text-white">
+                            <h3 class="text-lg font-bold mb-1">Office Interior</h3>
+                            <p class="text-sm opacity-80">Comfortable and private space.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 11: Normal Size (New: Happy Client) -->
+                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift cursor-pointer"
+                     data-src="https://images.pexels.com/photos/3777622/pexels-photo-3777622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" data-title="A Happy Client Story" data-description="Celebrating successful transformations.">
+                    <img src="https://images.pexels.com/photos/3777622/pexels-photo-3777622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Happy Client" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <div class="text-white">
+                            <h3 class="text-lg font-bold mb-1">Happy Client</h3>
+                            <p class="text-sm opacity-80">Celebrating transformations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox Modal -->
+        <div id="galleryLightbox" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+            <div class="relative w-full max-w-5xl max-h-[90vh] flex flex-col">
+                <!-- Close Button -->
+                <button id="lightboxCloseBtn" class="absolute -top-10 right-0 text-white text-3xl p-2 rounded-full hover:text-gray-300 transition-colors focus:outline-none">
+                    <i class="fas fa-times"></i>
+                </button>
+
+                <!-- Image Container -->
+                <div class="relative flex-grow flex items-center justify-center overflow-hidden rounded-lg shadow-xl">
+                    <img id="lightboxImage" src="" alt="Gallery Image" class="max-w-full max-h-[75vh] object-contain rounded-lg">
+                    <!-- Loading Spinner -->
+                    <div id="lightboxSpinner" class="absolute inset-0 flex items-center justify-center bg-black/50 rounded-lg hidden">
+                        <div class="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+                    </div>
+                </div>
+
+                <!-- Image Info -->
+                <div class="bg-gray-800 text-white p-4 rounded-b-lg flex flex-col sm:flex-row justify-between items-center mt-2">
+                    <div class="text-center sm:text-left mb-2 sm:mb-0">
+                        <h3 id="lightboxTitle" class="text-xl font-bold"></h3>
+                        <p id="lightboxDescription" class="text-sm opacity-80"></p>
+                    </div>
+                    <div class="flex space-x-4">
+                        <button id="lightboxPrevBtn" class="bg-primary hover:bg-secondary text-white px-4 py-2 rounded-lg transition-colors focus:outline-none">
+                            <i class="fas fa-chevron-left mr-2"></i>Prev
+                        </button>
+                        <button id="lightboxNextBtn" class="bg-primary hover:bg-secondary text-white px-4 py-2 rounded-lg transition-colors focus:outline-none">
+                            Next <i class="fas fa-chevron-right ml-2"></i>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all gallery items
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            // Get lightbox elements
+            const lightbox = document.getElementById('galleryLightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxTitle = document.getElementById('lightboxTitle');
+            const lightboxDescription = document.getElementById('lightboxDescription');
+            const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
+            const lightboxPrevBtn = document.getElementById('lightboxPrevBtn');
+            const lightboxNextBtn = document.getElementById('lightboxNextBtn');
+            const lightboxSpinner = document.getElementById('lightboxSpinner');
+
+            let currentImageIndex = 0;
+            let imagesData = []; // To store data-src, data-title, data-description
+
+            // Populate imagesData array
+            galleryItems.forEach((item, index) => {
+                imagesData.push({
+                    src: item.getAttribute('data-src'),
+                    title: item.getAttribute('data-title'),
+                    description: item.getAttribute('data-description')
+                });
+
+                // Add click listener to each gallery item
+                item.addEventListener('click', () => {
+                    currentImageIndex = index;
+                    openLightbox(currentImageIndex);
+                });
+            });
+
+            // Function to handle image loading and display
+            function handleImageLoad() {
+                lightboxSpinner.classList.add('hidden');
+                lightboxImage.classList.remove('hidden');
+            }
+
+            // Function to handle image loading errors
+            function handleImageError() {
+                lightboxSpinner.classList.add('hidden');
+                lightboxImage.classList.remove('hidden');
+                lightboxImage.src = 'https://placehold.co/600x400/FF0000/FFFFFF?text=Image+Load+Error'; // Fallback image
+                lightboxTitle.textContent = 'Error Loading Image';
+                lightboxDescription.textContent = 'Could not load image. Please try again later.';
+            }
+
+            // Function to open the lightbox
+            function openLightbox(index) {
+                // Show spinner while image loads
+                lightboxSpinner.classList.remove('hidden');
+                lightboxImage.classList.add('hidden'); // Hide image until loaded
+
+                const imageData = imagesData[index];
+
+                // Assign onload and onerror handlers BEFORE setting src
+                lightboxImage.onload = handleImageLoad;
+                lightboxImage.onerror = handleImageError;
+
+                lightboxImage.src = imageData.src;
+                lightboxTitle.textContent = imageData.title;
+                lightboxDescription.textContent = imageData.description;
+
+                // Check if image is already cached/loaded
+                if (lightboxImage.complete) {
+                    handleImageLoad(); // Manually trigger load handler if image is already complete
+                }
+
+                // Show lightbox with fade-in effect
+                lightbox.classList.remove('hidden');
+                setTimeout(() => lightbox.classList.remove('opacity-0'), 10); // Small delay for transition
+
+                // Prevent body scrolling
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.classList.add('opacity-0');
+                // Wait for transition to complete before hiding
+                setTimeout(() => {
+                    lightbox.classList.add('hidden');
+                    document.body.style.overflow = 'auto'; // Restore body scrolling
+                }, 300); // Matches transition duration
+            }
+
+            // Event listeners for lightbox controls
+            lightboxCloseBtn.addEventListener('click', closeLightbox);
+
+            lightboxPrevBtn.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex - 1 + imagesData.length) % imagesData.length;
+                openLightbox(currentImageIndex);
+            });
+
+            lightboxNextBtn.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex + 1) % imagesData.length;
+                openLightbox(currentImageIndex);
+            });
+
+            // Close lightbox on overlay click
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            // Close lightbox on Escape key press
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
+
 
     <!-- Testimonials Section -->
     <section class="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
