@@ -489,150 +489,282 @@
         </div>
     </section>
     <!-- Services -->  
+ <!-- Services Section -->
     <section id="services" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Our Services</h2>
-                    <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Comprehensive mental health solutions tailored to your unique needs
-                    </p>
-                </div>
-                <!-- Service Card:1 -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift group">
-                        <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Our Services</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive mental health solutions tailored to your unique needs
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card:1 - Mind Management -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                         style="background-image: url('https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                    
+                    <!-- Overlay - Changed to primary/secondary with /40 opacity -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary/40 backdrop-blur-sm"></div>
+
+                    <!-- Card Content -->
+                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
                             <i class="fas fa-brain text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-dark mb-4">Mind Management</h3>
-                        <p class="text-gray-600 mb-6">Advanced techniques to optimize mental performance, focus, and cognitive abilities.</p>
-                        <button class="service-popup-btn text-primary font-semibold hover:text-secondary transition-colors" data-service="mind-management">
+                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Mind Management</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Advanced techniques to optimize mental performance, focus, and cognitive abilities.</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="mind-management">
                             Learn More <i class="fas fa-arrow-right ml-2"></i>
                         </button>
                     </div>
-                <!-- Service Card:2 -->
-                    <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift group">
-                        <div class="w-16 h-16 bg-gradient-to-br from-secondary to-accent rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                </div>
+
+                <!-- Service Card:2 - Stress Management -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                         style="background-image: url('https://images.pexels.com/photos/416754/pexels-photo-416754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                    
+                    <!-- Overlay - Changed to secondary/accent with /40 opacity -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-secondary/40 to-accent/40 backdrop-blur-sm"></div>
+
+                    <!-- Card Content -->
+                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
                             <i class="fas fa-heart text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-dark mb-4">Stress Management</h3>
-                        <p class="text-gray-600 mb-6">Effective strategies to manage and reduce stress in personal and professional life.</p>
-                        <button class="service-popup-btn text-primary font-semibold hover:text-secondary transition-colors" data-service="stress-management">
+                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Stress Management</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Effective strategies to manage and reduce stress in personal and professional life.</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="stress-management">
                             Learn More <i class="fas fa-arrow-right ml-2"></i>
                         </button>
                     </div>
-                    <!-- Service Card:3 -->
-                    <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift group">
-                        <div class="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                </div>
+
+                <!-- Service Card:3 - Group Therapy -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                         style="background-image: url('https://images.pexels.com/photos/3845995/pexels-photo-3845995.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                    
+                    <!-- Overlay - Changed to accent/primary with /40 opacity -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-accent/40 to-primary/40 backdrop-blur-sm"></div>
+
+                    <!-- Card Content -->
+                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
                             <i class="fas fa-users text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-dark mb-4">Group Therapy</h3>
-                        <p class="text-gray-600 mb-6">Supportive group sessions for shared healing and community building.</p>
-                        <button class="service-popup-btn text-primary font-semibold hover:text-secondary transition-colors" data-service="group-therapy">
+                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Group Therapy</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Supportive group sessions for shared healing and community building.</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="group-therapy">
                             Learn More <i class="fas fa-arrow-right ml-2"></i>
                         </button>
                     </div>
-                    <!-- Service Card:4 -->
-                    <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift group">
-                        <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                </div>
+
+                <!-- Service Card:4 - Individual Counseling -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                         style="background-image: url('https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                    
+                    <!-- Overlay - Changed to primary/secondary with /40 opacity -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary/40 backdrop-blur-sm"></div>
+
+                    <!-- Card Content -->
+                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
                             <i class="fas fa-user text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-dark mb-4">Individual Counseling</h3>
-                        <p class="text-gray-600 mb-6">One-on-one sessions tailored to your specific mental health needs.</p>
-                        <button class="service-popup-btn text-primary font-semibold hover:text-secondary transition-colors" data-service="individual-counseling">
+                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Individual Counseling</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">One-on-one sessions tailored to your specific mental health needs.</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="individual-counseling">
                             Learn More <i class="fas fa-arrow-right ml-2"></i>
                         </button>
                     </div>
-                    <!-- Service Card:5 -->
-                    <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift group">
-                        <div class="w-16 h-16 bg-gradient-to-br from-secondary to-accent rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                </div>
+
+                <!-- Service Card:5 - Corporate Wellness -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                         style="background-image: url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                    
+                    <!-- Overlay - Changed to secondary/accent with /40 opacity -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-secondary/40 to-accent/40 backdrop-blur-sm"></div>
+
+                    <!-- Card Content -->
+                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
                             <i class="fas fa-building text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-dark mb-4">Corporate Wellness</h3>
-                        <p class="text-gray-600 mb-6">Mental health programs designed for organizations and their employees.</p>
-                        <button class="service-popup-btn text-primary font-semibold hover:text-secondary transition-colors" data-service="corporate-wellness">
+                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Corporate Wellness</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Mental health programs designed for organizations and their employees.</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="corporate-wellness">
                             Learn More <i class="fas fa-arrow-right ml-2"></i>
                         </button>
                     </div>
-                    <!-- Service Card:6 -->
-                    <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift group">
-                        <div class="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                </div>
+
+                <!-- Service Card:6 - 24/7 Support -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                         style="background-image: url('https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                    
+                    <!-- Overlay - Changed to accent/primary with /40 opacity -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-accent/40 to-primary/40 backdrop-blur-sm"></div>
+
+                    <!-- Card Content -->
+                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
                             <i class="fas fa-phone text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-dark mb-4">24/7 Support</h3>
-                        <p class="text-gray-600 mb-6">Round-the-clock crisis intervention and emergency mental health support.</p>
-                        <button class="service-popup-btn text-primary font-semibold hover:text-secondary transition-colors" data-service="support">
+                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">24/7 Support</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Round-the-clock crisis intervention and emergency mental health support.</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="support">
                             Learn More <i class="fas fa-arrow-right ml-2"></i>
                         </button>
                     </div>
-                    <!-- Service Card:7 -->
-                    <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift group">
-                        <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                </div>
+
+                <!-- Service Card:7 - Mindfulness Coaching -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                         style="background-image: url('https://images.pexels.com/photos/3862601/pexels-photo-3862601.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                    
+                    <!-- Overlay - Changed to primary/secondary with /40 opacity -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary/40 backdrop-blur-sm"></div>
+
+                    <!-- Card Content -->
+                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
                             <i class="fas fa-brain text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-dark mb-4">Mindfulness Coaching</h3>
-                        <p class="text-gray-600 mb-6">Techniques for enhanced presence, awareness, and mental clarity.</p>
-                        <button class="service-popup-btn text-primary font-semibold hover:text-secondary transition-colors" data-service="mindfulness-coaching">
+                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Mindfulness Coaching</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Techniques for enhanced presence, awareness, and mental clarity.</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="mindfulness-coaching">
                             Learn More <i class="fas fa-arrow-right ml-2"></i>
                         </button>
                     </div>
-                    <!-- Service Card:8 -->
-                    <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift group">
-                        <div class="w-16 h-16 bg-gradient-to-br from-secondary to-accent rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                </div>
+
+                <!-- Service Card:8 - Resilience Building -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                         style="background-image: url('https://images.pexels.com/photos/3862638/pexels-photo-3862638.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                    
+                    <!-- Overlay - Changed to secondary/accent with /40 opacity -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-secondary/40 to-accent/40 backdrop-blur-sm"></div>
+
+                    <!-- Card Content -->
+                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
                             <i class="fas fa-sun text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-dark mb-4">Resilience Building</h3>
-                        <p class="text-gray-600 mb-6">Programs to strengthen emotional and psychological resilience against adversity.</p>
-                        <button class="service-popup-btn text-primary font-semibold hover:text-secondary transition-colors" data-service="resilience-building">
+                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Resilience Building</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Programs to strengthen emotional and psychological resilience against adversity.</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="resilience-building">
                             Learn More <i class="fas fa-arrow-right ml-2"></i>
                         </button>
                     </div>
-                    <!-- Service Card:9 -->
-                    <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift group">
-                        <div class="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                </div>
+
+                <!-- Service Card:9 - Youth Counseling -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                         style="background-image: url('https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                    
+                    <!-- Overlay - Changed to accent/primary with /40 opacity -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-accent/40 to-primary/40 backdrop-blur-sm"></div>
+
+                    <!-- Card Content -->
+                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
                             <i class="fas fa-child text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-dark mb-4">Youth Counseling</h3>
-                        <p class="text-gray-600 mb-6">Specialized support for adolescents and young adults navigating unique challenges.</p>
-                        <button class="service-popup-btn text-primary font-semibold hover:text-secondary transition-colors" data-service="youth-counseling">
+                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Youth Counseling</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Specialized support for adolescents and young adults navigating unique challenges.</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="youth-counseling">
                             Learn More <i class="fas fa-arrow-right ml-2"></i>
                         </button>
                     </div>
-                    <!-- Service Card:10 -->
-                    <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift group">
-                        <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                </div>
+
+                <!-- Service Card:10 - Relationship Counseling -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                         style="background-image: url('https://images.pexels.com/photos/3861962/pexels-photo-3861962.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                    
+                    <!-- Overlay - Changed to primary/secondary with /40 opacity -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary/40 backdrop-blur-sm"></div>
+
+                    <!-- Card Content -->
+                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
                             <i class="fas fa-handshake text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-dark mb-4">Relationship Counseling</h3>
-                        <p class="text-gray-600 mb-6">Guidance for couples and families to improve communication and resolve conflicts.</p>
-                        <button class="service-popup-btn text-primary font-semibold hover:text-secondary transition-colors" data-service="relationship-counseling">
+                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Relationship Counseling</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Guidance for couples and families to improve communication and resolve conflicts.</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="relationship-counseling">
                             Learn More <i class="fas fa-arrow-right ml-2"></i>
                         </button>
                     </div>
-                    <!-- Service Card:11 -->
-                    <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift group">
-                        <div class="w-16 h-16 bg-gradient-to-br from-secondary to-accent rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                </div>
+
+                <!-- Service Card:11 - Leadership Coaching -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                         style="background-image: url('https://images.pexels.com/photos/3861970/pexels-photo-3861970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                    
+                    <!-- Overlay - Changed to secondary/accent with /40 opacity -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-secondary/40 to-accent/40 backdrop-blur-sm"></div>
+
+                    <!-- Card Content -->
+                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
                             <i class="fas fa-chalkboard-teacher text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-dark mb-4">Leadership Coaching</h3>
-                        <p class="text-gray-600 mb-6">Developing emotional intelligence and mental resilience for effective leadership.</p>
-                        <button class="service-popup-btn text-primary font-semibold hover:text-secondary transition-colors" data-service="leadership-coaching">
+                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Leadership Coaching</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Developing emotional intelligence and mental resilience for effective leadership.</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="leadership-coaching">
                             Learn More <i class="fas fa-arrow-right ml-2"></i>
                         </button>
                     </div>
-                    <!-- Service Card:12 -->
-                    <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift group">
-                        <div class="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                </div>
+
+                <!-- Service Card:12 - Cognitive Behavioral Therapy (CBT) -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                         style="background-image: url('https://images.pexels.com/photos/3861971/pexels-photo-3861971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                    
+                    <!-- Overlay - Changed to accent/primary with /40 opacity -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-accent/40 to-primary/40 backdrop-blur-sm"></div>
+
+                    <!-- Card Content -->
+                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
                             <i class="fas fa-lightbulb text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-dark mb-4">Cognitive Behavioral Therapy (CBT)</h3>
-                        <p class="text-gray-600 mb-6">Evidence-based therapy to identify and change negative thought patterns.</p>
-                        <button class="service-popup-btn text-primary font-semibold hover:text-secondary transition-colors" data-service="cbt-therapy">
+                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Cognitive Behavioral Therapy (CBT)</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Evidence-based therapy to identify and change negative thought patterns.</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="cbt-therapy">
                             Learn More <i class="fas fa-arrow-right ml-2"></i>
                         </button>
                     </div>
-                    </div>
+                </div>
             </div>
+        </div>
             <!-- Service Popups -->
             <div id="servicePopupOverlay" class="fixed inset-0 bg-black/70 z-50 hidden flex items-start justify-center pt-20 pb-8 px-4">
                 <div id="mind-management-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
@@ -1302,6 +1434,26 @@
                     closePopup();
                 }
             });
+            const footerServiceLinks = document.querySelectorAll('.footer-section ul a[href^="#"][href$="-popup"]'); // Selects links in footer's service list that point to popups
+
+    footerServiceLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default jump to anchor
+            const targetId = this.getAttribute('href').substring(1); // Get the ID (e.g., "mind-management-popup")
+            const popup = document.getElementById(targetId);
+
+            if (popup) {
+                // Re-use existing popup opening logic
+                popups.forEach(p => p.classList.add('hidden')); // Hide all popups first
+                overlay.classList.remove('hidden');
+                popup.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent body scrolling
+            } else {
+                console.warn(`Popup with ID "${targetId}" not found.`);
+            }
+        });
+
+});
         });
         </script>
     <!-- Branches Section -->
@@ -1486,10 +1638,11 @@
                             </div>
                         </div>
                         
-                        <button class="w-full mt-4 bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-600 transition-colors font-medium">
+                    <!-- Imagine needing help for this-->
+                        <a href="#contact" class="w-full mt-4 bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-600 transition-colors font-medium text-center inline-flex items-center justify-center">
                             <i class="fas fa-envelope mr-2"></i>
                             Notify Me
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -2524,17 +2677,24 @@
                 </div>
 
                 <!-- Services -->
-                <div class="footer-section">
-                    <h3 class="text-lg font-bold mb-6">Our Services</h3>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">Mind Management</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">Stress Management</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">Group Therapy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">Individual Counseling</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">Corporate Wellness</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">24/7 Support</a></li>
-                    </ul>
-                </div>
+                    <div class="footer-section">
+                        <h3 class="text-lg font-bold mb-6 text-center">Our Services</h3>
+                        <ul class="grid grid-cols-2 gap-x-4 gap-y-2 list-none p-0 m-0 mx-auto w-fit">
+                            <li><a href="#mind-management-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Mind Management</a></li>
+                            <li><a href="#stress-management-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Stress Management</a></li>
+                            <li><a href="#group-therapy-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Group Therapy</a></li>
+                            <li><a href="#individual-counseling-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Individual Counseling</a></li>
+                            <li><a href="#corporate-wellness-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Corporate Wellness</a></li>
+                            <li><a href="#support-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">24/7 Support</a></li>
+                            <li><a href="#mindfulness-coaching-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Mindfulness Coaching</a></li>
+                            <li><a href="#resilience-building-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Resilience Building</a></li>
+                            <li><a href="#youth-counseling-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Youth Counseling</a></li>
+                            <li><a href="#relationship-counseling-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Relationship Counseling</a></li>
+                            <li><a href="#leadership-coaching-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Leadership Coaching</a></li>
+                            <li><a href="#cbt-therapy-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">CBT Therapy</a></li>
+                        </ul>
+                    </div>
+
 
                 <!-- Contact -->
                 <div class="footer-section">
