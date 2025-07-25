@@ -110,12 +110,26 @@ function initPageLoader() {
     const loader = document.getElementById('pageLoader');
     if (!loader) return;
     
+    // Show content after a brief loading period
+    document.body.style.overflow = 'hidden'; // Prevent scroll during loading
+    
+    // Keep loader visible for a short time then fade out
     gsap.to(loader, {
         opacity: 0,
-        duration: 0.5,
-        delay: 0.5,
+        duration: 0.4,
+        delay: 0.8, // Show loading for 0.8 seconds so users can see it
         onComplete: () => {
             loader.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scroll
+            document.body.classList.add('loaded'); // Mark as loaded
+            
+            // Fade in the main content
+            gsap.to(['header', 'main', 'footer'], {
+                opacity: 1,
+                duration: 0.5,
+                stagger: 0.1
+            });
+            
             if (typeof ScrollTrigger !== 'undefined') {
                 ScrollTrigger.refresh();
             }
@@ -141,19 +155,52 @@ function initMobileMenu() {
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     
-    if (!mobileMenuBtn || !mobileMenu) return;
+    if (!mobileMenuBtn || !mobileMenu) {
+        console.warn('Mobile menu elements not found');
+        return;
+    }
     
+    // Enhanced mobile menu toggle with animation
     mobileMenuBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        mobileMenu.classList.toggle('hidden');
+        e.stopPropagation();
         
-        // Change icon based on menu state
+        const isHidden = mobileMenu.classList.contains('hidden');
         const icon = mobileMenuBtn.querySelector('i');
-        if (icon) {
-            if (mobileMenu.classList.contains('hidden')) {
-                icon.className = 'fas fa-bars text-xl';
-            } else {
-                icon.className = 'fas fa-times text-xl';
+        
+        if (isHidden) {
+            // Show menu
+            mobileMenu.classList.remove('hidden');
+            // Animate in
+            gsap.fromTo(mobileMenu, 
+                { opacity: 0, y: -20, scale: 0.95 },
+                { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "back.out(1.7)" }
+            );
+            // Change icon to X
+            if (icon) {
+                gsap.to(icon, { rotation: 90, duration: 0.2, onComplete: () => {
+                    icon.className = 'fas fa-times text-xl';
+                    gsap.fromTo(icon, { rotation: 90 }, { rotation: 0, duration: 0.2 });
+                }});
+            }
+        } else {
+            // Hide menu
+            gsap.to(mobileMenu, { 
+                opacity: 0, 
+                y: -20, 
+                scale: 0.95, 
+                duration: 0.2, 
+                ease: "power2.in",
+                onComplete: () => {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+            // Change icon to hamburger
+            if (icon) {
+                gsap.to(icon, { rotation: -90, duration: 0.2, onComplete: () => {
+                    icon.className = 'fas fa-bars text-xl';
+                    gsap.fromTo(icon, { rotation: -90 }, { rotation: 0, duration: 0.2 });
+                }});
             }
         }
     });
@@ -163,9 +210,75 @@ function initMobileMenu() {
         if (!mobileMenuBtn.contains(e.target) && 
             !mobileMenu.contains(e.target) && 
             !mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.add('hidden');
+            
+            // Animate out and hide
+            gsap.to(mobileMenu, { 
+                opacity: 0, 
+                y: -20, 
+                scale: 0.95, 
+                duration: 0.2, 
+                ease: "power2.in",
+                onComplete: () => {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+            
             const icon = mobileMenuBtn.querySelector('i');
-            if (icon) icon.className = 'fas fa-bars text-xl';
+            if (icon) {
+                gsap.to(icon, { rotation: -90, duration: 0.2, onComplete: () => {
+                    icon.className = 'fas fa-bars text-xl';
+                    gsap.fromTo(icon, { rotation: -90 }, { rotation: 0, duration: 0.2 });
+                }});
+            }
+        }
+    });
+    
+    // Close menu when clicking on nav links
+    const navLinks = mobileMenu.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            gsap.to(mobileMenu, { 
+                opacity: 0, 
+                y: -20, 
+                scale: 0.95, 
+                duration: 0.2, 
+                ease: "power2.in",
+                onComplete: () => {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+            
+            const icon = mobileMenuBtn.querySelector('i');
+            if (icon) {
+                gsap.to(icon, { rotation: -90, duration: 0.2, onComplete: () => {
+                    icon.className = 'fas fa-bars text-xl';
+                    gsap.fromTo(icon, { rotation: -90 }, { rotation: 0, duration: 0.2 });
+                }});
+            }
+        });
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+            gsap.to(mobileMenu, { 
+                opacity: 0, 
+                y: -20, 
+                scale: 0.95, 
+                duration: 0.2, 
+                ease: "power2.in",
+                onComplete: () => {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+            
+            const icon = mobileMenuBtn.querySelector('i');
+            if (icon) {
+                gsap.to(icon, { rotation: -90, duration: 0.2, onComplete: () => {
+                    icon.className = 'fas fa-bars text-xl';
+                    gsap.fromTo(icon, { rotation: -90 }, { rotation: 0, duration: 0.2 });
+                }});
+            }
         }
     });
     
@@ -191,55 +304,55 @@ function initAnimations() {
         icon.style.transform = 'none';
     });
 
-    // Hero section animations
-    const heroTl = gsap.timeline();
+    // Hero section animations - start immediately
+    const heroTl = gsap.timeline({ delay: 0.05 }); // Further reduced delay to sync with loader
     
     heroTl
         .from("#home .text-secondary", { 
             opacity: 0, 
-            y: 30, 
-            duration: config.duration.normal,
-            ease: config.ease.bounce 
+            y: 20, // Reduced movement for faster feel
+            duration: config.duration.fast,
+            ease: config.ease.smooth
         })
         .from("#home h1", { 
             opacity: 0, 
-            y: 50, 
-            duration: config.duration.slow,
+            y: 30, // Reduced movement
+            duration: config.duration.fast, // Changed to fast
             ease: config.ease.smooth 
-        }, "-=0.3")
+        }, "-=0.4") // Increased overlap
         .from("#home p", { 
             opacity: 0, 
-            y: 30, 
-            duration: config.duration.normal,
+            y: 20, // Reduced movement
+            duration: config.duration.fast,
             ease: config.ease.smooth 
-        }, "-=0.5")
+        }, "-=0.4")
         .from("#home .glass-effect", { 
             opacity: 0, 
-            y: 40, 
-            scale: 0.9,
-            duration: config.duration.normal,
+            y: 20, // Reduced movement
+            scale: 0.95, // Less dramatic scale
+            duration: config.duration.fast,
             ease: config.ease.smooth 
-        }, "-=0.3")
+        }, "-=0.4")
         .from("#home .flex a", { 
             opacity: 0, 
-            y: 30, 
+            y: 15, // Reduced movement
             duration: config.duration.fast,
-            stagger: 0.2,
-            ease: config.ease.bounce 
-        }, "-=0.2")
+            stagger: 0.05, // Faster stagger
+            ease: config.ease.smooth
+        }, "-=0.4")
         .from("#home .grid > div", { 
             opacity: 0, 
-            y: 20, 
+            y: 10, // Minimal movement
             duration: config.duration.fast,
-            stagger: 0.1,
+            stagger: 0.03, // Very fast stagger
             ease: config.ease.smooth 
-        }, "-=0.3");
+        }, "-=0.4");
 
-    // Hero visual element
-    utils.fadeIn("#home .relative img", "scale", 0.8, {
-        duration: config.duration.slow,
+    // Hero visual element - start immediately after loader
+    utils.fadeIn("#home .relative img", "scale", 0.9, { // Less dramatic scale
+        duration: config.duration.fast, // Fast animation
         ease: config.ease.smooth,
-        delay: 0.5
+        delay: 0.05 // Minimal delay
     });
 
     // Section animations

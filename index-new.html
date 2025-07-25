@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lifetime - Mind Management Solutions</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/LT.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/LT.png">
+    <link rel="apple-touch-icon" href="assets/LT.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/LIFETIME LOGO.jpg" as="image">
+    <link rel="preload" href="assets/SOMENATH DEY PHOTO.jpg" as="image">
+    <link rel="preload" href="main.js" as="script">
+    
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
@@ -47,6 +57,55 @@
             overflow-x: hidden;
             width: 100%;
             position: relative;
+        }
+        
+        /* Ensure content is visible even if JS doesn't load */
+        body {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Show loading screen by default */
+        #pageLoader {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        /* Hide content initially until loaded */
+        body:not(.loaded) main,
+        body:not(.loaded) header,
+        body:not(.loaded) footer {
+            opacity: 0;
+        }
+        
+        /* Show content when loaded */
+        body.loaded main,
+        body.loaded header,
+        body.loaded footer {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+        
+        /* Mobile menu enhancements */
+        #mobileMenu {
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Ensure hamburger button is always clickable */
+        #mobileMenuBtn {
+            position: relative;
+            z-index: 96;
+        }
+        
+        /* Add subtle animation to hamburger icon */
+        #mobileMenuBtn i {
+            transition: all 0.3s ease;
+        }
+        
+        #mobileMenuBtn:hover i {
+            transform: scale(1.1);
         }
         
         /* Custom animations */
@@ -109,11 +168,11 @@
     <!-- Service card icons are fixed in main.js -->
     
     <!-- Loading Screen -->
-    <div id="pageLoader" class="fixed inset-0 bg-gradient-to-br from-primary to-secondary z-50 flex items-center justify-center">
+    <div id="pageLoader" class="fixed inset-0 bg-gradient-to-br from-primary to-secondary z-[100] flex items-center justify-center">
         <div class="text-center text-white">
             <div class="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
             <h2 class="text-2xl font-bold">Loading...</h2>
-            <p class="text-sm opacity-80 mt-2">Preparing your mind management experience</p>
+            <p class="text-sm opacity-80 mt-2">Almost ready...</p>
         </div>
     </div>
 
@@ -122,8 +181,10 @@
         <div id="scrollProgress" class="h-full bg-gradient-to-r from-primary to-secondary transition-all duration-300 w-0"></div>
     </div>
 
+    <main>
+
     <!-- Header -->
-    <header id="header" class="fixed top-0 w-full z-30 transition-all duration-300 bg-white/80 backdrop-blur-sm shadow-sm">
+    <header id="header" class="fixed top-0 w-full z-[90] transition-all duration-300 bg-white/80 backdrop-blur-sm shadow-sm">
         <nav class="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
@@ -131,7 +192,7 @@
                     <img src="assets/LIFETIME LOGO.jpg" alt="Lifetime Logo" class="h-10 sm:h-12 w-auto rounded-lg shadow-md">
                     <div>
                         <h1 class="text-lg sm:text-xl font-bold text-dark">Lifetime</h1>
-                        <p class="text-xs sm:text-sm text-gray-600">Mind Management</p>
+                        <p class="text-xs sm:text-sm text-gray-600">Since 2005</p>
                     </div>
                 </div>
 
@@ -148,28 +209,29 @@
 
                 <!-- CTA Button -->
                 <div class="hidden lg:block">
-                    <a href="#contact" class="bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600 transition-all duration-300 transform hover:scale-105 shadow-lg glow-animation">
-                        Get Started
+                    <a href="#contact" class="bg-yellow-500 hover:bg-yellow-600 text-dark font-bold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg border-2 border-yellow-400 hover:border-yellow-500">
+                        <i class="fas fa-rocket mr-2"></i>Get Started
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn" class="lg:hidden text-gray-700 focus:outline-none p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
+                <button id="mobileMenuBtn" class="lg:hidden text-gray-700 focus:outline-none p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors relative z-[95]">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
 
             <!-- Mobile Menu -->
-            <div id="mobileMenu" class="lg:hidden hidden bg-white/95 backdrop-blur-sm rounded-lg mt-4 p-4 shadow-lg absolute left-4 right-4 z-50">
+            <div id="mobileMenu" class="lg:hidden hidden bg-white/95 backdrop-blur-sm rounded-lg mt-4 p-4 shadow-xl border border-gray-200 absolute left-4 right-4 z-[95] max-h-[80vh] overflow-y-auto">
                 <div class="flex flex-col space-y-4">
-                    <a href="#home" class="nav-link text-gray-700 hover:text-primary font-medium py-2 px-3 rounded-lg hover:bg-gray-100">Home</a>
-                    <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium py-2 px-3 rounded-lg hover:bg-gray-100">About</a>
-                    <a href="#services" class="nav-link text-gray-700 hover:text-primary font-medium py-2 px-3 rounded-lg hover:bg-gray-100">Services</a>
-                    <a href="#branches" class="nav-link text-gray-700 hover:text-primary font-medium py-2 px-3 rounded-lg hover:bg-gray-100">Branches</a>
-                    <a href="#gallery" class="nav-link text-gray-700 hover:text-primary font-medium py-2 px-3 rounded-lg hover:bg-gray-100">Gallery</a>
-                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary font-medium py-2 px-3 rounded-lg hover:bg-gray-100">Contact</a>
+                    <a href="#home" class="nav-link text-gray-700 hover:text-primary font-medium py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">About</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-primary font-medium py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Services</a>
+                    <a href="#branches" class="nav-link text-gray-700 hover:text-primary font-medium py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Branches</a>
+                    <a href="#events" class="nav-link text-gray-700 hover:text-primary font-medium py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Events</a>
+                    <a href="#gallery" class="nav-link text-gray-700 hover:text-primary font-medium py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Gallery</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary font-medium py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Contact</a>
                     <div class="pt-2 mt-2 border-t border-gray-200">
-                        <a href="#contact" class="block bg-yellow-500 text-white px-6 py-3 rounded-lg text-center hover:bg-yellow-600 transition-colors font-medium">
+                        <a href="#contact" class="block bg-yellow-500 hover:bg-yellow-600 text-dark font-bold px-6 py-3 rounded-lg text-center transition-colors border-2 border-yellow-400 hover:border-yellow-500">
                             <i class="fas fa-rocket mr-2"></i>Get Started
                         </a>
                     </div>
@@ -190,10 +252,7 @@
             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary/30 rounded-full blur-3xl float-animation" style="animation-delay: 4s;"></div>
         </div>
 
-        <div class="container mx-auto px-6 relative z-30"> <!-- Ensure main content is highest -->
-        
-
-        <div class="container mx-auto px-6 relative z-10">
+        <div class="container mx-auto px-6 relative z-30">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <!-- Content -->
                 <div class="text-white">
@@ -220,7 +279,7 @@
                             <div>
                                 <h3 class="text-lg font-bold text-white">Somenath Dey</h3>
                                 <p class="text-sm text-gray-300 mt-1">Founder & Chief Mind Architect</p>
-                                <p class="text-sm text-gray-300 mt-1">19+ years of transforming minds</p>
+                                <p class="text-sm text-gray-300 mt-1">20+ years of transforming minds</p>
                             </div>
                         </div>
                     </div>
@@ -238,7 +297,7 @@
                     <!-- Stats -->
                     <div class="grid grid-cols-3 gap-6">
                         <div class="text-center">
-                            <div class="text-3xl font-bold text-secondary">19+</div>
+                            <div class="text-3xl font-bold text-secondary">20+</div>
                             <div class="text-gray-300 text-sm">Years Experience</div>
                         </div>
                         <div class="text-center">
@@ -575,8 +634,8 @@
                     </div>
             </div>
             <!-- Service Popups -->
-            <div id="servicePopupOverlay" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center">
-                <div id="mind-management-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+            <div id="servicePopupOverlay" class="fixed inset-0 bg-black/70 z-50 hidden flex items-start justify-center pt-20 pb-8 px-4">
+                <div id="mind-management-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
                     <div class="p-8">
                         <div class="flex justify-between items-center mb-6">
                             <div class="flex items-center">
@@ -621,7 +680,7 @@
                     </div>
                 </div>
                 
-                <div id="stress-management-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+                <div id="stress-management-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
                     <div class="p-8">
                         <div class="flex justify-between items-center mb-6">
                             <div class="flex items-center">
@@ -666,7 +725,7 @@
                     </div>
                 </div>
                 
-                <div id="group-therapy-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+                <div id="group-therapy-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
                     <div class="p-8">
                         <div class="flex justify-between items-center mb-6">
                             <div class="flex items-center">
@@ -717,7 +776,7 @@
                     </div>
                 </div>
                 
-                <div id="individual-counseling-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+                <div id="individual-counseling-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
                     <div class="p-8">
                         <div class="flex justify-between items-center mb-6">
                             <div class="flex items-center">
@@ -769,7 +828,7 @@
                     </div>
                 </div>
                 
-                <div id="corporate-wellness-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+                <div id="corporate-wellness-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
                     <div class="p-8">
                         <div class="flex justify-between items-center mb-6">
                             <div class="flex items-center">
@@ -821,7 +880,7 @@
                     </div>
                 </div>
                 
-                <div id="support-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+                <div id="support-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
                     <div class="p-8">
                         <div class="flex justify-between items-center mb-6">
                             <div class="flex items-center">
@@ -875,7 +934,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="mindfulness-coaching-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+                <div id="mindfulness-coaching-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
                     <div class="p-8">
                         <div class="flex justify-between items-center mb-6">
                             <div class="flex items-center">
@@ -920,7 +979,7 @@
                     </div>
                 </div>
 
-                <div id="resilience-building-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+                <div id="resilience-building-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
                     <div class="p-8">
                         <div class="flex justify-between items-center mb-6">
                             <div class="flex items-center">
@@ -965,7 +1024,7 @@
                     </div>
                 </div>
 
-                <div id="youth-counseling-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+                <div id="youth-counseling-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
                     <div class="p-8">
                         <div class="flex justify-between items-center mb-6">
                             <div class="flex items-center">
@@ -1017,7 +1076,7 @@
                     </div>
                 </div>
 
-                <div id="relationship-counseling-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+                <div id="relationship-counseling-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
                     <div class="p-8">
                         <div class="flex justify-between items-center mb-6">
                             <div class="flex items-center">
@@ -1069,7 +1128,7 @@
                     </div>
                 </div>
 
-                <div id="leadership-coaching-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+                <div id="leadership-coaching-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
                     <div class="p-8">
                         <div class="flex justify-between items-center mb-6">
                             <div class="flex items-center">
@@ -1122,7 +1181,7 @@
                     </div>
                 </div>
 
-                <div id="cbt-therapy-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+                <div id="cbt-therapy-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
                     <div class="p-8">
                         <div class="flex justify-between items-center mb-6">
                             <div class="flex items-center">
@@ -2538,6 +2597,7 @@
     <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-primary hover:bg-secondary text-white rounded-full shadow-lg transition-all duration-300 z-30 opacity-0 scale-0">
         <i class="fas fa-chevron-up"></i>
     </button>
+    </main>
 
     <!-- Consolidated script file -->
     <script src="main.js"></script>
