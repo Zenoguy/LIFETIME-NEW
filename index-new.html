@@ -488,8 +488,7 @@
             </div>
         </div>
     </section>
-    <!-- Services -->  
- <!-- Services Section -->
+    <!-- Services Section -->
     <section id="services" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -499,327 +498,251 @@
                     Comprehensive mental health solutions tailored to your unique needs
                 </p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card:1 - Mind Management -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <!-- Background Image -->
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                         style="background-image: url('https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid-container">
+                <!-- Service Card:1 - Financial Hule -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                     style="background-image: url('https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg'); background-size: cover; background-position: center;">
                     
-                    <!-- Overlay - Changed to primary/secondary with /40 opacity -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary/40 backdrop-blur-sm"></div>
+                    <!-- REMOVED: Overlay div for performance -->
 
-                    <!-- Card Content -->
+                    <!-- Card Content - IMPROVED Text shadow for readability -->
                     <div class="relative p-8 text-white min-h-[320px] flex flex-col">
                         <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-brain text-white text-2xl"></i>
+                            <i class="fas fa-money-bill-wave text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Mind Management</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Advanced techniques to optimize mental performance, focus, and cognitive abilities.</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="mind-management">
+                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Financial Hub</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 0px 0px 6px rgba(0,0,0,0.7);">Comprehensive financial planning and investment solutions for your future</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="financial-hub">
                             Learn More <i class="fas fa-arrow-right ml-2"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- Service Card:2 - Stress Management -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <!-- Background Image -->
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                         style="background-image: url('https://images.pexels.com/photos/416754/pexels-photo-416754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                <!-- Service Card:2 - Education Training -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                     style="background-image: url('https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg'); background-size: cover; background-position: center;">
                     
-                    <!-- Overlay - Changed to secondary/accent with /40 opacity -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-secondary/40 to-accent/40 backdrop-blur-sm"></div>
+                    <!-- REMOVED: Overlay div for performance -->
 
-                    <!-- Card Content -->
+                    <!-- Card Content - IMPROVED Text shadow for readability -->
                     <div class="relative p-8 text-white min-h-[320px] flex flex-col">
                         <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-heart text-white text-2xl"></i>
+                            <i class="fas fa-graduation-cap text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Stress Management</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Effective strategies to manage and reduce stress in personal and professional life.</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="stress-management">
+                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Education Training</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 0px 0px 6px rgba(0,0,0,0.7);">Comprehensive educational programs and skill development courses</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="education-training">
                             Learn More <i class="fas fa-arrow-right ml-2"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- Service Card:3 - Group Therapy -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <!-- Background Image -->
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                         style="background-image: url('https://images.pexels.com/photos/3845995/pexels-photo-3845995.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                <!-- Service Card:3 - Vocational Training -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                     style="background-image: url('https://images.pexels.com/photos/1181472/pexels-photo-1181472.jpeg'); background-size: cover; background-position: center;">
                     
-                    <!-- Overlay - Changed to accent/primary with /40 opacity -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-accent/40 to-primary/40 backdrop-blur-sm"></div>
+                    <!-- REMOVED: Overlay div for performance -->
 
-                    <!-- Card Content -->
+                    <!-- Card Content - IMPROVED Text shadow for readability -->
                     <div class="relative p-8 text-white min-h-[320px] flex flex-col">
                         <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-users text-white text-2xl"></i>
+                            <i class="fas fa-tools text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Group Therapy</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Supportive group sessions for shared healing and community building.</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="group-therapy">
+                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Vocational Training</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 0px 0px 6px rgba(0,0,0,0.7);">Practical skills training for immediate employment opportunities</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="vocational-training">
                             Learn More <i class="fas fa-arrow-right ml-2"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- Service Card:4 - Individual Counseling -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <!-- Background Image -->
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                         style="background-image: url('https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                <!-- Service Card:4 - Professional Training -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                     style="background-image: url('https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg'); background-size: cover; background-position: center;">
                     
-                    <!-- Overlay - Changed to primary/secondary with /40 opacity -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary/40 backdrop-blur-sm"></div>
+                    <!-- REMOVED: Overlay div for performance -->
 
-                    <!-- Card Content -->
+                    <!-- Card Content - IMPROVED Text shadow for readability -->
                     <div class="relative p-8 text-white min-h-[320px] flex flex-col">
                         <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-user text-white text-2xl"></i>
+                            <i class="fas fa-briefcase text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Individual Counseling</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">One-on-one sessions tailored to your specific mental health needs.</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="individual-counseling">
+                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Professional Training</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 0px 0px 6px rgba(0,0,0,0.7);">Advanced professional development programs for career growth</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="professional-training">
                             Learn More <i class="fas fa-arrow-right ml-2"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- Service Card:5 - Corporate Wellness -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <!-- Background Image -->
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                         style="background-image: url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                <!-- Service Card:5 - Special Training -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                     style="background-image: url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg'); background-size: cover; background-position: center;">
                     
-                    <!-- Overlay - Changed to secondary/accent with /40 opacity -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-secondary/40 to-accent/40 backdrop-blur-sm"></div>
+                    <!-- REMOVED: Overlay div for performance -->
 
-                    <!-- Card Content -->
+                    <!-- Card Content - IMPROVED Text shadow for readability -->
+                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                            <i class="fas fa-star text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Special Training</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 0px 0px 6px rgba(0,0,0,0.7);">Customized training solutions for specific industry needs</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="special-training">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Card:6 - Corporate Training -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                     style="background-image: url('https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg'); background-size: cover; background-position: center;">
+                    
+                    <!-- REMOVED: Overlay div for performance -->
+
+                    <!-- Card Content - IMPROVED Text shadow for readability -->
                     <div class="relative p-8 text-white min-h-[320px] flex flex-col">
                         <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
                             <i class="fas fa-building text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Corporate Wellness</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Mental health programs designed for organizations and their employees.</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="corporate-wellness">
+                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Corporate Training</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 0px 0px 6px rgba(0,0,0,0.7);">Enterprise-level training and development solutions</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="corporate-training">
                             Learn More <i class="fas fa-arrow-right ml-2"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- Service Card:6 - 24/7 Support -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <!-- Background Image -->
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                         style="background-image: url('https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                <!-- Service Card:7 - Education Consultancy -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                     style="background-image: url('https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg'); background-size: cover; background-position: center;">
                     
-                    <!-- Overlay - Changed to accent/primary with /40 opacity -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-accent/40 to-primary/40 backdrop-blur-sm"></div>
+                    <!-- REMOVED: Overlay div for performance -->
 
-                    <!-- Card Content -->
+                    <!-- Card Content - IMPROVED Text shadow for readability -->
+                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                            <i class="fas fa-book text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Education Consultancy</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 0px 0px 6px rgba(0,0,0,0.7);">Strategic educational planning and advisory services</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="education-consultancy">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Card:8 - Job Vacancy -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                     style="background-image: url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg'); background-size: cover; background-position: center;">
+                    
+                    <!-- REMOVED: Overlay div for performance -->
+
+                    <!-- Card Content - IMPROVED Text shadow for readability -->
+                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                            <i class="fas fa-briefcase text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Job Vacancy</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.6);">Employment opportunities and recruitment services</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="job-vacancy">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Card:9 - Investment Awareness -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                     style="background-image: url('https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg'); background-size: cover; background-position: center;">
+                    
+                    <!-- REMOVED: Overlay div for performance -->
+
+                    <!-- Card Content - IMPROVED Text shadow for readability -->
+                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                            <i class="fas fa-chart-line text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Investment Awareness</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.6);">Financial literacy and investment education programs</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="investment-awareness">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Card:10 - Career & Skill Development -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                     style="background-image: url('https://images.pexels.com/photos/3184425/pexels-photo-3184425.jpeg'); background-size: cover; background-position: center;">
+                    
+                    <!-- REMOVED: Overlay div for performance -->
+
+                    <!-- Card Content - IMPROVED Text shadow for readability -->
+                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                            <i class="fas fa-rocket text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Career & Skill Development</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.6);">Professional growth and skill enhancement programs</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="career-skill-development">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Card:11 - Digital Marketing -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                     style="background-image: url('https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg'); background-size: cover; background-position: center;">
+                    
+                    <!-- REMOVED: Overlay div for performance -->
+
+                    <!-- Card Content - IMPROVED Text shadow for readability -->
+                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                            <i class="fas fa-laptop-code text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Digital Marketing</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.6);">Comprehensive digital marketing solutions and training</p>
+                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="digital-marketing">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Card:12 - 24/7 Support (Moved to last) -->
+                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                     style="background-image: url('https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg'); background-size: cover; background-position: center;">
+                    
+                    <!-- REMOVED: Overlay div for performance -->
+
+                    <!-- Card Content - IMPROVED Text shadow for readability -->
                     <div class="relative p-8 text-white min-h-[320px] flex flex-col">
                         <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
                             <i class="fas fa-phone text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">24/7 Support</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Round-the-clock crisis intervention and emergency mental health support.</p>
+                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">24/7 Support</h3>
+                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.6);">Round-the-clock crisis intervention and emergency mental health support.</p>
                         <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="support">
-                            Learn More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service Card:7 - Mindfulness Coaching -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <!-- Background Image -->
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                         style="background-image: url('https://images.pexels.com/photos/3862601/pexels-photo-3862601.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
-                    
-                    <!-- Overlay - Changed to primary/secondary with /40 opacity -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary/40 backdrop-blur-sm"></div>
-
-                    <!-- Card Content -->
-                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-brain text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Mindfulness Coaching</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Techniques for enhanced presence, awareness, and mental clarity.</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="mindfulness-coaching">
-                            Learn More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service Card:8 - Resilience Building -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <!-- Background Image -->
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                         style="background-image: url('https://images.pexels.com/photos/3862638/pexels-photo-3862638.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
-                    
-                    <!-- Overlay - Changed to secondary/accent with /40 opacity -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-secondary/40 to-accent/40 backdrop-blur-sm"></div>
-
-                    <!-- Card Content -->
-                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-sun text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Resilience Building</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Programs to strengthen emotional and psychological resilience against adversity.</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="resilience-building">
-                            Learn More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service Card:9 - Youth Counseling -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <!-- Background Image -->
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                         style="background-image: url('https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
-                    
-                    <!-- Overlay - Changed to accent/primary with /40 opacity -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-accent/40 to-primary/40 backdrop-blur-sm"></div>
-
-                    <!-- Card Content -->
-                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-child text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Youth Counseling</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Specialized support for adolescents and young adults navigating unique challenges.</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="youth-counseling">
-                            Learn More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service Card:10 - Relationship Counseling -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <!-- Background Image -->
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                         style="background-image: url('https://images.pexels.com/photos/3861962/pexels-photo-3861962.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
-                    
-                    <!-- Overlay - Changed to primary/secondary with /40 opacity -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary/40 backdrop-blur-sm"></div>
-
-                    <!-- Card Content -->
-                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-handshake text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Relationship Counseling</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Guidance for couples and families to improve communication and resolve conflicts.</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="relationship-counseling">
-                            Learn More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service Card:11 - Leadership Coaching -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <!-- Background Image -->
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                         style="background-image: url('https://images.pexels.com/photos/3861970/pexels-photo-3861970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
-                    
-                    <!-- Overlay - Changed to secondary/accent with /40 opacity -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-secondary/40 to-accent/40 backdrop-blur-sm"></div>
-
-                    <!-- Card Content -->
-                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-chalkboard-teacher text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Leadership Coaching</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Developing emotional intelligence and mental resilience for effective leadership.</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="leadership-coaching">
-                            Learn More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service Card:12 - Cognitive Behavioral Therapy (CBT) -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <!-- Background Image -->
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                         style="background-image: url('https://images.pexels.com/photos/3861971/pexels-photo-3861971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
-                    
-                    <!-- Overlay - Changed to accent/primary with /40 opacity -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-accent/40 to-primary/40 backdrop-blur-sm"></div>
-
-                    <!-- Card Content -->
-                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-lightbulb text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4 drop-shadow-md">Cognitive Behavioral Therapy (CBT)</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed drop-shadow-sm">Evidence-based therapy to identify and change negative thought patterns.</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="cbt-therapy">
                             Learn More <i class="fas fa-arrow-right ml-2"></i>
                         </button>
                     </div>
                 </div>
             </div>
         </div>
+
+
+
             <!-- Service Popups -->
             <div id="servicePopupOverlay" class="fixed inset-0 bg-black/70 z-50 hidden flex items-start justify-center pt-20 pb-8 px-4">
-                <div id="mind-management-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-6">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-brain text-white text-xl"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold text-dark">Mind Management</h3>
-                            </div>
-                            <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <img src="assets/gallery.jpg" alt="Mind Management" class="w-full h-64 object-cover rounded-xl">
-                        </div>
-                        
-                        <div class="space-y-4 text-gray-600">
-                            <p>Our Mind Management program is a comprehensive approach to optimizing mental performance and cognitive abilities. Through a combination of evidence-based techniques and personalized strategies, we help you achieve peak mental clarity, focus, and emotional balance.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Key Benefits:</h4>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Enhanced focus and concentration abilities</li>
-                                <li>Improved memory and cognitive processing</li>
-                                <li>Better emotional regulation and stress resilience</li>
-                                <li>Increased mental clarity and decision-making skills</li>
-                                <li>Optimized performance in professional and personal contexts</li>
-                            </ul>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Our Approach:</h4>
-                            <p>We begin with a comprehensive assessment of your current mental patterns, challenges, and goals. Our expert practitioners then create a tailored program that may include cognitive training exercises, mindfulness practices, neurofeedback sessions, and strategic mental frameworks to help you achieve optimal mental performance.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Who Can Benefit:</h4>
-                            <p>Mind Management is ideal for professionals seeking peak performance, students aiming to optimize learning, individuals experiencing cognitive challenges, and anyone looking to enhance their mental capabilities and emotional balance.</p>
-                        </div>
-                        
-                        <div class="mt-8 flex justify-end">
-                            <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-                                Schedule a Consultation
-                            </a>
-                        </div>
-                    </div>
-                </div>
                 
-                <div id="stress-management-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
+                <!-- Financial Hub Popup -->
+                <div id="financial-hub-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
                     <div class="p-8">
                         <div class="flex justify-between items-center mb-6">
                             <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-heart text-white text-xl"></i>
+                                <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-money-bill-wave text-white text-xl"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold text-dark">Stress Management</h3>
+                                <h3 class="text-2xl font-bold text-dark">Financial Hub</h3>
                             </div>
                             <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
                                 <i class="fas fa-times"></i>
@@ -827,298 +750,67 @@
                         </div>
                         
                         <div class="mb-6">
-                            <img src="assets/gallery5.jpg" alt="Stress Management" class="w-full h-64 object-cover rounded-xl">
+                            <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_financial_hub.webp" alt="Financial Hub" class="w-full h-64 object-cover rounded-xl">
                         </div>
                         
                         <div class="space-y-4 text-gray-600">
-                            <p>Our Stress Management program provides effective strategies and techniques to help you reduce stress, build resilience, and maintain balance in both personal and professional life. We focus on sustainable practices that address the root causes of stress while providing immediate relief tools.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Key Benefits:</h4>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Reduced physical symptoms of stress (headaches, tension, fatigue)</li>
-                                <li>Improved sleep quality and patterns</li>
-                                <li>Enhanced ability to respond to stressors calmly</li>
-                                <li>Better work-life balance and boundary setting</li>
-                                <li>Increased overall sense of wellbeing and life satisfaction</li>
-                            </ul>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Our Approach:</h4>
-                            <p>We begin with a comprehensive stress assessment to identify your unique stress triggers, patterns, and current coping mechanisms. Our experts then develop a personalized stress management plan that may include mindfulness practices, cognitive reframing techniques, lifestyle adjustments, breathing exercises, and progressive relaxation methods.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Who Can Benefit:</h4>
-                            <p>This program is ideal for busy professionals, parents, caregivers, individuals in high-pressure environments, those experiencing major life transitions, and anyone seeking to reduce stress and improve their quality of life.</p>
-                        </div>
-                        
-                        <div class="mt-8 flex justify-end">
-                            <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-                                Schedule a Consultation
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="group-therapy-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-6">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-users text-white text-xl"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold text-dark">Group Therapy</h3>
-                            </div>
-                            <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <img src="assets/gallery1.jpg" alt="Group Therapy" class="w-full h-64 object-cover rounded-xl">
-                        </div>
-                        
-                        <div class="space-y-4 text-gray-600">
-                            <p>Our Group Therapy sessions provide a supportive and collaborative environment where individuals can share experiences, gain insights, and develop coping strategies together. Led by experienced facilitators, these sessions harness the power of community and shared understanding to promote healing and growth.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Key Benefits:</h4>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Reduced feelings of isolation through shared experiences</li>
-                                <li>Multiple perspectives and feedback on personal challenges</li>
-                                <li>Development of social skills and interpersonal effectiveness</li>
-                                <li>Cost-effective therapeutic support</li>
-                                <li>Accountability and motivation through group dynamics</li>
-                            </ul>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Our Approach:</h4>
-                            <p>We offer various specialized therapy groups focused on specific concerns or demographics. Each group is carefully structured with clear guidelines to ensure a safe, respectful environment. Our facilitators use evidence-based approaches including CBT, DBT, and mindfulness techniques within the group setting to maximize benefits for all participants.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Available Groups:</h4>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Anxiety Management Group</li>
-                                <li>Grief and Loss Support</li>
-                                <li>Professional Burnout Recovery</li>
-                                <li>Mindfulness Practice Group</li>
-                                <li>Young Adult Transition Support</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="mt-8 flex justify-end">
-                            <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-                                Join a Group
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="individual-counseling-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-6">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-user text-white text-xl"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold text-dark">Individual Counseling</h3>
-                            </div>
-                            <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <img src="assets/gallery4.jpg" alt="Individual Counseling" class="w-full h-64 object-cover rounded-xl">
-                        </div>
-                        
-                        <div class="space-y-4 text-gray-600">
-                            <p>Our Individual Counseling service provides one-on-one therapeutic support tailored specifically to your unique needs, challenges, and goals. Working with a dedicated counselor, you'll receive personalized guidance and evidence-based interventions in a confidential, supportive environment.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Key Benefits:</h4>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Completely personalized approach to your specific situation</li>
-                                <li>Private, confidential setting to discuss sensitive concerns</li>
-                                <li>Flexible scheduling to accommodate your needs</li>
-                                <li>Targeted interventions for your particular challenges</li>
-                                <li>One-on-one attention and support throughout your journey</li>
-                            </ul>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Our Approach:</h4>
-                            <p>We begin with a comprehensive initial assessment to understand your history, current challenges, and therapeutic goals. Your counselor will then work collaboratively with you to develop a treatment plan drawing from various evidence-based approaches such as Cognitive Behavioral Therapy, Mindfulness-Based Interventions, Solution-Focused Therapy, and other modalities as appropriate for your needs.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Areas We Address:</h4>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Anxiety and stress management</li>
-                                <li>Depression and mood disorders</li>
-                                <li>Relationship challenges</li>
-                                <li>Life transitions and adjustment</li>
-                                <li>Trauma recovery and resilience building</li>
-                                <li>Self-esteem and personal growth</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="mt-8 flex justify-end">
-                            <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-                                Book a Session
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="corporate-wellness-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-6">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-building text-white text-xl"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold text-dark">Corporate Wellness</h3>
-                            </div>
-                            <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <img src="assets/gallery3.jpg" alt="Corporate Wellness" class="w-full h-64 object-cover rounded-xl">
-                        </div>
-                        
-                        <div class="space-y-4 text-gray-600">
-                            <p>Our Corporate Wellness programs are designed to enhance workplace mental health, boost employee wellbeing, and improve organizational performance. We offer customized solutions that address the specific needs and challenges of your organization and workforce.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Key Benefits:</h4>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Reduced employee stress and burnout</li>
-                                <li>Improved workplace morale and engagement</li>
-                                <li>Decreased absenteeism and presenteeism</li>
-                                <li>Enhanced team cohesion and communication</li>
-                                <li>Increased productivity and innovation</li>
-                                <li>Better retention of top talent</li>
-                            </ul>
+                            <p>Our Financial Hub provides comprehensive financial planning and investment solutions designed to secure your financial future. We offer expert guidance across all aspects of personal and business finance, helping you make informed decisions and achieve your financial goals.</p>
                             
                             <h4 class="text-lg font-bold text-primary mt-6">Our Services Include:</h4>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li><strong>Workplace Mental Health Assessments:</strong> Evaluating organizational strengths and areas for improvement</li>
-                                <li><strong>Employee Wellness Workshops:</strong> Interactive sessions on stress management, resilience, work-life balance, and more</li>
-                                <li><strong>Leadership Training:</strong> Equipping managers with skills to support team mental health</li>
-                                <li><strong>Employee Assistance Programs:</strong> Confidential counseling services for staff</li>
-                                <li><strong>Organizational Consulting:</strong> Strategic guidance on creating mentally healthy workplace cultures</li>
-                            </ul>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Our Approach:</h4>
-                            <p>We begin with a thorough needs assessment to understand your organization's unique challenges and goals. Our team then develops a customized wellness strategy that aligns with your company culture and objectives. Implementation includes a combination of workshops, training, individual support, and organizational development initiatives, with ongoing evaluation to measure impact and ROI.</p>
-                        </div>
-                        
-                        <div class="mt-8 flex justify-end">
-                            <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-                                Request Corporate Consultation
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="support-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-6">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-phone text-white text-xl"></i>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-blue-700">LIC</h5>
+                                    <p class="text-sm">Life Insurance Corporation policies and comprehensive coverage plans for financial security</p>
                                 </div>
-                                <h3 class="text-2xl font-bold text-dark">24/7 Support</h3>
-                            </div>
-                            <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <img src="assets/galler2.jpg" alt="24/7 Support" class="w-full h-64 object-cover rounded-xl">
-                        </div>
-                        
-                        <div class="space-y-4 text-gray-600">
-                            <p>Our 24/7 Support service ensures that professional mental health assistance is available to you whenever you need it, day or night. We provide round-the-clock crisis intervention, emergency mental health support, and immediate guidance during challenging moments.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Key Benefits:</h4>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Immediate access to professional support whenever needed</li>
-                                <li>Crisis de-escalation and stabilization</li>
-                                <li>Peace of mind knowing help is always available</li>
-                                <li>Continuity of care between regular sessions</li>
-                                <li>Reduced emergency room visits through timely intervention</li>
-                            </ul>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Our Support Includes:</h4>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li><strong>24/7 Crisis Hotline:</strong> Staffed by trained mental health professionals</li>
-                                <li><strong>Emergency Video Consultations:</strong> Face-to-face support when needed</li>
-                                <li><strong>Text-Based Support:</strong> For situations where voice communication isn't possible</li>
-                                <li><strong>Crisis Assessment and Intervention:</strong> Professional evaluation and immediate action plans</li>
-                                <li><strong>Coordination with Treatment Team:</strong> Ensuring your regular providers are informed</li>
-                            </ul>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">How It Works:</h4>
-                            <p>Clients enrolled in our 24/7 Support program receive access to our secure support platform and dedicated emergency contact numbers. When you reach out, you'll be connected with a qualified mental health professional who can provide immediate assistance, de-escalation techniques, coping strategies, and if necessary, coordination with emergency services or your regular treatment providers.</p>
-                            
-                            <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-6">
-                                <p class="text-red-700 font-medium">Important Note: If you are experiencing a life-threatening emergency, please call emergency services (100) immediately. Our 24/7 Support is not a substitute for emergency medical services in cases of immediate danger.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-8 flex justify-end">
-                            <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-                                Enroll in 24/7 Support
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div id="mindfulness-coaching-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-6">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-brain text-white text-xl"></i>
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-blue-700">Mediclaim</h5>
+                                    <p class="text-sm">Health insurance and medical coverage for you and your family's wellbeing</p>
                                 </div>
-                                <h3 class="text-2xl font-bold text-dark">Mindfulness Coaching</h3>
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-blue-700">Loan Services</h5>
+                                    <p class="text-sm">Personal, home, and business loan solutions with competitive rates and flexible terms</p>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-blue-700">Mutual Funds</h5>
+                                    <p class="text-sm">Diversified investment portfolio management and systematic investment planning</p>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-blue-700">Bonds</h5>
+                                    <p class="text-sm">Government and corporate bond investments for stable returns and capital preservation</p>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-blue-700">Stock Market</h5>
+                                    <p class="text-sm">Equity trading and investment strategies for long-term wealth creation</p>
+                                </div>
                             </div>
-                            <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <img src="assets/gallery.jpg" alt="Mindfulness Coaching" class="w-full h-64 object-cover rounded-xl">
-                        </div>
-                        
-                        <div class="space-y-4 text-gray-600">
-                            <p>Our Mindfulness Coaching program provides techniques to enhance your presence, awareness, and mental clarity. Learn to calm your mind, reduce distractions, and live more fully in the moment through guided practices and personalized strategies.</p>
                             
-                            <h4 class="text-lg font-bold text-primary mt-6">Key Benefits:</h4>
+                            <h4 class="text-lg font-bold text-primary mt-6">Why Choose Our Financial Hub:</h4>
                             <ul class="list-disc pl-5 space-y-2">
-                                <li>Increased present moment awareness</li>
-                                <li>Improved emotional regulation</li>
-                                <li>Reduced rumination and overthinking</li>
-                                <li>Enhanced ability to focus and concentrate</li>
-                                <li>Greater sense of inner peace and calm</li>
+                                <li>Expert financial advisors with years of industry experience</li>
+                                <li>Personalized financial planning tailored to your unique needs</li>
+                                <li>Comprehensive tax planning and compliance services</li>
+                                <li>Regular portfolio reviews and performance optimization</li>
+                                <li>24/7 customer support for all your financial queries</li>
                             </ul>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Our Approach:</h4>
-                            <p>Through one-on-one coaching sessions, we'll explore various mindfulness techniques, including meditation, body scans, and mindful breathing. We'll help you integrate these practices into your daily life, providing tools and support to sustain your mindfulness journey. Our approach is practical, personalized, and designed for real-world application.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Who Can Benefit:</h4>
-                            <p>Mindfulness Coaching is beneficial for individuals seeking to reduce stress, improve mental clarity, enhance emotional well-being, or simply live a more intentional and present life. It's suitable for all experience levels, from beginners to those looking to deepen their existing practice.</p>
                         </div>
                         
                         <div class="mt-8 flex justify-end">
                             <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-                                Schedule a Consultation
+                                Get Financial Consultation
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div id="resilience-building-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
+                <!-- Education Training Popup -->
+                <div id="education-training-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
                     <div class="p-8">
                         <div class="flex justify-between items-center mb-6">
                             <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-sun text-white text-xl"></i>
+                                <div class="w-12 h-12 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-graduation-cap text-white text-xl"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold text-dark">Resilience Building</h3>
+                                <h3 class="text-2xl font-bold text-dark">Education Training</h3>
                             </div>
                             <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
                                 <i class="fas fa-times"></i>
@@ -1126,44 +818,60 @@
                         </div>
                         
                         <div class="mb-6">
-                            <img src="assets/gallery5.jpg" alt="Resilience Building" class="w-full h-64 object-cover rounded-xl">
+                            <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/Services_Educational_Training.png" alt="Education Training" class="w-full h-64 object-cover rounded-xl">
                         </div>
                         
                         <div class="space-y-4 text-gray-600">
-                            <p>Our Resilience Building programs are designed to strengthen your emotional and psychological capacity to cope with and recover from adversity. Develop effective strategies to navigate life's challenges, bounce back from setbacks, and thrive under pressure.</p>
+                            <p>Our Education Training programs offer comprehensive educational solutions designed to enhance knowledge, develop skills, and advance careers. We provide structured learning experiences that combine theoretical knowledge with practical applications.</p>
+                            
+                            <h4 class="text-lg font-bold text-primary mt-6">Training Programs:</h4>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-yellow-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-yellow-700">Fundamental Computer</h5>
+                                    <p class="text-sm">Learn essential computer operations, terminology, and system navigation for beginners.</p>
+                                </div>
+                                <div class="bg-yellow-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-yellow-700">Basic Computer</h5>
+                                    <p class="text-sm">Master core skills like MS Office, internet usage, and file management.</p>
+                                </div>
+                                <div class="bg-yellow-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-yellow-700">DTP</h5>
+                                    <p class="text-sm">Get hands-on with desktop publishing tools for creative design and layout projects.</p>
+                                </div>
+                                <div class="bg-yellow-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-yellow-700">Career Development</h5>
+                                    <p class="text-sm">Build confidence with resume writing, interview prep, and communication skills training.</p>
+                                </div>
+                            </div>
                             
                             <h4 class="text-lg font-bold text-primary mt-6">Key Benefits:</h4>
                             <ul class="list-disc pl-5 space-y-2">
-                                <li>Enhanced ability to manage stress and pressure</li>
-                                <li>Improved problem-solving and adaptive coping skills</li>
-                                <li>Greater emotional stability and self-regulation</li>
-                                <li>Increased optimism and positive outlook</li>
-                                <li>Stronger sense of personal agency and control</li>
+                                <li>Expert-designed curriculum aligned with industry standards</li>
+                                <li>Flexible learning options including online and offline modes</li>
+                                <li>Hands-on practical training and real-world applications</li>
+                                <li>Career guidance and placement assistance</li>
+                                <li>Continuous assessment and progress tracking</li>
+                                <li>Networking opportunities with peers and industry professionals</li>
                             </ul>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Our Approach:</h4>
-                            <p>We utilize a multi-faceted approach, incorporating cognitive restructuring, emotional intelligence training, mindfulness, and practical stress-reduction techniques. Sessions focus on identifying personal strengths, developing flexible thinking patterns, and building a supportive social network. Our programs are tailored to help you build lasting resilience for various life circumstances.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Who Can Benefit:</h4>
-                            <p>Resilience Building is ideal for individuals facing significant life changes, high-pressure environments (e.g., corporate roles, public service), those recovering from challenging experiences, or anyone looking to proactively strengthen their mental fortitude and adaptability.</p>
                         </div>
                         
                         <div class="mt-8 flex justify-end">
                             <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-                                Build Your Resilience
+                                Explore Courses
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div id="youth-counseling-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
+                <!-- Vocational Training Popup -->
+                <div id="vocational-training-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
                     <div class="p-8">
                         <div class="flex justify-between items-center mb-6">
                             <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-child text-white text-xl"></i>
+                                <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-tools text-white text-xl"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold text-dark">Youth Counseling</h3>
+                                <h3 class="text-2xl font-bold text-dark">Vocational Training</h3>
                             </div>
                             <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
                                 <i class="fas fa-times"></i>
@@ -1171,51 +879,53 @@
                         </div>
                         
                         <div class="mb-6">
-                            <img src="assets/gallery1.jpg" alt="Youth Counseling" class="w-full h-64 object-cover rounded-xl">
+                            <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_vocational_training.jpg" alt="Vocational Training" class="w-full h-64 object-cover rounded-xl">
                         </div>
                         
                         <div class="space-y-4 text-gray-600">
-                            <p>Our Youth Counseling services provide a safe, confidential, and empathetic space for adolescents and young adults to explore their feelings, navigate challenges, and develop healthy coping mechanisms. Our counselors specialize in addressing the unique pressures and developmental stages of youth.</p>
+                            <p>Our Vocational Training programs provide practical skills training specifically designed for immediate employment opportunities. We focus on hands-on learning that prepares you for real-world work environments and industry demands.</p>
                             
-                            <h4 class="text-lg font-bold text-primary mt-6">Key Benefits:</h4>
+                            <h4 class="text-lg font-bold text-primary mt-6">Language Options:</h4>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-green-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-green-700">Spoken English</h5>
+                                    <p class="text-sm">Improve fluency, vocabulary, and confidence in everyday and professional English conversations.</p>
+                                </div>
+                                <div class="bg-green-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-green-700">Spoken Hindi</h5>
+                                    <p class="text-sm">Build effective communication skills in Hindi for both casual and formal settings.</p>
+                                </div>
+                            </div>
+
+                            <h4 class="text-lg font-bold text-primary mt-6">Program Features:</h4>
                             <ul class="list-disc pl-5 space-y-2">
-                                <li>Improved self-esteem and confidence</li>
-                                <li>Enhanced communication skills with peers and adults</li>
-                                <li>Effective strategies for managing anxiety and peer pressure</li>
-                                <li>Support for academic stress and future planning</li>
-                                <li>Healthy emotional expression and coping</li>
+                                <li>Practical, conversation-based learning focused on real-world communication</li>
+                                <li>Customized modules for beginners, intermediates, and advanced learners</li>
+                                <li>Interactive sessions with role-plays, group discussions, and presentations</li>
+                                <li>Certified language trainers with professional teaching experience</li>
+                                <li>Flexible class timings including weekends and evening batches</li>
+                                <li>Regular speaking assessments and personalized feedback</li>
                             </ul>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Our Approach:</h4>
-                            <p>We use age-appropriate therapeutic techniques, including play therapy (for younger adolescents), cognitive behavioral therapy (CBT), and solution-focused brief therapy, tailored to the individual's needs. We involve families as appropriate to create a holistic support system. Our goal is to empower young people to build resilience, make positive choices, and thrive.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Common Issues Addressed:</h4>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Anxiety and depression in adolescents</li>
-                                <li>Peer relationships and bullying</li>
-                                <li>Family conflict</li>
-                                <li>Academic stress and motivation</li>
-                                <li>Identity formation and self-discovery</li>
-                                <li>Behavioral challenges</li>
-                            </ul>
+
                         </div>
                         
                         <div class="mt-8 flex justify-end">
                             <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-                                Connect for Youth Support
+                                Start Your Training
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div id="relationship-counseling-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
+                <!-- Professional Training Popup -->
+                <div id="professional-training-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
                     <div class="p-8">
                         <div class="flex justify-between items-center mb-6">
                             <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-handshake text-white text-xl"></i>
+                                <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-briefcase text-white text-xl"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold text-dark">Relationship Counseling</h3>
+                                <h3 class="text-2xl font-bold text-dark">Professional Training</h3>
                             </div>
                             <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
                                 <i class="fas fa-times"></i>
@@ -1223,51 +933,48 @@
                         </div>
                         
                         <div class="mb-6">
-                            <img src="assets/gallery4.jpg" alt="Relationship Counseling" class="w-full h-64 object-cover rounded-xl">
+                            <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_career_counseling.jpg" alt="Professional Training" class="w-full h-64 object-cover rounded-xl">
                         </div>
                         
                         <div class="space-y-4 text-gray-600">
-                            <p>Our Relationship Counseling services provide a supportive space for couples and families to improve communication, resolve conflicts, and strengthen their bonds. Our experienced counselors help navigate interpersonal dynamics and foster healthier, more fulfilling relationships.</p>
+                            <p>Our Professional Training programs are designed for advanced professional development and career growth. We offer comprehensive training solutions that enhance leadership capabilities, management skills, and overall professional competency.</p>
                             
-                            <h4 class="text-lg font-bold text-primary mt-6">Key Benefits:</h4>
+                            <h4 class="text-lg font-bold text-primary mt-6">Core Programs:</h4>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-purple-50 p-4 rounded-lg">
+                                   <h5 class="font-semibold text-purple-700">Career Counseling</h5>
+                                    <p class="text-sm">Personalized career guidance and planning to help you achieve your professional goals.</p>
+                                </div>
+                            </div>
+                            
+                            <h4 class="text-lg font-bold text-primary mt-6">Training Benefits:</h4>
                             <ul class="list-disc pl-5 space-y-2">
-                                <li>Improved communication and active listening</li>
-                                <li>Effective conflict resolution strategies</li>
-                                <li>Increased empathy and understanding among partners/family members</li>
-                                <li>Rebuilding trust and intimacy</li>
-                                <li>Strengthening family cohesion and support</li>
-                            </ul>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Our Approach:</h4>
-                            <p>We use various therapeutic models, including Emotionally Focused Therapy (EFT) and Gottman Method Couples Therapy, to help clients understand underlying patterns and develop new ways of interacting. Sessions focus on identifying core issues, practicing new communication skills, and establishing shared goals for a healthier relationship. We work with couples, families, and individuals seeking to improve their relationships.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Areas We Address:</h4>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Communication breakdowns</li>
-                                <li>Conflict and arguments</li>
-                                <li>Trust and infidelity issues</li>
-                                <li>Parenting challenges</li>
-                                <li>Life transitions impacting relationships</li>
-                                <li>Premarital counseling</li>
+                                <li>Personalized career guidance based on aptitude, interests, and goals</li>
+                                <li>Psychometric assessments to identify strengths and suitable career paths</li>
+                                <li>Expert advice on academic streams, vocational courses, and higher studies</li>
+                                <li>Support with resume building, interview preparation, and soft skills</li>
+                                <li>Information on emerging career trends and industry demands</li>
+                                <li>Continuous mentoring and goal tracking for long-term success</li>
                             </ul>
                         </div>
                         
                         <div class="mt-8 flex justify-end">
                             <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-                                Strengthen Your Relationships
+                                Advance Your Career
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div id="leadership-coaching-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
+                <!-- Special Training Popup -->
+                <div id="special-training-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
                     <div class="p-8">
                         <div class="flex justify-between items-center mb-6">
                             <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-chalkboard-teacher text-white text-xl"></i>
+                                <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-star text-white text-xl"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold text-dark">Leadership Coaching</h3>
+                                <h3 class="text-2xl font-bold text-dark">Special Training</h3>
                             </div>
                             <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
                                 <i class="fas fa-times"></i>
@@ -1275,52 +982,57 @@
                         </div>
                         
                         <div class="mb-6">
-                            <img src="assets/gallery3.jpg" alt="Leadership Coaching" class="w-full h-64 object-cover rounded-xl">
+                            <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/Services_Special_Training.jpg" alt="Special Training" class="w-full h-64 object-cover rounded-xl">
                         </div>
                         
                         <div class="space-y-4 text-gray-600">
-                            <p>Our Leadership Coaching programs are designed to empower current and aspiring leaders with the mental and emotional resilience needed to excel. We focus on developing key leadership competencies, fostering emotional intelligence, and enhancing strategic decision-making.</p>
+                            <p>Our Special Training programs offer customized training solutions designed to meet specific industry needs and unique organizational requirements. We create tailored learning experiences that address particular challenges and objectives.</p>
                             
-                            <h4 class="text-lg font-bold text-primary mt-6">Key Benefits:</h4>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Improved strategic thinking and problem-solving</li>
-                                <li>Enhanced emotional intelligence and empathy</li>
-                                <li>Effective team motivation and conflict resolution</li>
-                                <li>Stronger decision-making under pressure</li>
-                                <li>Increased personal and organizational impact</li>
-                                <li>Sustainable leadership growth and well-being</li>
-                            </ul>
+                            <h4 class="text-lg font-bold text-primary mt-6">Specialized Programs:</h4>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-pink-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-pink-700">Graphology</h5>
+                                    <p class="text-sm">Explore personality insights through handwriting analysis for better self-awareness and communication.</p>
+                                </div>
+                                <div class="bg-pink-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-pink-700">Spiritual Management</h5>
+                                    <p class="text-sm">Learn to align personal values with professional life for deeper fulfillment and resilience.</p>
+                                </div>
+                                <div class="bg-pink-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-pink-700">Mind Management</h5>
+                                    <p class="text-sm">Gain tools to manage stress, enhance focus, and build emotional intelligence in daily life.</p>
+                                </div>
+                            </div>
+
                             
                             <h4 class="text-lg font-bold text-primary mt-6">Our Approach:</h4>
-                            <p>We provide one-on-one coaching, leadership workshops, and custom development plans. Our methodology integrates modern leadership theories with practical mental management techniques, including mindfulness for leaders, stress resilience, and advanced communication strategies. We work closely with leaders to identify growth areas and unlock their full potential.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Topics Covered:</h4>
                             <ul class="list-disc pl-5 space-y-2">
-                                <li>Mindful Leadership</li>
-                                <li>Stress & Burnout Prevention for Leaders</li>
-                                <li>Effective Communication & Influence</li>
-                                <li>Decision-Making Under Uncertainty</li>
-                                <li>Building High-Performing Teams</li>
-                                <li>Emotional Intelligence for Leaders</li>
+                                <li>Holistic assessment of emotional, cognitive, and behavioral patterns</li>
+                                <li>Personalized coaching modules tailored to individual or group needs</li>
+                                <li>Blended learning methods combining theory, practice, and reflection</li>
+                                <li>Guidance from certified professionals in psychology and wellness</li>
+                                <li>Follow-up sessions for progress tracking and continued support</li>
+                                <li>Focus on lifelong self-growth, awareness, and inner balance</li>
                             </ul>
                         </div>
                         
                         <div class="mt-8 flex justify-end">
                             <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-                                Empower Your Leadership
+                                Request Custom Training
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div id="cbt-therapy-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
+                <!-- Corporate Training Popup -->
+                <div id="corporate-training-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
                     <div class="p-8">
                         <div class="flex justify-between items-center mb-6">
                             <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-lightbulb text-white text-xl"></i>
+                                <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-building text-white text-xl"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold text-dark">Cognitive Behavioral Therapy (CBT)</h3>
+                                <h3 class="text-2xl font-bold text-dark">Corporate Training</h3>
                             </div>
                             <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
                                 <i class="fas fa-times"></i>
@@ -1328,45 +1040,397 @@
                         </div>
                         
                         <div class="mb-6">
-                            <img src="assets/galler2.jpg" alt="CBT Therapy" class="w-full h-64 object-cover rounded-xl">
+                            <img src= "https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_corporate_training.jpg" alt="Corporate Training" class="w-full h-64 object-cover rounded-xl">
                         </div>
                         
                         <div class="space-y-4 text-gray-600">
-                            <p>Cognitive Behavioral Therapy (CBT) is an evidence-based approach that helps individuals identify and challenge unhelpful thought patterns and behaviors. Through structured sessions, our therapists guide you in developing healthier coping strategies and achieving positive changes in your life.</p>
+                            <p>Our Corporate Training solutions provide enterprise-level training and development programs designed to enhance organizational performance, employee skills, and business outcomes. We offer comprehensive training solutions for companies of all sizes.</p>
                             
-                            <h4 class="text-lg font-bold text-primary mt-6">Key Benefits:</h4>
+                            <h4 class="text-lg font-bold text-primary mt-6">Corporate Solutions:</h4>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-indigo-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-indigo-700">LIC</h5>
+                                    <p class="text-sm">Understand the fundamentals of life insurance, policy types, and long-term financial planning.</p>
+                                </div>
+                                <div class="bg-indigo-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-indigo-700">Health Insurance</h5>
+                                    <p class="text-sm">Learn how to choose health coverage wisely and navigate claims and benefits effectively.</p>
+                                </div>
+                                <div class="bg-indigo-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-indigo-700">Mutual Funds</h5>
+                                    <p class="text-sm">Get introduced to mutual fund categories, SIPs, risk factors, and portfolio diversification.</p>
+                                </div>
+                                <div class="bg-indigo-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-indigo-700">Stock Market</h5>
+                                    <p class="text-sm">Gain foundational knowledge in equity investing, trading strategies, and market trends.</p>
+                                </div>
+
+                            </div>
+                            <h4 class="text-lg font-bold text-primary mt-6">Enterprise Benefits:</h4>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li>Introduction to key financial instruments: insurance, stocks, and mutual funds</li>
+                                    <li>Risk assessment and financial goal setting for individuals and families</li>
+                                    <li>Interactive case studies to explain market behavior and fund performance</li>
+                                    <li>Guidance on policy selection, claim procedures, and financial safety nets</li>
+                                    <li>Hands-on workshops on using financial tools and investment platforms</li>
+                                    <li>Updated insights on government schemes, tax benefits, and regulatory norms</li>
+                                </ul>
+                        
+                        <div class="mt-8 flex justify-end">
+                            <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+                                Get Enterprise Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Consultancy Popup -->
+                <div id="education-consultancy-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-book text-white text-xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-dark">Education Consultancy</h3>
+                            </div>
+                            <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_educational_consulatancy.webp" alt="Education Consultancy" class="w-full h-64 object-cover rounded-xl">
+                        </div>
+                        
+                        <div class="space-y-4 text-gray-600">
+                            <p>Our Education Consultancy services provide strategic educational planning and advisory services to help students, professionals, and organizations make informed decisions about their educational journey and career development.</p>
+                            
+                            <h4 class="text-lg font-bold text-primary mt-6">Consultancy Services:</h4>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-teal-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-teal-700">Career Guidance</h5>
+                                    <p class="text-sm">Professional career counseling and personalized pathway planning</p>
+                                </div>
+                                <div class="bg-teal-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-teal-700">Course Selection</h5>
+                                    <p class="text-sm">Educational pathway planning and optimal program selection guidance</p>
+                                </div>
+                                <div class="bg-teal-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-teal-700">University Admissions</h5>
+                                    <p class="text-sm">Higher education guidance and comprehensive application support</p>
+                                </div>
+                                <div class="bg-teal-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-teal-700">Study Abroad</h5>
+                                    <p class="text-sm">International education consulting and complete visa assistance</p>
+                                </div>
+                            </div>
+                            
+                            <h4 class="text-lg font-bold text-primary mt-6">Our Expertise:</h4>
                             <ul class="list-disc pl-5 space-y-2">
-                                <li>Effective for a wide range of mental health challenges</li>
-                                <li>Teaches practical, actionable coping skills</li>
-                                <li>Focuses on current issues and future solutions</li>
-                                <li>Empowers individuals to become their own therapists</li>
-                                <li>Typically a short-term, goal-oriented therapy</li>
-                            </ul>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Our Approach:</h4>
-                            <p>Our CBT therapists work collaboratively with you to understand your specific challenges. We help you recognize negative thoughts, explore how they influence your emotions and behaviors, and develop new, healthier responses. Sessions involve guided exercises, homework assignments, and skill-building activities to reinforce learning and promote lasting change.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Conditions CBT Can Help With:</h4>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Depression</li>
-                                <li>Anxiety Disorders (GAD, Panic Disorder, Social Anxiety)</li>
-                                <li>Obsessive-Compulsive Disorder (OCD)</li>
-                                <li>Post-Traumatic Stress Disorder (PTSD)</li>
-                                <li>Eating Disorders</li>
-                                <li>Insomnia</li>
-                                <li>Chronic Pain Management</li>
+                                <li>Comprehensive educational assessment and aptitude testing</li>
+                                <li>Personalized academic and career roadmap development</li>
+                                <li>University selection and application process guidance</li>
+                                <li>Scholarship identification and application assistance</li>
+                                <li>Interview preparation and admission coaching</li>
+                                <li>Post-admission support and transition guidance</li>
                             </ul>
                         </div>
                         
                         <div class="mt-8 flex justify-end">
                             <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-                                Explore CBT
+                                Schedule Consultation
                             </a>
                         </div>
                     </div>
                 </div>
-                </div>
-        </section>
+           <!-- Job Vacancy Popup -->
+<div id="job-vacancy-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
+  <div class="p-8">
+    <div class="flex justify-between items-center mb-6">
+      <div class="flex items-center">
+        <div class="w-12 h-12 bg-gradient-to-br from-orange-500/90 to-orange-600/90 rounded-lg flex items-center justify-center mr-4">
+          <i class="fas fa-briefcase text-white text-xl"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-dark">Job Vacancy</h3>
+      </div>
+      <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="mb-6">
+      <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_educational_consulatancy.webp" alt="Job Vacancy" class="w-full h-64 object-cover rounded-xl">
+    </div>
+    <div class="space-y-4 text-gray-600">
+      <p>Explore our Job Vacancy services to find employment opportunities and recruitment support. We connect job seekers with employers and provide tools to help you stand out in the competitive job market.</p>
+      <h4 class="text-lg font-bold text-primary mt-6">Services Offered:</h4>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-orange-50 p-4 rounded-lg">
+          <h5 class="font-semibold text-orange-700">Job Placement</h5>
+          <p class="text-sm">Career placement assistance and job matching</p>
+        </div>
+        <div class="bg-orange-50 p-4 rounded-lg">
+          <h5 class="font-semibold text-orange-700">Recruitment</h5>
+          <p class="text-sm">Talent acquisition services for employers</p>
+        </div>
+        <div class="bg-orange-50 p-4 rounded-lg">
+          <h5 class="font-semibold text-orange-700">Resume Building</h5>
+          <p class="text-sm">Professional resume development and optimization</p>
+        </div>
+        <div class="bg-orange-50 p-4 rounded-lg">
+          <h5 class="font-semibold text-orange-700">Interview Preparation</h5>
+          <p class="text-sm">Interview skills training and mock sessions</p>
+        </div>
+      </div>
+      <h4 class="text-lg font-bold text-primary mt-6">Why Choose Us:</h4>
+      <ul class="list-disc pl-6 text-sm space-y-1">
+        <li>Strong industry connections with top employers</li>
+        <li>Personalized support tailored to your goals</li>
+        <li>Resources to enhance job-readiness and confidence</li>
+        <li>Efficient matching of skills with market demand</li>
+        <li>Dedicated career advisors available for guidance</li>
+        <li>Access to exclusive job openings and employer partnerships</li>
+
+      </ul>
+    </div>
+    <div class="mt-8 flex justify-end">
+      <a href="#contact" class="bg-primary hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+        Apply for Opportunities
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Investment Awareness Popup -->
+<div id="investment-awareness-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
+  <div class="p-8">
+    <div class="flex justify-between items-center mb-6">
+      <div class="flex items-center">
+        <div class="w-12 h-12 bg-gradient-to-br from-red-500/90 to-red-600/90 rounded-lg flex items-center justify-center mr-4">
+          <i class="fas fa-chart-line text-white text-xl"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-dark">Investment Awareness</h3>
+      </div>
+      <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="mb-6">
+      <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/servies_investment_awareness.jpg" alt="Investment Awareness" class="w-full h-64 object-cover rounded-xl">
+    </div>
+    <div class="space-y-4 text-gray-600">
+      <p>Our Investment Awareness programs aim to improve financial literacy and empower individuals to make informed investment decisions. Whether you're a beginner or experienced investor, we offer insights and guidance tailored to your level.</p>
+      <h4 class="text-lg font-bold text-primary mt-6">Topics Covered:</h4>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-red-50 p-4 rounded-lg">
+          <h5 class="font-semibold text-red-700">Financial Literacy</h5>
+          <p class="text-sm">Basic financial education and money management</p>
+        </div>
+        <div class="bg-red-50 p-4 rounded-lg">
+          <h5 class="font-semibold text-red-700">Investment Strategies</h5>
+          <p class="text-sm">Portfolio management and investment planning</p>
+        </div>
+        <div class="bg-red-50 p-4 rounded-lg">
+          <h5 class="font-semibold text-red-700">Risk Management</h5>
+          <p class="text-sm">Investment risk assessment and mitigation</p>
+        </div>
+        <div class="bg-red-50 p-4 rounded-lg">
+          <h5 class="font-semibold text-red-700">Market Analysis</h5>
+          <p class="text-sm">Financial market insights and trend analysis</p>
+        </div>
+      </div>
+      <h4 class="text-lg font-bold text-primary mt-6">Benefits of Our Program:</h4>
+      <ul class="list-disc pl-6 text-sm space-y-1">
+        <li>Tailored learning for all experience levels</li>
+        <li>Up-to-date knowledge on current market trends</li>
+        <li>Expert guidance for better decision making</li>
+        <li>Confidence in managing personal finances</li>
+        <li>Interactive sessions and real-life case studies</li>
+        <li>Community support through forums and webinars</li>
+
+      </ul>
+    </div>
+    <div class="mt-8 flex justify-end">
+      <a href="#contact" class="bg-primary hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+        Learn to Invest
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Career & Skill Development Popup -->
+<div id="career-skill-development-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
+  <div class="p-8">
+    <div class="flex justify-between items-center mb-6">
+      <div class="flex items-center">
+        <div class="w-12 h-12 bg-gradient-to-br from-cyan-500/90 to-cyan-600/90 rounded-lg flex items-center justify-center mr-4">
+          <i class="fas fa-rocket text-white text-xl"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-dark">Career & Skill Development</h3>
+      </div>
+      <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="mb-6">
+      <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/servies_investment_awareness.jpg" alt="Career & Skill Development" class="w-full h-64 object-cover rounded-xl">
+    </div>
+    <div class="space-y-4 text-gray-600">
+      <p>Advance your career with our Career & Skill Development programs. We provide personalized development plans, mentorship, and resources to enhance your professional journey.</p>
+      <h4 class="text-lg font-bold text-primary mt-6">Development Services:</h4>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-cyan-50 p-4 rounded-lg">
+          <h5 class="font-semibold text-cyan-700">Skill Assessment</h5>
+          <p class="text-sm">Professional skill evaluation and gap analysis</p>
+        </div>
+        <div class="bg-cyan-50 p-4 rounded-lg">
+          <h5 class="font-semibold text-cyan-700">Career Planning</h5>
+          <p class="text-sm">Strategic career development and goal setting</p>
+        </div>
+        <div class="bg-cyan-50 p-4 rounded-lg">
+          <h5 class="font-semibold text-cyan-700">Mentorship</h5>
+          <p class="text-sm">Professional guidance and mentoring programs</p>
+        </div>
+        <div class="bg-cyan-50 p-4 rounded-lg">
+          <h5 class="font-semibold text-cyan-700">Networking</h5>
+          <p class="text-sm">Professional network building and industry connections</p>
+        </div>
+      </div>
+      <h4 class="text-lg font-bold text-primary mt-6">Benefits You Gain:</h4>
+      <ul class="list-disc pl-6 text-sm space-y-1">
+        <li>Personalized growth plans and feedback</li>
+        <li>Stronger professional network and exposure</li>
+        <li>Real-world insights from industry mentors</li>
+        <li>Improved marketability and confidence</li>
+        <li>Hands-on projects to build practical experience</li>
+        <li>Flexible learning formats including remote options</li>
+
+      </ul>
+    </div>
+    <div class="mt-8 flex justify-end">
+      <a href="#contact" class="bg-primary hover:bg-cyan-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+        Build Your Career
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Digital Marketing Popup -->
+<div id="digital-marketing-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
+  <div class="p-8">
+    <div class="flex justify-between items-center mb-6">
+      <div class="flex items-center">
+        <div class="w-12 h-12 bg-gradient-to-br from-violet-500/90 to-violet-600/90 rounded-lg flex items-center justify-center mr-4">
+          <i class="fas fa-laptop-code text-white text-xl"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-dark">Digital Marketing</h3>
+      </div>
+      <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="mb-6">
+      <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_digital_marketing.jpg" alt="Digital Marketing" class="w-full h-64 object-cover rounded-xl">
+    </div>
+    <div class="space-y-4 text-gray-600">
+      <p>Boost your digital presence with our all-in-one Digital Marketing services. From SEO to content strategy, we equip you with the tools and training needed to thrive in the online world.</p>
+      <h4 class="text-lg font-bold text-primary mt-6">Marketing Services:</h4>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-violet-50 p-4 rounded-lg">
+          <h5 class="font-semibold text-violet-700">SEO/SEM</h5>
+          <p class="text-sm">Search engine optimization and marketing strategies</p>
+        </div>
+        <div class="bg-violet-50 p-4 rounded-lg">
+          <h5 class="font-semibold text-violet-700">Social Media</h5>
+          <p class="text-sm">Social media strategy, management, and advertising</p>
+        </div>
+        <div class="bg-violet-50 p-4 rounded-lg">
+          <h5 class="font-semibold text-violet-700">Content Marketing</h5>
+          <p class="text-sm">Content creation, strategy, and distribution</p>
+        </div>
+        <div class="bg-violet-50 p-4 rounded-lg">
+          <h5 class="font-semibold text-violet-700">Analytics</h5>
+          <p class="text-sm">Digital marketing analytics and performance insights</p>
+        </div>
+      </div>
+      <h4 class="text-lg font-bold text-primary mt-6">Why Work With Us:</h4>
+      <ul class="list-disc pl-6 text-sm space-y-1">
+        <li>Data-driven approach for real results</li>
+        <li>Cross-platform strategy tailored to your brand</li>
+        <li>Ongoing support and optimization</li>
+        <li>Transparent reporting and measurable KPIs</li>
+        <li>End-to-end digital strategy and implementation</li>
+        <li>Workshops and training for in-house teams</li>
+
+      </ul>
+    </div>
+    <div class="mt-8 flex justify-end">
+      <a href="#contact" class="bg-primary hover:bg-violet-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+        Launch Your Campaign
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- 24/7 Support Popup -->
+<div id="support-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
+  <div class="p-8">
+    <div class="flex justify-between items-center mb-6">
+      <div class="flex items-center">
+        <div class="w-12 h-12 bg-gradient-to-br from-green-500/90 to-green-600/90 rounded-lg flex items-center justify-center mr-4">
+          <i class="fas fa-headset text-white text-xl"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-dark">24/7 Support</h3>
+      </div>
+      <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="mb-6">
+      <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_247.webp" alt="24/7 Support" class="w-full h-64 object-cover rounded-xl">
+    </div>
+    <div class="space-y-4 text-gray-600">
+      <p>Day or night, we’re here for you. Our 24/7 Support service ensures you get the help you need, when you need it — from tech assistance to customer inquiries and emergency resolutions.</p>
+      <h4 class="text-lg font-bold text-primary mt-6">Support Features:</h4>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-green-50 p-4 rounded-lg">
+          <h5 class="font-semibold text-green-700">Live Chat</h5>
+          <p class="text-sm">Real-time help from trained professionals</p>
+        </div>
+        <div class="bg-green-50 p-4 rounded-lg">
+          <h5 class="font-semibold text-green-700">Email Support</h5>
+          <p class="text-sm">Get detailed responses within hours</p>
+        </div>
+        <div class="bg-green-50 p-4 rounded-lg">
+          <h5 class="font-semibold text-green-700">Phone Support</h5>
+          <p class="text-sm">Speak to an expert for instant solutions</p>
+        </div>
+        <div class="bg-green-50 p-4 rounded-lg">
+          <h5 class="font-semibold text-green-700">Issue Tracking</h5>
+          <p class="text-sm">Ticket system to follow your case until resolution</p>
+        </div>
+      </div>
+      <h4 class="text-lg font-bold text-primary mt-6">Why Our Support Stands Out:</h4>
+      <ul class="list-disc pl-6 text-sm space-y-1">
+        <li>24/7 availability for uninterrupted assistance</li>
+        <li>Multichannel access for convenience</li>
+        <li>Fast resolution times and proactive follow-up</li>
+        <li>Friendly, knowledgeable, and professional team</li>
+        <li>Continuous service monitoring to prevent downtime</li>
+        <li>Customized support solutions for your business needs</li>
+
+      </ul>
+    </div>
+    <div class="mt-8 flex justify-end">
+      <a href="#contact" class="bg-primary hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+        Contact Support
+      </a>
+    </div>
+  </div>
+</div>
+
+
+</section>
         
         <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -1968,13 +2032,16 @@
                     </div>
                 </div>
 
-                <!-- Gallery Item 7: Tall (New: Meditation Session) -->
-                <!--
-                    - md:row-span-2: This item will span 2 rows on medium screens and up, making it taller.
-                -->
+                <!-- Gallery Item 7: Tall (Updated: Meditation Session) -->
                 <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift cursor-pointer md:row-span-2"
-                     data-src="https://images.pexels.com/photos/3822625/pexels-photo-3822625.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200" data-title="Guided Meditation Session" data-description="Finding inner peace and clarity through guided meditation.">
-                    <img src="https://images.pexels.com/photos/3822625/pexels-photo-3822625.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200" alt="Meditation Session" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    data-src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/main/assets/gallery13.webp"
+                    data-title="Guided Meditation Session"
+                    data-description="Finding inner peace and clarity through guided meditation.">
+
+                    <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/main/assets/gallery13.webp"
+                        alt="Meditation Session"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                         <div class="text-white">
                             <h3 class="text-lg font-bold mb-1">Meditation Session</h3>
@@ -1983,10 +2050,17 @@
                     </div>
                 </div>
 
+
                 <!-- Gallery Item 8: Normal Size (New: Online Session) -->
                 <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift cursor-pointer"
-                     data-src="https://images.pexels.com/photos/7176313/pexels-photo-7176313.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" data-title="Online Counseling Session" data-description="Convenient and accessible therapy from anywhere.">
-                    <img src="https://images.pexels.com/photos/7176313/pexels-photo-7176313.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Online Session" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    data-src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/main/assets/gallery11.webp"
+                    data-title="Online Counseling Session"
+                    data-description="Convenient and accessible therapy from anywhere.">
+
+                    <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/main/assets/gallery11.webp"
+                        alt="Online Session"
+                        class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                         <div class="text-white">
                             <h3 class="text-lg font-bold mb-1">Online Session</h3>
@@ -1995,42 +2069,63 @@
                     </div>
                 </div>
 
-                <!-- Gallery Item 9: Normal Size (New: Youth Program) -->
-                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift cursor-pointer"
-                     data-src="https://images.pexels.com/photos/3862638/pexels-photo-3862638.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" data-title="Youth Empowerment Program" data-description="Building resilience and confidence in young minds.">
-                    <img src="https://images.pexels.com/photos/3862638/pexels-photo-3862638.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Youth Program" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                        <div class="text-white">
-                            <h3 class="text-lg font-bold mb-1">Youth Program</h3>
-                            <p class="text-sm opacity-80">Empowering young minds.</p>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Gallery Item 10: Normal Size (New: Office Interior) -->
-                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift cursor-pointer"
-                     data-src="https://images.pexels.com/photos/5699475/pexels-photo-5699475.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" data-title="Our Welcoming Office Interior" data-description="A comfortable and private space for your sessions.">
-                    <img src="https://images.pexels.com/photos/5699475/pexels-photo-5699475.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Office Interior" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                        <div class="text-white">
-                            <h3 class="text-lg font-bold mb-1">Office Interior</h3>
-                            <p class="text-sm opacity-80">Comfortable and private space.</p>
-                        </div>
-                    </div>
-                </div>
+            <!-- Gallery Item 9: Normal Size (Updated: Youth Empowerment Program) -->
+            <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift cursor-pointer"
+                data-src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/main/assets/gallery15.webp"
+                data-title="Youth Empowerment Program"
+                data-description="Building resilience and confidence in young minds.">
+                
+                <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/main/assets/gallery15.webp"
+                    alt="Youth Program"
+                    class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
 
-                <!-- Gallery Item 11: Normal Size (New: Happy Client) -->
-                <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift cursor-pointer"
-                     data-src="https://images.pexels.com/photos/3777622/pexels-photo-3777622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" data-title="A Happy Client Story" data-description="Celebrating successful transformations.">
-                    <img src="https://images.pexels.com/photos/3777622/pexels-photo-3777622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Happy Client" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                        <div class="text-white">
-                            <h3 class="text-lg font-bold mb-1">Happy Client</h3>
-                            <p class="text-sm opacity-80">Celebrating transformations.</p>
-                        </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <div class="text-white">
+                        <h3 class="text-lg font-bold mb-1">Youth Program</h3>
+                        <p class="text-sm opacity-80">Empowering young minds.</p>
                     </div>
                 </div>
             </div>
+
+
+            <!-- Gallery Item 10: Normal Size (Updated: Office Interior) -->
+            <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift cursor-pointer"
+                data-src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/main/assets/gallery12.webp"
+                data-title="Our Welcoming Office Interior"
+                data-description="A comfortable and private space for your sessions.">
+
+                <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/main/assets/gallery12.webp"
+                    alt="Office Interior"
+                    class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <div class="text-white">
+                        <h3 class="text-lg font-bold mb-1">Office Interior</h3>
+                        <p class="text-sm opacity-80">Comfortable and private space.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Gallery Item 11: Normal Size (Updated: Happy Client) -->
+            <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover-lift cursor-pointer"
+                data-src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/main/assets/gallery14.webp"
+                data-title="A Happy Client Story"
+                data-description="Celebrating successful transformations.">
+
+                <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/main/assets/gallery14.webp"
+                    alt="Happy Client"
+                    class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <div class="text-white">
+                        <h3 class="text-lg font-bold mb-1">Happy Client</h3>
+                        <p class="text-sm opacity-80">Celebrating transformations.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <!-- Lightbox Modal -->
