@@ -488,1038 +488,997 @@
             </div>
         </div>
     </section>
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Our Services</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Comprehensive mental health solutions tailored to your unique needs
-                </p>
+<section id="services" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Our Services</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Comprehensive mental health solutions tailored to your unique needs
+            </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid-container">
+            <!--Financial Hub-->
+            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                 style="background-image: url('https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+
+                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                        <i class="fas fa-money-bill-wave text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Financial Hub</h3>
+                    <p class="text-white/90 mb-6 leading-relaxed">Comprehensive financial planning and investment solutions for your future</p>
+                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="financial-hub">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid-container">
-                <!-- Service Card:1 - Financial Hule -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                     style="background-image: url('https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg'); background-size: cover; background-position: center;">
-                    
-                    <!-- REMOVED: Overlay div for performance -->
+            <!--Education Training-->
+            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                 style="background-image: url('https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
-                    <!-- Card Content - IMPROVED Text shadow for readability -->
-                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-money-bill-wave text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Financial Hub</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 0px 0px 6px rgba(0,0,0,0.7);">Comprehensive financial planning and investment solutions for your future</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="financial-hub">
-                            Learn More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
+                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
                     </div>
+                    <h3 class="text-xl font-bold mb-4">Education Training</h3>
+                    <p class="text-white/90 mb-6 leading-relaxed">Comprehensive educational programs and skill development courses</p>
+                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="education-training">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
                 </div>
+            </div>
+            <!--Vocational Training-->
+            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                 style="background-image: url('https://images.pexels.com/photos/1181472/pexels-photo-1181472.jpeg'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
-                <!-- Service Card:2 - Education Training -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                     style="background-image: url('https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg'); background-size: cover; background-position: center;">
-                    
-                    <!-- REMOVED: Overlay div for performance -->
 
-                    <!-- Card Content - IMPROVED Text shadow for readability -->
-                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-graduation-cap text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Education Training</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 0px 0px 6px rgba(0,0,0,0.7);">Comprehensive educational programs and skill development courses</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="education-training">
-                            Learn More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
+                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                        <i class="fas fa-tools text-white text-2xl"></i>
                     </div>
+                    <h3 class="text-xl font-bold mb-4">Vocational Training</h3>
+                    <p class="text-white/90 mb-6 leading-relaxed">Practical skills training for immediate employment opportunities</p>
+                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="vocational-training">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
                 </div>
+            </div>
+            <!--Professional Training-->
+            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                 style="background-image: url('https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
-                <!-- Service Card:3 - Vocational Training -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                     style="background-image: url('https://images.pexels.com/photos/1181472/pexels-photo-1181472.jpeg'); background-size: cover; background-position: center;">
-                    
-                    <!-- REMOVED: Overlay div for performance -->
-
-                    <!-- Card Content - IMPROVED Text shadow for readability -->
-                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-tools text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Vocational Training</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 0px 0px 6px rgba(0,0,0,0.7);">Practical skills training for immediate employment opportunities</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="vocational-training">
-                            Learn More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
+                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                        <i class="fas fa-briefcase text-white text-2xl"></i>
                     </div>
+                    <h3 class="text-xl font-bold mb-4">Professional Training</h3>
+                    <p class="text-white/90 mb-6 leading-relaxed">Advanced professional development programs for career growth</p>
+                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="professional-training">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
                 </div>
+            </div>
+            <!--Special Training-->
+            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                 style="background-image: url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
-                <!-- Service Card:4 - Professional Training -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                     style="background-image: url('https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg'); background-size: cover; background-position: center;">
-                    
-                    <!-- REMOVED: Overlay div for performance -->
-
-                    <!-- Card Content - IMPROVED Text shadow for readability -->
-                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-briefcase text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Professional Training</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 0px 0px 6px rgba(0,0,0,0.7);">Advanced professional development programs for career growth</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="professional-training">
-                            Learn More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
+                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                        <i class="fas fa-star text-white text-2xl"></i>
                     </div>
+                    <h3 class="text-xl font-bold mb-4">Special Training</h3>
+                    <p class="text-white/90 mb-6 leading-relaxed">Customized training solutions for specific industry needs</p>
+                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="special-training">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
                 </div>
+            </div>
+            <!--Corporate Training-->
+            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                 style="background-image: url('https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
-                <!-- Service Card:5 - Special Training -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                     style="background-image: url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg'); background-size: cover; background-position: center;">
-                    
-                    <!-- REMOVED: Overlay div for performance -->
-
-                    <!-- Card Content - IMPROVED Text shadow for readability -->
-                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-star text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Special Training</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 0px 0px 6px rgba(0,0,0,0.7);">Customized training solutions for specific industry needs</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="special-training">
-                            Learn More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
+                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                        <i class="fas fa-building text-white text-2xl"></i>
                     </div>
+                    <h3 class="text-xl font-bold mb-4">Corporate Training</h3>
+                    <p class="text-white/90 mb-6 leading-relaxed">Enterprise-level training and development solutions</p>
+                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="corporate-training">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
                 </div>
+            </div>
+            <!--Education Consultancy-->
+            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                 style="background-image: url('https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
-                <!-- Service Card:6 - Corporate Training -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                     style="background-image: url('https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg'); background-size: cover; background-position: center;">
-                    
-                    <!-- REMOVED: Overlay div for performance -->
-
-                    <!-- Card Content - IMPROVED Text shadow for readability -->
-                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-building text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Corporate Training</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 0px 0px 6px rgba(0,0,0,0.7);">Enterprise-level training and development solutions</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="corporate-training">
-                            Learn More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
+                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                        <i class="fas fa-book text-white text-2xl"></i>
                     </div>
+                    <h3 class="text-xl font-bold mb-4">Education Consultancy</h3>
+                    <p class="text-white/90 mb-6 leading-relaxed">Strategic educational planning and advisory services</p>
+                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="education-consultancy">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
                 </div>
+            </div>
+            <!--Job Vacancy-->
+            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                 style="background-image: url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
-                <!-- Service Card:7 - Education Consultancy -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                     style="background-image: url('https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg'); background-size: cover; background-position: center;">
-                    
-                    <!-- REMOVED: Overlay div for performance -->
-
-                    <!-- Card Content - IMPROVED Text shadow for readability -->
-                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-book text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Education Consultancy</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 0px 0px 6px rgba(0,0,0,0.7);">Strategic educational planning and advisory services</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="education-consultancy">
-                            Learn More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
+                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                        <i class="fas fa-briefcase text-white text-2xl"></i>
                     </div>
+                    <h3 class="text-xl font-bold mb-4">Job Vacancy</h3>
+                    <p class="text-white/90 mb-6 leading-relaxed">Employment opportunities and recruitment services</p>
+                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="job-vacancy">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
                 </div>
+            </div>
+            <!--Investment Awareness-->
+            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                 style="background-image: url('https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
-                <!-- Service Card:8 - Job Vacancy -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                     style="background-image: url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg'); background-size: cover; background-position: center;">
-                    
-                    <!-- REMOVED: Overlay div for performance -->
-
-                    <!-- Card Content - IMPROVED Text shadow for readability -->
-                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-briefcase text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Job Vacancy</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.6);">Employment opportunities and recruitment services</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="job-vacancy">
-                            Learn More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
+                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
                     </div>
+                    <h3 class="text-xl font-bold mb-4">Investment Awareness</h3>
+                    <p class="text-white/90 mb-6 leading-relaxed">Financial literacy and investment education programs</p>
+                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="investment-awareness">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
                 </div>
+            </div>
+            <!--Career & Skill Development-->
+            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                 style="background-image: url('https://images.pexels.com/photos/3184425/pexels-photo-3184425.jpeg'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
-                <!-- Service Card:9 - Investment Awareness -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                     style="background-image: url('https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg'); background-size: cover; background-position: center;">
-                    
-                    <!-- REMOVED: Overlay div for performance -->
-
-                    <!-- Card Content - IMPROVED Text shadow for readability -->
-                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-chart-line text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Investment Awareness</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.6);">Financial literacy and investment education programs</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="investment-awareness">
-                            Learn More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
+                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                        <i class="fas fa-rocket text-white text-2xl"></i>
                     </div>
+                    <h3 class="text-xl font-bold mb-4">Career & Skill Development</h3>
+                    <p class="text-white/90 mb-6 leading-relaxed">Professional growth and skill enhancement programs</p>
+                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="career-skill-development">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
                 </div>
+            </div>
+            <!--Digital Marketing-->
+            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                 style="background-image: url('https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
-                <!-- Service Card:10 - Career & Skill Development -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                     style="background-image: url('https://images.pexels.com/photos/3184425/pexels-photo-3184425.jpeg'); background-size: cover; background-position: center;">
-                    
-                    <!-- REMOVED: Overlay div for performance -->
-
-                    <!-- Card Content - IMPROVED Text shadow for readability -->
-                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-rocket text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Career & Skill Development</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.6);">Professional growth and skill enhancement programs</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="career-skill-development">
-                            Learn More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
+                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                        <i class="fas fa-laptop-code text-white text-2xl"></i>
                     </div>
+                    <h3 class="text-xl font-bold mb-4">Digital Marketing</h3>
+                    <p class="text-white/90 mb-6 leading-relaxed">Comprehensive digital marketing solutions and training</p>
+                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="digital-marketing">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
                 </div>
+            </div>
+            <!--Support-->
+            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
+                 style="background-image: url('https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
-                <!-- Service Card:11 - Digital Marketing -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                     style="background-image: url('https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg'); background-size: cover; background-position: center;">
-                    
-                    <!-- REMOVED: Overlay div for performance -->
-
-                    <!-- Card Content - IMPROVED Text shadow for readability -->
-                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-laptop-code text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">Digital Marketing</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.6);">Comprehensive digital marketing solutions and training</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="digital-marketing">
-                            Learn More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
+                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                        <i class="fas fa-phone text-white text-2xl"></i>
                     </div>
-                </div>
-
-                <!-- Service Card:12 - 24/7 Support (Moved to last) -->
-                <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                     style="background-image: url('https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg'); background-size: cover; background-position: center;">
-                    
-                    <!-- REMOVED: Overlay div for performance -->
-
-                    <!-- Card Content - IMPROVED Text shadow for readability -->
-                    <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                            <i class="fas fa-phone text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4" style="text-shadow: 0px 0px 8px rgba(0,0,0,0.8);">24/7 Support</h3>
-                        <p class="text-white/90 mb-6 leading-relaxed" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.6);">Round-the-clock crisis intervention and emergency mental health support.</p>
-                        <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="support">
-                            Learn More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
-                    </div>
+                    <h3 class="text-xl font-bold mb-4">24/7 Support</h3>
+                    <p class="text-white/90 mb-6 leading-relaxed">Round-the-clock crisis intervention and emergency mental health support.</p>
+                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="support">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
                 </div>
             </div>
         </div>
-
-
-
-            <!-- Service Popups -->
-            <div id="servicePopupOverlay" class="fixed inset-0 bg-black/70 z-50 hidden flex items-start justify-center pt-20 pb-8 px-4">
-                
-                <!-- Financial Hub Popup -->
-                <div id="financial-hub-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-6">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-money-bill-wave text-white text-xl"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold text-dark">Financial Hub</h3>
-                            </div>
-                            <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_financial_hub.webp" alt="Financial Hub" class="w-full h-64 object-cover rounded-xl">
-                        </div>
-                        
-                        <div class="space-y-4 text-gray-600">
-                            <p>Our Financial Hub provides comprehensive financial planning and investment solutions designed to secure your financial future. We offer expert guidance across all aspects of personal and business finance, helping you make informed decisions and achieve your financial goals.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Our Services Include:</h4>
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div class="bg-blue-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-blue-700">LIC</h5>
-                                    <p class="text-sm">Life Insurance Corporation policies and comprehensive coverage plans for financial security</p>
-                                </div>
-                                <div class="bg-blue-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-blue-700">Mediclaim</h5>
-                                    <p class="text-sm">Health insurance and medical coverage for you and your family's wellbeing</p>
-                                </div>
-                                <div class="bg-blue-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-blue-700">Loan Services</h5>
-                                    <p class="text-sm">Personal, home, and business loan solutions with competitive rates and flexible terms</p>
-                                </div>
-                                <div class="bg-blue-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-blue-700">Mutual Funds</h5>
-                                    <p class="text-sm">Diversified investment portfolio management and systematic investment planning</p>
-                                </div>
-                                <div class="bg-blue-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-blue-700">Bonds</h5>
-                                    <p class="text-sm">Government and corporate bond investments for stable returns and capital preservation</p>
-                                </div>
-                                <div class="bg-blue-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-blue-700">Stock Market</h5>
-                                    <p class="text-sm">Equity trading and investment strategies for long-term wealth creation</p>
-                                </div>
-                            </div>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Why Choose Our Financial Hub:</h4>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Expert financial advisors with years of industry experience</li>
-                                <li>Personalized financial planning tailored to your unique needs</li>
-                                <li>Comprehensive tax planning and compliance services</li>
-                                <li>Regular portfolio reviews and performance optimization</li>
-                                <li>24/7 customer support for all your financial queries</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="mt-8 flex justify-end">
-                            <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-                                Get Financial Consultation
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Education Training Popup -->
-                <div id="education-training-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-6">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-graduation-cap text-white text-xl"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold text-dark">Education Training</h3>
-                            </div>
-                            <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/Services_Educational_Training.png" alt="Education Training" class="w-full h-64 object-cover rounded-xl">
-                        </div>
-                        
-                        <div class="space-y-4 text-gray-600">
-                            <p>Our Education Training programs offer comprehensive educational solutions designed to enhance knowledge, develop skills, and advance careers. We provide structured learning experiences that combine theoretical knowledge with practical applications.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Training Programs:</h4>
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div class="bg-yellow-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-yellow-700">Fundamental Computer</h5>
-                                    <p class="text-sm">Learn essential computer operations, terminology, and system navigation for beginners.</p>
-                                </div>
-                                <div class="bg-yellow-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-yellow-700">Basic Computer</h5>
-                                    <p class="text-sm">Master core skills like MS Office, internet usage, and file management.</p>
-                                </div>
-                                <div class="bg-yellow-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-yellow-700">DTP</h5>
-                                    <p class="text-sm">Get hands-on with desktop publishing tools for creative design and layout projects.</p>
-                                </div>
-                                <div class="bg-yellow-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-yellow-700">Career Development</h5>
-                                    <p class="text-sm">Build confidence with resume writing, interview prep, and communication skills training.</p>
-                                </div>
-                            </div>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Key Benefits:</h4>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Expert-designed curriculum aligned with industry standards</li>
-                                <li>Flexible learning options including online and offline modes</li>
-                                <li>Hands-on practical training and real-world applications</li>
-                                <li>Career guidance and placement assistance</li>
-                                <li>Continuous assessment and progress tracking</li>
-                                <li>Networking opportunities with peers and industry professionals</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="mt-8 flex justify-end">
-                            <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-                                Explore Courses
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Vocational Training Popup -->
-                <div id="vocational-training-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-6">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-tools text-white text-xl"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold text-dark">Vocational Training</h3>
-                            </div>
-                            <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_vocational_training.jpg" alt="Vocational Training" class="w-full h-64 object-cover rounded-xl">
-                        </div>
-                        
-                        <div class="space-y-4 text-gray-600">
-                            <p>Our Vocational Training programs provide practical skills training specifically designed for immediate employment opportunities. We focus on hands-on learning that prepares you for real-world work environments and industry demands.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Language Options:</h4>
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div class="bg-green-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-green-700">Spoken English</h5>
-                                    <p class="text-sm">Improve fluency, vocabulary, and confidence in everyday and professional English conversations.</p>
-                                </div>
-                                <div class="bg-green-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-green-700">Spoken Hindi</h5>
-                                    <p class="text-sm">Build effective communication skills in Hindi for both casual and formal settings.</p>
-                                </div>
-                            </div>
-
-                            <h4 class="text-lg font-bold text-primary mt-6">Program Features:</h4>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Practical, conversation-based learning focused on real-world communication</li>
-                                <li>Customized modules for beginners, intermediates, and advanced learners</li>
-                                <li>Interactive sessions with role-plays, group discussions, and presentations</li>
-                                <li>Certified language trainers with professional teaching experience</li>
-                                <li>Flexible class timings including weekends and evening batches</li>
-                                <li>Regular speaking assessments and personalized feedback</li>
-                            </ul>
-
-                        </div>
-                        
-                        <div class="mt-8 flex justify-end">
-                            <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-                                Start Your Training
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Professional Training Popup -->
-                <div id="professional-training-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-6">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-briefcase text-white text-xl"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold text-dark">Professional Training</h3>
-                            </div>
-                            <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_career_counseling.jpg" alt="Professional Training" class="w-full h-64 object-cover rounded-xl">
-                        </div>
-                        
-                        <div class="space-y-4 text-gray-600">
-                            <p>Our Professional Training programs are designed for advanced professional development and career growth. We offer comprehensive training solutions that enhance leadership capabilities, management skills, and overall professional competency.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Core Programs:</h4>
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div class="bg-purple-50 p-4 rounded-lg">
-                                   <h5 class="font-semibold text-purple-700">Career Counseling</h5>
-                                    <p class="text-sm">Personalized career guidance and planning to help you achieve your professional goals.</p>
-                                </div>
-                            </div>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Training Benefits:</h4>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Personalized career guidance based on aptitude, interests, and goals</li>
-                                <li>Psychometric assessments to identify strengths and suitable career paths</li>
-                                <li>Expert advice on academic streams, vocational courses, and higher studies</li>
-                                <li>Support with resume building, interview preparation, and soft skills</li>
-                                <li>Information on emerging career trends and industry demands</li>
-                                <li>Continuous mentoring and goal tracking for long-term success</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="mt-8 flex justify-end">
-                            <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-                                Advance Your Career
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Special Training Popup -->
-                <div id="special-training-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-6">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-star text-white text-xl"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold text-dark">Special Training</h3>
-                            </div>
-                            <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/Services_Special_Training.jpg" alt="Special Training" class="w-full h-64 object-cover rounded-xl">
-                        </div>
-                        
-                        <div class="space-y-4 text-gray-600">
-                            <p>Our Special Training programs offer customized training solutions designed to meet specific industry needs and unique organizational requirements. We create tailored learning experiences that address particular challenges and objectives.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Specialized Programs:</h4>
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div class="bg-pink-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-pink-700">Graphology</h5>
-                                    <p class="text-sm">Explore personality insights through handwriting analysis for better self-awareness and communication.</p>
-                                </div>
-                                <div class="bg-pink-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-pink-700">Spiritual Management</h5>
-                                    <p class="text-sm">Learn to align personal values with professional life for deeper fulfillment and resilience.</p>
-                                </div>
-                                <div class="bg-pink-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-pink-700">Mind Management</h5>
-                                    <p class="text-sm">Gain tools to manage stress, enhance focus, and build emotional intelligence in daily life.</p>
-                                </div>
-                            </div>
-
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Our Approach:</h4>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Holistic assessment of emotional, cognitive, and behavioral patterns</li>
-                                <li>Personalized coaching modules tailored to individual or group needs</li>
-                                <li>Blended learning methods combining theory, practice, and reflection</li>
-                                <li>Guidance from certified professionals in psychology and wellness</li>
-                                <li>Follow-up sessions for progress tracking and continued support</li>
-                                <li>Focus on lifelong self-growth, awareness, and inner balance</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="mt-8 flex justify-end">
-                            <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-                                Request Custom Training
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Corporate Training Popup -->
-                <div id="corporate-training-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-6">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-building text-white text-xl"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold text-dark">Corporate Training</h3>
-                            </div>
-                            <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <img src= "https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_corporate_training.jpg" alt="Corporate Training" class="w-full h-64 object-cover rounded-xl">
-                        </div>
-                        
-                        <div class="space-y-4 text-gray-600">
-                            <p>Our Corporate Training solutions provide enterprise-level training and development programs designed to enhance organizational performance, employee skills, and business outcomes. We offer comprehensive training solutions for companies of all sizes.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Corporate Solutions:</h4>
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div class="bg-indigo-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-indigo-700">LIC</h5>
-                                    <p class="text-sm">Understand the fundamentals of life insurance, policy types, and long-term financial planning.</p>
-                                </div>
-                                <div class="bg-indigo-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-indigo-700">Health Insurance</h5>
-                                    <p class="text-sm">Learn how to choose health coverage wisely and navigate claims and benefits effectively.</p>
-                                </div>
-                                <div class="bg-indigo-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-indigo-700">Mutual Funds</h5>
-                                    <p class="text-sm">Get introduced to mutual fund categories, SIPs, risk factors, and portfolio diversification.</p>
-                                </div>
-                                <div class="bg-indigo-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-indigo-700">Stock Market</h5>
-                                    <p class="text-sm">Gain foundational knowledge in equity investing, trading strategies, and market trends.</p>
-                                </div>
-
-                            </div>
-                            <h4 class="text-lg font-bold text-primary mt-6">Enterprise Benefits:</h4>
-                                <ul class="list-disc pl-5 space-y-2">
-                                    <li>Introduction to key financial instruments: insurance, stocks, and mutual funds</li>
-                                    <li>Risk assessment and financial goal setting for individuals and families</li>
-                                    <li>Interactive case studies to explain market behavior and fund performance</li>
-                                    <li>Guidance on policy selection, claim procedures, and financial safety nets</li>
-                                    <li>Hands-on workshops on using financial tools and investment platforms</li>
-                                    <li>Updated insights on government schemes, tax benefits, and regulatory norms</li>
-                                </ul>
-                        
-                        <div class="mt-8 flex justify-end">
-                            <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-                                Get Enterprise Quote
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Education Consultancy Popup -->
-                <div id="education-consultancy-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-6">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-book text-white text-xl"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold text-dark">Education Consultancy</h3>
-                            </div>
-                            <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_educational_consulatancy.webp" alt="Education Consultancy" class="w-full h-64 object-cover rounded-xl">
-                        </div>
-                        
-                        <div class="space-y-4 text-gray-600">
-                            <p>Our Education Consultancy services provide strategic educational planning and advisory services to help students, professionals, and organizations make informed decisions about their educational journey and career development.</p>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Consultancy Services:</h4>
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div class="bg-teal-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-teal-700">Career Guidance</h5>
-                                    <p class="text-sm">Professional career counseling and personalized pathway planning</p>
-                                </div>
-                                <div class="bg-teal-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-teal-700">Course Selection</h5>
-                                    <p class="text-sm">Educational pathway planning and optimal program selection guidance</p>
-                                </div>
-                                <div class="bg-teal-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-teal-700">University Admissions</h5>
-                                    <p class="text-sm">Higher education guidance and comprehensive application support</p>
-                                </div>
-                                <div class="bg-teal-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-teal-700">Study Abroad</h5>
-                                    <p class="text-sm">International education consulting and complete visa assistance</p>
-                                </div>
-                            </div>
-                            
-                            <h4 class="text-lg font-bold text-primary mt-6">Our Expertise:</h4>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Comprehensive educational assessment and aptitude testing</li>
-                                <li>Personalized academic and career roadmap development</li>
-                                <li>University selection and application process guidance</li>
-                                <li>Scholarship identification and application assistance</li>
-                                <li>Interview preparation and admission coaching</li>
-                                <li>Post-admission support and transition guidance</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="mt-8 flex justify-end">
-                            <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-                                Schedule Consultation
-                            </a>
-                        </div>
-                    </div>
-                </div>
-           <!-- Job Vacancy Popup -->
-<div id="job-vacancy-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
-  <div class="p-8">
-    <div class="flex justify-between items-center mb-6">
-      <div class="flex items-center">
-        <div class="w-12 h-12 bg-gradient-to-br from-orange-500/90 to-orange-600/90 rounded-lg flex items-center justify-center mr-4">
-          <i class="fas fa-briefcase text-white text-xl"></i>
-        </div>
-        <h3 class="text-2xl font-bold text-dark">Job Vacancy</h3>
-      </div>
-      <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
-        <i class="fas fa-times"></i>
-      </button>
     </div>
-    <div class="mb-6">
-      <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_educational_consulatancy.webp" alt="Job Vacancy" class="w-full h-64 object-cover rounded-xl">
-    </div>
-    <div class="space-y-4 text-gray-600">
-      <p>Explore our Job Vacancy services to find employment opportunities and recruitment support. We connect job seekers with employers and provide tools to help you stand out in the competitive job market.</p>
-      <h4 class="text-lg font-bold text-primary mt-6">Services Offered:</h4>
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="bg-orange-50 p-4 rounded-lg">
-          <h5 class="font-semibold text-orange-700">Job Placement</h5>
-          <p class="text-sm">Career placement assistance and job matching</p>
-        </div>
-        <div class="bg-orange-50 p-4 rounded-lg">
-          <h5 class="font-semibold text-orange-700">Recruitment</h5>
-          <p class="text-sm">Talent acquisition services for employers</p>
-        </div>
-        <div class="bg-orange-50 p-4 rounded-lg">
-          <h5 class="font-semibold text-orange-700">Resume Building</h5>
-          <p class="text-sm">Professional resume development and optimization</p>
-        </div>
-        <div class="bg-orange-50 p-4 rounded-lg">
-          <h5 class="font-semibold text-orange-700">Interview Preparation</h5>
-          <p class="text-sm">Interview skills training and mock sessions</p>
-        </div>
-      </div>
-      <h4 class="text-lg font-bold text-primary mt-6">Why Choose Us:</h4>
-      <ul class="list-disc pl-6 text-sm space-y-1">
-        <li>Strong industry connections with top employers</li>
-        <li>Personalized support tailored to your goals</li>
-        <li>Resources to enhance job-readiness and confidence</li>
-        <li>Efficient matching of skills with market demand</li>
-        <li>Dedicated career advisors available for guidance</li>
-        <li>Access to exclusive job openings and employer partnerships</li>
-
-      </ul>
-    </div>
-    <div class="mt-8 flex justify-end">
-      <a href="#contact" class="bg-primary hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-        Apply for Opportunities
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- Investment Awareness Popup -->
-<div id="investment-awareness-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
-  <div class="p-8">
-    <div class="flex justify-between items-center mb-6">
-      <div class="flex items-center">
-        <div class="w-12 h-12 bg-gradient-to-br from-red-500/90 to-red-600/90 rounded-lg flex items-center justify-center mr-4">
-          <i class="fas fa-chart-line text-white text-xl"></i>
-        </div>
-        <h3 class="text-2xl font-bold text-dark">Investment Awareness</h3>
-      </div>
-      <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
-    <div class="mb-6">
-      <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/servies_investment_awareness.jpg" alt="Investment Awareness" class="w-full h-64 object-cover rounded-xl">
-    </div>
-    <div class="space-y-4 text-gray-600">
-      <p>Our Investment Awareness programs aim to improve financial literacy and empower individuals to make informed investment decisions. Whether you're a beginner or experienced investor, we offer insights and guidance tailored to your level.</p>
-      <h4 class="text-lg font-bold text-primary mt-6">Topics Covered:</h4>
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="bg-red-50 p-4 rounded-lg">
-          <h5 class="font-semibold text-red-700">Financial Literacy</h5>
-          <p class="text-sm">Basic financial education and money management</p>
-        </div>
-        <div class="bg-red-50 p-4 rounded-lg">
-          <h5 class="font-semibold text-red-700">Investment Strategies</h5>
-          <p class="text-sm">Portfolio management and investment planning</p>
-        </div>
-        <div class="bg-red-50 p-4 rounded-lg">
-          <h5 class="font-semibold text-red-700">Risk Management</h5>
-          <p class="text-sm">Investment risk assessment and mitigation</p>
-        </div>
-        <div class="bg-red-50 p-4 rounded-lg">
-          <h5 class="font-semibold text-red-700">Market Analysis</h5>
-          <p class="text-sm">Financial market insights and trend analysis</p>
-        </div>
-      </div>
-      <h4 class="text-lg font-bold text-primary mt-6">Benefits of Our Program:</h4>
-      <ul class="list-disc pl-6 text-sm space-y-1">
-        <li>Tailored learning for all experience levels</li>
-        <li>Up-to-date knowledge on current market trends</li>
-        <li>Expert guidance for better decision making</li>
-        <li>Confidence in managing personal finances</li>
-        <li>Interactive sessions and real-life case studies</li>
-        <li>Community support through forums and webinars</li>
-
-      </ul>
-    </div>
-    <div class="mt-8 flex justify-end">
-      <a href="#contact" class="bg-primary hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-        Learn to Invest
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- Career & Skill Development Popup -->
-<div id="career-skill-development-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
-  <div class="p-8">
-    <div class="flex justify-between items-center mb-6">
-      <div class="flex items-center">
-        <div class="w-12 h-12 bg-gradient-to-br from-cyan-500/90 to-cyan-600/90 rounded-lg flex items-center justify-center mr-4">
-          <i class="fas fa-rocket text-white text-xl"></i>
-        </div>
-        <h3 class="text-2xl font-bold text-dark">Career & Skill Development</h3>
-      </div>
-      <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
-    <div class="mb-6">
-      <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/servies_investment_awareness.jpg" alt="Career & Skill Development" class="w-full h-64 object-cover rounded-xl">
-    </div>
-    <div class="space-y-4 text-gray-600">
-      <p>Advance your career with our Career & Skill Development programs. We provide personalized development plans, mentorship, and resources to enhance your professional journey.</p>
-      <h4 class="text-lg font-bold text-primary mt-6">Development Services:</h4>
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="bg-cyan-50 p-4 rounded-lg">
-          <h5 class="font-semibold text-cyan-700">Skill Assessment</h5>
-          <p class="text-sm">Professional skill evaluation and gap analysis</p>
-        </div>
-        <div class="bg-cyan-50 p-4 rounded-lg">
-          <h5 class="font-semibold text-cyan-700">Career Planning</h5>
-          <p class="text-sm">Strategic career development and goal setting</p>
-        </div>
-        <div class="bg-cyan-50 p-4 rounded-lg">
-          <h5 class="font-semibold text-cyan-700">Mentorship</h5>
-          <p class="text-sm">Professional guidance and mentoring programs</p>
-        </div>
-        <div class="bg-cyan-50 p-4 rounded-lg">
-          <h5 class="font-semibold text-cyan-700">Networking</h5>
-          <p class="text-sm">Professional network building and industry connections</p>
-        </div>
-      </div>
-      <h4 class="text-lg font-bold text-primary mt-6">Benefits You Gain:</h4>
-      <ul class="list-disc pl-6 text-sm space-y-1">
-        <li>Personalized growth plans and feedback</li>
-        <li>Stronger professional network and exposure</li>
-        <li>Real-world insights from industry mentors</li>
-        <li>Improved marketability and confidence</li>
-        <li>Hands-on projects to build practical experience</li>
-        <li>Flexible learning formats including remote options</li>
-
-      </ul>
-    </div>
-    <div class="mt-8 flex justify-end">
-      <a href="#contact" class="bg-primary hover:bg-cyan-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-        Build Your Career
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- Digital Marketing Popup -->
-<div id="digital-marketing-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
-  <div class="p-8">
-    <div class="flex justify-between items-center mb-6">
-      <div class="flex items-center">
-        <div class="w-12 h-12 bg-gradient-to-br from-violet-500/90 to-violet-600/90 rounded-lg flex items-center justify-center mr-4">
-          <i class="fas fa-laptop-code text-white text-xl"></i>
-        </div>
-        <h3 class="text-2xl font-bold text-dark">Digital Marketing</h3>
-      </div>
-      <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
-    <div class="mb-6">
-      <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_digital_marketing.jpg" alt="Digital Marketing" class="w-full h-64 object-cover rounded-xl">
-    </div>
-    <div class="space-y-4 text-gray-600">
-      <p>Boost your digital presence with our all-in-one Digital Marketing services. From SEO to content strategy, we equip you with the tools and training needed to thrive in the online world.</p>
-      <h4 class="text-lg font-bold text-primary mt-6">Marketing Services:</h4>
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="bg-violet-50 p-4 rounded-lg">
-          <h5 class="font-semibold text-violet-700">SEO/SEM</h5>
-          <p class="text-sm">Search engine optimization and marketing strategies</p>
-        </div>
-        <div class="bg-violet-50 p-4 rounded-lg">
-          <h5 class="font-semibold text-violet-700">Social Media</h5>
-          <p class="text-sm">Social media strategy, management, and advertising</p>
-        </div>
-        <div class="bg-violet-50 p-4 rounded-lg">
-          <h5 class="font-semibold text-violet-700">Content Marketing</h5>
-          <p class="text-sm">Content creation, strategy, and distribution</p>
-        </div>
-        <div class="bg-violet-50 p-4 rounded-lg">
-          <h5 class="font-semibold text-violet-700">Analytics</h5>
-          <p class="text-sm">Digital marketing analytics and performance insights</p>
-        </div>
-      </div>
-      <h4 class="text-lg font-bold text-primary mt-6">Why Work With Us:</h4>
-      <ul class="list-disc pl-6 text-sm space-y-1">
-        <li>Data-driven approach for real results</li>
-        <li>Cross-platform strategy tailored to your brand</li>
-        <li>Ongoing support and optimization</li>
-        <li>Transparent reporting and measurable KPIs</li>
-        <li>End-to-end digital strategy and implementation</li>
-        <li>Workshops and training for in-house teams</li>
-
-      </ul>
-    </div>
-    <div class="mt-8 flex justify-end">
-      <a href="#contact" class="bg-primary hover:bg-violet-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-        Launch Your Campaign
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- 24/7 Support Popup -->
-<div id="support-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto my-auto">
-  <div class="p-8">
-    <div class="flex justify-between items-center mb-6">
-      <div class="flex items-center">
-        <div class="w-12 h-12 bg-gradient-to-br from-green-500/90 to-green-600/90 rounded-lg flex items-center justify-center mr-4">
-          <i class="fas fa-headset text-white text-xl"></i>
-        </div>
-        <h3 class="text-2xl font-bold text-dark">24/7 Support</h3>
-      </div>
-      <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
-    <div class="mb-6">
-      <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_247.webp" alt="24/7 Support" class="w-full h-64 object-cover rounded-xl">
-    </div>
-    <div class="space-y-4 text-gray-600">
-      <p>Day or night, we’re here for you. Our 24/7 Support service ensures you get the help you need, when you need it — from tech assistance to customer inquiries and emergency resolutions.</p>
-      <h4 class="text-lg font-bold text-primary mt-6">Support Features:</h4>
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="bg-green-50 p-4 rounded-lg">
-          <h5 class="font-semibold text-green-700">Live Chat</h5>
-          <p class="text-sm">Real-time help from trained professionals</p>
-        </div>
-        <div class="bg-green-50 p-4 rounded-lg">
-          <h5 class="font-semibold text-green-700">Email Support</h5>
-          <p class="text-sm">Get detailed responses within hours</p>
-        </div>
-        <div class="bg-green-50 p-4 rounded-lg">
-          <h5 class="font-semibold text-green-700">Phone Support</h5>
-          <p class="text-sm">Speak to an expert for instant solutions</p>
-        </div>
-        <div class="bg-green-50 p-4 rounded-lg">
-          <h5 class="font-semibold text-green-700">Issue Tracking</h5>
-          <p class="text-sm">Ticket system to follow your case until resolution</p>
-        </div>
-      </div>
-      <h4 class="text-lg font-bold text-primary mt-6">Why Our Support Stands Out:</h4>
-      <ul class="list-disc pl-6 text-sm space-y-1">
-        <li>24/7 availability for uninterrupted assistance</li>
-        <li>Multichannel access for convenience</li>
-        <li>Fast resolution times and proactive follow-up</li>
-        <li>Friendly, knowledgeable, and professional team</li>
-        <li>Continuous service monitoring to prevent downtime</li>
-        <li>Customized support solutions for your business needs</li>
-
-      </ul>
-    </div>
-    <div class="mt-8 flex justify-end">
-      <a href="#contact" class="bg-primary hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
-        Contact Support
-      </a>
-    </div>
-  </div>
-</div>
-
-
 </section>
-        
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get all elements
-            const serviceButtons = document.querySelectorAll('.service-popup-btn');
-            const overlay = document.getElementById('servicePopupOverlay');
-            const popups = document.querySelectorAll('.service-popup-content');
-            const closeButtons = document.querySelectorAll('.close-popup');
-            const closeAndScrollButtons = document.querySelectorAll('.close-and-scroll');
-            
-            // Open popup when service button is clicked
-            serviceButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const service = this.getAttribute('data-service');
-                    const popup = document.getElementById(`${service}-popup`);
-                    
-                    // Hide all popups first
-                    popups.forEach(p => p.classList.add('hidden'));
-                    
-                    // Show overlay and the specific popup
-                    overlay.classList.remove('hidden');
-                    popup.classList.remove('hidden');
-                    
-                    // Prevent body scrolling
-                    document.body.style.overflow = 'hidden';
-                });
-            });
-            
-            // Close popup function
-            function closePopup() {
-                overlay.classList.add('hidden');
-                popups.forEach(popup => popup.classList.add('hidden'));
-                document.body.style.overflow = 'auto';
+
+<div id="servicePopupOverlay" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4">
+
+    <div id="financial-hub-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-money-bill-wave text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark">Financial Hub</h3>
+                </div>
+                <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="mb-6">
+                <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_financial_hub.webp" alt="Financial Hub" class="w-full h-64 object-cover rounded-xl">
+            </div>
+
+            <div class="space-y-4 text-gray-600">
+                <p>Our Financial Hub provides comprehensive financial planning and investment solutions designed to secure your financial future. We offer expert guidance across all aspects of personal and business finance, helping you make informed decisions and achieve your financial goals.</p>
+
+                <h4 class="text-lg font-bold text-primary mt-6">Our Services Include:</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-blue-700">LIC</h5>
+                        <p class="text-sm">Life Insurance Corporation policies and comprehensive coverage plans for financial security</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-blue-700">Mediclaim</h5>
+                        <p class="text-sm">Health insurance and medical coverage for you and your family's wellbeing</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-blue-700">Loan Services</h5>
+                        <p class="text-sm">Personal, home, and business loan solutions with competitive rates and flexible terms</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-blue-700">Mutual Funds</h5>
+                        <p class="text-sm">Diversified investment portfolio management and systematic investment planning</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-blue-700">Bonds</h5>
+                        <p class="text-sm">Government and corporate bond investments for stable returns and capital preservation</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-blue-700">Stock Market</h5>
+                        <p class="text-sm">Equity trading and investment strategies for long-term wealth creation</p>
+                    </div>
+                </div>
+
+                <h4 class="text-lg font-bold text-primary mt-6">Why Choose Our Financial Hub:</h4>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Expert financial advisors with years of industry experience</li>
+                    <li>Personalized financial planning tailored to your unique needs</li>
+                    <li>Comprehensive tax planning and compliance services</li>
+                    <li>Regular portfolio reviews and performance optimization</li>
+                    <li>24/7 customer support for all your financial queries</li>
+                </ul>
+            </div>
+
+            <div class="mt-8 flex justify-end">
+                <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+                    Get Financial Consultation
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="education-training-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-graduation-cap text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark">Education Training</h3>
+                </div>
+                <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="mb-6">
+                <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/Services_Educational_Training.png" alt="Education Training" class="w-full h-64 object-cover rounded-xl">
+            </div>
+
+            <div class="space-y-4 text-gray-600">
+                <p>Our Education Training programs offer comprehensive educational solutions designed to enhance knowledge, develop skills, and advance careers. We provide structured learning experiences that combine theoretical knowledge with practical applications.</p>
+
+                <h4 class="text-lg font-bold text-primary mt-6">Training Programs:</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-yellow-700">Fundamental Computer</h5>
+                        <p class="text-sm">Learn essential computer operations, terminology, and system navigation for beginners.</p>
+                    </div>
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-yellow-700">Basic Computer</h5>
+                        <p class="text-sm">Master core skills like MS Office, internet usage, and file management.</p>
+                    </div>
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-yellow-700">DTP</h5>
+                        <p class="text-sm">Get hands-on with desktop publishing tools for creative design and layout projects.</p>
+                    </div>
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-yellow-700">Career Development</h5>
+                        <p class="text-sm">Build confidence with resume writing, interview prep, and communication skills training.</p>
+                    </div>
+                </div>
+
+                <h4 class="text-lg font-bold text-primary mt-6">Key Benefits:</h4>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Expert-designed curriculum aligned with industry standards</li>
+                    <li>Flexible learning options including online and offline modes</li>
+                    <li>Hands-on practical training and real-world applications</li>
+                    <li>Career guidance and placement assistance</li>
+                    <li>Continuous assessment and progress tracking</li>
+                    <li>Networking opportunities with peers and industry professionals</li>
+                </ul>
+            </div>
+
+            <div class="mt-8 flex justify-end">
+                <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+                    Explore Courses
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="vocational-training-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-tools text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark">Vocational Training</h3>
+                </div>
+                <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="mb-6">
+                <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_vocational_training.jpg" alt="Vocational Training" class="w-full h-64 object-cover rounded-xl">
+            </div>
+
+            <div class="space-y-4 text-gray-600">
+                <p>Our Vocational Training programs provide practical skills training specifically designed for immediate employment opportunities. We focus on hands-on learning that prepares you for real-world work environments and industry demands.</p>
+
+                <h4 class="text-lg font-bold text-primary mt-6">Language Options:</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-green-700">Spoken English</h5>
+                        <p class="text-sm">Improve fluency, vocabulary, and confidence in everyday and professional English conversations.</p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-green-700">Spoken Hindi</h5>
+                        <p class="text-sm">Build effective communication skills in Hindi for both casual and formal settings.</p>
+                    </div>
+                </div>
+
+                <h4 class="text-lg font-bold text-primary mt-6">Program Features:</h4>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Practical, conversation-based learning focused on real-world communication</li>
+                    <li>Customized modules for beginners, intermediates, and advanced learners</li>
+                    <li>Interactive sessions with role-plays, group discussions, and presentations</li>
+                    <li>Certified language trainers with professional teaching experience</li>
+                    <li>Flexible class timings including weekends and evening batches</li>
+                    <li>Regular speaking assessments and personalized feedback</li>
+                </ul>
+
+            </div>
+
+            <div class="mt-8 flex justify-end">
+                <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+                    Start Your Training
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="professional-training-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-briefcase text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark">Professional Training</h3>
+                </div>
+                <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="mb-6">
+                <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_career_counseling.jpg" alt="Professional Training" class="w-full h-64 object-cover rounded-xl">
+            </div>
+
+            <div class="space-y-4 text-gray-600">
+                <p>Our Professional Training programs are designed for advanced professional development and career growth. We offer comprehensive training solutions that enhance leadership capabilities, management skills, and overall professional competency.</p>
+
+                <h4 class="text-lg font-bold text-primary mt-6">Core Programs:</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-purple-700">Career Counseling</h5>
+                        <p class="text-sm">Personalized career guidance and planning to help you achieve your professional goals.</p>
+                    </div>
+                </div>
+
+                <h4 class="text-lg font-bold text-primary mt-6">Training Benefits:</h4>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Personalized career guidance based on aptitude, interests, and goals</li>
+                    <li>Psychometric assessments to identify strengths and suitable career paths</li>
+                    <li>Expert advice on academic streams, vocational courses, and higher studies</li>
+                    <li>Support with resume building, interview preparation, and soft skills</li>
+                    <li>Information on emerging career trends and industry demands</li>
+                    <li>Continuous mentoring and goal tracking for long-term success</li>
+                </ul>
+            </div>
+
+            <div class="mt-8 flex justify-end">
+                <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+                    Advance Your Career
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="special-training-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-star text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark">Special Training</h3>
+                </div>
+                <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="mb-6">
+                <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/Services_Special_Training.jpg" alt="Special Training" class="w-full h-64 object-cover rounded-xl">
+            </div>
+
+            <div class="space-y-4 text-gray-600">
+                <p>Our Special Training programs offer customized training solutions designed to meet specific industry needs and unique organizational requirements. We create tailored learning experiences that address particular challenges and objectives.</p>
+
+                <h4 class="text-lg font-bold text-primary mt-6">Specialized Programs:</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-pink-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-pink-700">Graphology</h5>
+                        <p class="text-sm">Explore personality insights through handwriting analysis for better self-awareness and communication.</p>
+                    </div>
+                    <div class="bg-pink-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-pink-700">Spiritual Management</h5>
+                        <p class="text-sm">Learn to align personal values with professional life for deeper fulfillment and resilience.</p>
+                    </div>
+                    <div class="bg-pink-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-pink-700">Mind Management</h5>
+                        <p class="text-sm">Gain tools to manage stress, enhance focus, and build emotional intelligence in daily life.</p>
+                    </div>
+                </div>
+
+
+                <h4 class="text-lg font-bold text-primary mt-6">Our Approach:</h4>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Holistic assessment of emotional, cognitive, and behavioral patterns</li>
+                    <li>Personalized coaching modules tailored to individual or group needs</li>
+                    <li>Blended learning methods combining theory, practice, and reflection</li>
+                    <li>Guidance from certified professionals in psychology and wellness</li>
+                    <li>Follow-up sessions for progress tracking and continued support</li>
+                    <li>Focus on lifelong self-growth, awareness, and inner balance</li>
+                </ul>
+            </div>
+
+            <div class="mt-8 flex justify-end">
+                <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+                    Request Custom Training
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="corporate-training-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-building text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark">Corporate Training</h3>
+                </div>
+                <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="mb-6">
+                <img src= "https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_corporate_training.jpg" alt="Corporate Training" class="w-full h-64 object-cover rounded-xl">
+            </div>
+
+            <div class="space-y-4 text-gray-600">
+                <p>Our Corporate Training solutions provide enterprise-level training and development programs designed to enhance organizational performance, employee skills, and business outcomes. We offer comprehensive training solutions for companies of all sizes.</p>
+
+                <h4 class="text-lg font-bold text-primary mt-6">Corporate Solutions:</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-indigo-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-indigo-700">LIC</h5>
+                        <p class="text-sm">Understand the fundamentals of life insurance, policy types, and long-term financial planning.</p>
+                    </div>
+                    <div class="bg-indigo-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-indigo-700">Health Insurance</h5>
+                        <p class="text-sm">Learn how to choose health coverage wisely and navigate claims and benefits effectively.</p>
+                    </div>
+                    <div class="bg-indigo-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-indigo-700">Mutual Funds</h5>
+                        <p class="text-sm">Get introduced to mutual fund categories, SIPs, risk factors, and portfolio diversification.</p>
+                    </div>
+                    <div class="bg-indigo-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-indigo-700">Stock Market</h5>
+                        <p class="text-sm">Gain foundational knowledge in equity investing, trading strategies, and market trends.</p>
+                    </div>
+
+                </div>
+                <h4 class="text-lg font-bold text-primary mt-6">Enterprise Benefits:</h4>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Introduction to key financial instruments: insurance, stocks, and mutual funds</li>
+                    <li>Risk assessment and financial goal setting for individuals and families</li>
+                    <li>Interactive case studies to explain market behavior and fund performance</li>
+                    <li>Guidance on policy selection, claim procedures, and financial safety nets</li>
+                    <li>Hands-on workshops on using financial tools and investment platforms</li>
+                    <li>Updated insights on government schemes, tax benefits, and regulatory norms</li>
+                </ul>
+            </div>
+            <div class="mt-8 flex justify-end">
+                <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+                    Get Enterprise Quote
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="education-consultancy-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-book text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark">Education Consultancy</h3>
+                </div>
+                <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="mb-6">
+                <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_educational_consulatancy.webp" alt="Education Consultancy" class="w-full h-64 object-cover rounded-xl">
+            </div>
+
+            <div class="space-y-4 text-gray-600">
+                <p>Our Education Consultancy services provide strategic educational planning and advisory services to help students, professionals, and organizations make informed decisions about their educational journey and career development.</p>
+
+                <h4 class="text-lg font-bold text-primary mt-6">Consultancy Services:</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-teal-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-teal-700">Career Guidance</h5>
+                        <p class="text-sm">Professional career counseling and personalized pathway planning</p>
+                    </div>
+                    <div class="bg-teal-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-teal-700">Course Selection</h5>
+                        <p class="text-sm">Educational pathway planning and optimal program selection guidance</p>
+                    </div>
+                    <div class="bg-teal-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-teal-700">University Admissions</h5>
+                        <p class="text-sm">Higher education guidance and comprehensive application support</p>
+                    </div>
+                    <div class="bg-teal-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-teal-700">Study Abroad</h5>
+                        <p class="text-sm">International education consulting and complete visa assistance</p>
+                    </div>
+                </div>
+
+                <h4 class="text-lg font-bold text-primary mt-6">Our Expertise:</h4>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Comprehensive educational assessment and aptitude testing</li>
+                    <li>Personalized academic and career roadmap development</li>
+                    <li>University selection and application process guidance</li>
+                    <li>Scholarship identification and application assistance</li>
+                    <li>Interview preparation and admission coaching</li>
+                    <li>Post-admission support and transition guidance</li>
+                </ul>
+            </div>
+
+            <div class="mt-8 flex justify-end">
+                <a href="#contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+                    Schedule Consultation
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="job-vacancy-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-orange-500/90 to-orange-600/90 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-briefcase text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark">Job Vacancy</h3>
+                </div>
+                <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="mb-6">
+                <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_educational_consulatancy.webp" alt="Job Vacancy" class="w-full h-64 object-cover rounded-xl">
+            </div>
+            <div class="space-y-4 text-gray-600">
+                <p>Explore our Job Vacancy services to find employment opportunities and recruitment support. We connect job seekers with employers and provide tools to help you stand out in the competitive job market.</p>
+                <h4 class="text-lg font-bold text-primary mt-6">Services Offered:</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-orange-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-orange-700">Job Placement</h5>
+                        <p class="text-sm">Career placement assistance and job matching</p>
+                    </div>
+                    <div class="bg-orange-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-orange-700">Recruitment</h5>
+                        <p class="text-sm">Talent acquisition services for employers</p>
+                    </div>
+                    <div class="bg-orange-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-orange-700">Resume Building</h5>
+                        <p class="text-sm">Professional resume development and optimization</p>
+                    </div>
+                    <div class="bg-orange-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-orange-700">Interview Preparation</h5>
+                        <p class="text-sm">Interview skills training and mock sessions</p>
+                    </div>
+                </div>
+                <h4 class="text-lg font-bold text-primary mt-6">Why Choose Us:</h4>
+                <ul class="list-disc pl-6 text-sm space-y-1">
+                    <li>Strong industry connections with top employers</li>
+                    <li>Personalized support tailored to your goals</li>
+                    <li>Resources to enhance job-readiness and confidence</li>
+                    <li>Efficient matching of skills with market demand</li>
+                    <li>Dedicated career advisors available for guidance</li>
+                    <li>Access to exclusive job openings and employer partnerships</li>
+
+                </ul>
+            </div>
+            <div class="mt-8 flex justify-end">
+                <a href="#contact" class="bg-primary hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+                    Apply for Opportunities
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="investment-awareness-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-red-500/90 to-red-600/90 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-chart-line text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark">Investment Awareness</h3>
+                </div>
+                <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="mb-6">
+                <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/servies_investment_awareness.jpg" alt="Investment Awareness" class="w-full h-64 object-cover rounded-xl">
+            </div>
+            <div class="space-y-4 text-gray-600">
+                <p>Our Investment Awareness programs aim to improve financial literacy and empower individuals to make informed investment decisions. Whether you're a beginner or experienced investor, we offer insights and guidance tailored to your level.</p>
+                <h4 class="text-lg font-bold text-primary mt-6">Topics Covered:</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-red-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-red-700">Financial Literacy</h5>
+                        <p class="text-sm">Basic financial education and money management</p>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-red-700">Investment Strategies</h5>
+                        <p class="text-sm">Portfolio management and investment planning</p>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-red-700">Risk Management</h5>
+                        <p class="text-sm">Investment risk assessment and mitigation</p>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-red-700">Market Analysis</h5>
+                        <p class="text-sm">Financial market insights and trend analysis</p>
+                    </div>
+                </div>
+                <h4 class="text-lg font-bold text-primary mt-6">Benefits of Our Program:</h4>
+                <ul class="list-disc pl-6 text-sm space-y-1">
+                    <li>Tailored learning for all experience levels</li>
+                    <li>Up-to-date knowledge on current market trends</li>
+                    <li>Expert guidance for better decision making</li>
+                    <li>Confidence in managing personal finances</li>
+                    <li>Interactive sessions and real-life case studies</li>
+                    <li>Community support through forums and webinars</li>
+
+                </ul>
+            </div>
+            <div class="mt-8 flex justify-end">
+                <a href="#contact" class="bg-primary hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+                    Learn to Invest
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="career-skill-development-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-cyan-500/90 to-cyan-600/90 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-rocket text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark">Career & Skill Development</h3>
+                </div>
+                <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="mb-6">
+                <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/servies_investment_awareness.jpg" alt="Career & Skill Development" class="w-full h-64 object-cover rounded-xl">
+            </div>
+            <div class="space-y-4 text-gray-600">
+                <p>Advance your career with our Career & Skill Development programs. We provide personalized development plans, mentorship, and resources to enhance your professional journey.</p>
+                <h4 class="text-lg font-bold text-primary mt-6">Development Services:</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-cyan-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-cyan-700">Skill Assessment</h5>
+                        <p class="text-sm">Professional skill evaluation and gap analysis</p>
+                    </div>
+                    <div class="bg-cyan-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-cyan-700">Career Planning</h5>
+                        <p class="text-sm">Strategic career development and goal setting</p>
+                    </div>
+                    <div class="bg-cyan-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-cyan-700">Mentorship</h5>
+                        <p class="text-sm">Professional guidance and mentoring programs</p>
+                    </div>
+                    <div class="bg-cyan-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-cyan-700">Networking</h5>
+                        <p class="text-sm">Professional network building and industry connections</p>
+                    </div>
+                </div>
+                <h4 class="text-lg font-bold text-primary mt-6">Benefits You Gain:</h4>
+                <ul class="list-disc pl-6 text-sm space-y-1">
+                    <li>Personalized growth plans and feedback</li>
+                    <li>Stronger professional network and exposure</li>
+                    <li>Real-world insights from industry mentors</li>
+                    <li>Improved marketability and confidence</li>
+                    <li>Hands-on projects to build practical experience</li>
+                    <li>Flexible learning formats including remote options</li>
+
+                </ul>
+            </div>
+            <div class="mt-8 flex justify-end">
+                <a href="#contact" class="bg-primary hover:bg-cyan-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+                    Build Your Career
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="digital-marketing-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-violet-500/90 to-violet-600/90 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-laptop-code text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark">Digital Marketing</h3>
+                </div>
+                <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="mb-6">
+                <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_digital_marketing.jpg" alt="Digital Marketing" class="w-full h-64 object-cover rounded-xl">
+            </div>
+            <div class="space-y-4 text-gray-600">
+                <p>Boost your digital presence with our all-in-one Digital Marketing services. From SEO to content strategy, we equip you with the tools and training needed to thrive in the online world.</p>
+                <h4 class="text-lg font-bold text-primary mt-6">Marketing Services:</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-violet-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-violet-700">SEO/SEM</h5>
+                        <p class="text-sm">Search engine optimization and marketing strategies</p>
+                    </div>
+                    <div class="bg-violet-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-violet-700">Social Media</h5>
+                        <p class="text-sm">Social media strategy, management, and advertising</p>
+                    </div>
+                    <div class="bg-violet-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-violet-700">Content Marketing</h5>
+                        <p class="text-sm">Content creation, strategy, and distribution</p>
+                    </div>
+                    <div class="bg-violet-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-violet-700">Analytics</h5>
+                        <p class="text-sm">Digital marketing analytics and performance insights</p>
+                    </div>
+                </div>
+                <h4 class="text-lg font-bold text-primary mt-6">Why Work With Us:</h4>
+                <ul class="list-disc pl-6 text-sm space-y-1">
+                    <li>Data-driven approach for real results</li>
+                    <li>Cross-platform strategy tailored to your brand</li>
+                    <li>Ongoing support and optimization</li>
+                    <li>Transparent reporting and measurable KPIs</li>
+                    <li>End-to-end digital strategy and implementation</li>
+                    <li>Workshops and training for in-house teams</li>
+
+                </ul>
+            </div>
+            <div class="mt-8 flex justify-end">
+                <a href="#contact" class="bg-primary hover:bg-violet-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+                    Launch Your Campaign
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="support-popup" class="service-popup-content hidden bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-green-500/90 to-green-600/90 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-headset text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark">24/7 Support</h3>
+                </div>
+                <button class="close-popup text-gray-500 hover:text-gray-800 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="mb-6">
+                <img src="https://raw.githubusercontent.com/Zenoguy/LIFETIME/refs/heads/main/assets/services_247.webp" alt="24/7 Support" class="w-full h-64 object-cover rounded-xl">
+            </div>
+            <div class="space-y-4 text-gray-600">
+                <p>Day or night, we’re here for you. Our 24/7 Support service ensures you get the help you need, when you need it — from tech assistance to customer inquiries and emergency resolutions.</p>
+                <h4 class="text-lg font-bold text-primary mt-6">Support Features:</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-green-700">Live Chat</h5>
+                        <p class="text-sm">Real-time help from trained professionals</p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-green-700">Email Support</h5>
+                        <p class="text-sm">Get detailed responses within hours</p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-green-700">Phone Support</h5>
+                        <p class="text-sm">Speak to an expert for instant solutions</p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-green-700">Issue Tracking</h5>
+                        <p class="text-sm">Ticket system to follow your case until resolution</p>
+                    </div>
+                </div>
+                <h4 class="text-lg font-bold text-primary mt-6">Why Our Support Stands Out:</h4>
+                <ul class="list-disc pl-6 text-sm space-y-1">
+                    <li>24/7 availability for uninterrupted assistance</li>
+                    <li>Multichannel access for convenience</li>
+                    <li>Fast resolution times and proactive follow-up</li>
+                    <li>Friendly, knowledgeable, and professional team</li>
+                    <li>Continuous service monitoring to prevent downtime</li>
+                    <li>Customized support solutions for your business needs</li>
+
+                </ul>
+            </div>
+            <div class="mt-8 flex justify-end">
+                <a href="#contact" class="bg-primary hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors close-and-scroll">
+                    Contact Support
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const serviceButtons = document.querySelectorAll('.service-popup-btn');
+        const overlay = document.getElementById('servicePopupOverlay');
+        const popups = document.querySelectorAll('.service-popup-content');
+        const closeButtons = document.querySelectorAll('.close-popup');
+        const closeAndScrollButtons = document.querySelectorAll('.close-and-scroll');
+
+        // Function to open a popup
+        function openPopup(serviceId) {
+            const popup = document.getElementById(`${serviceId}-popup`);
+            if (!popup) {
+                console.error(`Error: Popup with ID "${serviceId}-popup" not found.`);
+                return;
             }
-            
-            // Close when X button is clicked
-            closeButtons.forEach(button => {
-                button.addEventListener('click', closePopup);
+
+            // Hide all popups first
+            popups.forEach(p => p.classList.add('hidden'));
+
+            // Show overlay and the specific popup
+            overlay.classList.remove('hidden');
+            popup.classList.remove('hidden');
+
+            // Prevent body scrolling
+            document.body.style.overflow = 'hidden';
+            // Optional: Add a class to body for custom scrollbar hiding if desired
+            // document.body.classList.add('no-scroll');
+        }
+
+        // Function to close popup
+        function closePopup() {
+            overlay.classList.add('hidden');
+            popups.forEach(popup => popup.classList.add('hidden'));
+            document.body.style.overflow = 'auto';
+            // Optional: Remove custom scrollbar hiding class
+            // document.body.classList.remove('no-scroll');
+        }
+
+        // Event listener for opening popups from service cards
+        serviceButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const service = this.getAttribute('data-service');
+                openPopup(service);
             });
-            
-            // Close when clicking outside the popup
-            overlay.addEventListener('click', function(e) {
-                if (e.target === overlay) {
-                    closePopup();
-                }
-            });
-            
-            // Close and scroll to contact section
-            closeAndScrollButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    closePopup();
-                    
-                    // Small delay to ensure popup is closed before scrolling
-                    setTimeout(() => {
-                        const contactSection = document.getElementById('contact');
+        });
+
+        // Event listener for closing popups using 'X' button
+        closeButtons.forEach(button => {
+            button.addEventListener('click', closePopup);
+        });
+
+        // Event listener for closing popup by clicking on the overlay backdrop
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) { // Ensure only clicks directly on the overlay close it
+                closePopup();
+            }
+        });
+
+        // Event listener for closing popup and scrolling to contact section
+        closeAndScrollButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default anchor jump
+                closePopup();
+
+                // Small delay to ensure popup is closed before scrolling
+                setTimeout(() => {
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
                         contactSection.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
-                });
+                    } else {
+                        console.warn('Contact section not found for scrolling.');
+                    }
+                }, 100);
             });
-            
-            // Close with Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    closePopup();
-                }
-            });
-            const footerServiceLinks = document.querySelectorAll('.footer-section ul a[href^="#"][href$="-popup"]'); // Selects links in footer's service list that point to popups
+        });
 
-    footerServiceLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent default jump to anchor
-            const targetId = this.getAttribute('href').substring(1); // Get the ID (e.g., "mind-management-popup")
-            const popup = document.getElementById(targetId);
-
-            if (popup) {
-                // Re-use existing popup opening logic
-                popups.forEach(p => p.classList.add('hidden')); // Hide all popups first
-                overlay.classList.remove('hidden');
-                popup.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; // Prevent body scrolling
-            } else {
-                console.warn(`Popup with ID "${targetId}" not found.`);
+        // Event listener for closing popup with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !overlay.classList.contains('hidden')) { // Only close if overlay is visible
+                closePopup();
             }
         });
 
-});
+        // Handle footer service links (already in your code, keeping it here for completeness)
+        const footerServiceLinks = document.querySelectorAll('.footer-section ul a[href^="#"][href$="-popup"]');
+        footerServiceLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1); // Get the ID (e.g., "mind-management-popup")
+                const service = targetId.replace('-popup', ''); // Extract service name for openPopup function
+                openPopup(service); // Use the refactored openPopup function
+            });
         });
-        </script>
+    });
+</script>
     <!-- Branches Section -->
     <section id="branches" class="py-20 bg-gradient-to-br from-light to-white">
         <div class="container mx-auto px-6">
@@ -2102,7 +2061,7 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <div class="text-white">
                         <h3 class="text-lg font-bold mb-1">Office Interior</h3>
-                        <p class="text-sm opacity-80">Comfortable and private space.</p>
+                        <p class="text-sm opacity-80">Somenath Dey with Rahul and Shantanu.</p>
                     </div>
                 </div>
             </div>
@@ -2771,22 +2730,22 @@
                     </ul>
                 </div>
 
-                <!-- Services -->
+<!-- Services -->
                     <div class="footer-section">
                         <h3 class="text-lg font-bold mb-6 text-center">Our Services</h3>
                         <ul class="grid grid-cols-2 gap-x-4 gap-y-2 list-none p-0 m-0 mx-auto w-fit">
-                            <li><a href="#mind-management-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Mind Management</a></li>
-                            <li><a href="#stress-management-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Stress Management</a></li>
-                            <li><a href="#group-therapy-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Group Therapy</a></li>
-                            <li><a href="#individual-counseling-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Individual Counseling</a></li>
-                            <li><a href="#corporate-wellness-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Corporate Wellness</a></li>
-                            <li><a href="#support-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">24/7 Support</a></li>
-                            <li><a href="#mindfulness-coaching-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Mindfulness Coaching</a></li>
-                            <li><a href="#resilience-building-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Resilience Building</a></li>
-                            <li><a href="#youth-counseling-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Youth Counseling</a></li>
-                            <li><a href="#relationship-counseling-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Relationship Counseling</a></li>
-                            <li><a href="#leadership-coaching-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Leadership Coaching</a></li>
-                            <li><a href="#cbt-therapy-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">CBT Therapy</a></li>
+                            <li><a href="#financial-hub-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Financial Hule</a></li>
+                            <li><a href="#education-training-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Education Training</a></li>
+                            <li><a href="#vocational-training-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Vocational Training</a></li>
+                            <li><a href="#professional-training-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Professional Training</a></li>
+                            <li><a href="#special-training-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Special Training</a></li>
+                            <li><a href="#corporate-training-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Corporate Training</a></li>
+                            <li><a href="#education-consultancy-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Education Consultancy</a></li>
+                            <li><a href="#job-vacancy-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Job Vacancy</a></li>
+                            <li><a href="#investment-awareness-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Investment Awareness</a></li>
+                            <li><a href="#career-skill-development-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Career & Skill Development</a></li>
+                            <li><a href="#digital-marketing-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">Digital Marketing</a></li>
+                            <li><a href="#24-7-support-popup" class="text-gray-400 hover:text-secondary transition-colors text-sm">24/7 Support</a></li>
                         </ul>
                     </div>
 
