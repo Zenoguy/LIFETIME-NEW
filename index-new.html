@@ -693,6 +693,7 @@
             </div>
         </div>
     </div>
+    </div>
 </section>
 
 <div id="servicePopupOverlay" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4">
@@ -1476,6 +1477,55 @@
             });
         });
     });
+    
+    // Success Stories Carousel - Wait for DOM to be fully loaded
+    setTimeout(() => {
+        let currentSuccessSlide = 0;
+        const successCarousel = document.getElementById('successCarousel');
+        const successDots = document.querySelectorAll('.success-dot');
+        const nextBtn = document.getElementById('nextSuccess');
+        const prevBtn = document.getElementById('prevSuccess');
+        const totalSuccess = 10;
+        
+        if (!successCarousel || !nextBtn || !prevBtn) return;
+        
+        function updateSuccessCarousel() {
+            successCarousel.style.transform = `translateX(-${currentSuccessSlide * 100}%)`;
+            successDots.forEach((dot, index) => {
+                if (index === currentSuccessSlide) {
+                    dot.classList.remove('bg-gray-300');
+                    dot.classList.add('bg-primary');
+                } else {
+                    dot.classList.remove('bg-primary');
+                    dot.classList.add('bg-gray-300');
+                }
+            });
+        }
+        
+        nextBtn.addEventListener('click', () => {
+            currentSuccessSlide = (currentSuccessSlide + 1) % totalSuccess;
+            updateSuccessCarousel();
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            currentSuccessSlide = (currentSuccessSlide - 1 + totalSuccess) % totalSuccess;
+            updateSuccessCarousel();
+        });
+        
+        successDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSuccessSlide = index;
+                updateSuccessCarousel();
+            });
+        });
+        
+        // Auto-play
+        setInterval(() => {
+            currentSuccessSlide = (currentSuccessSlide + 1) % totalSuccess;
+            updateSuccessCarousel();
+        }, 5000);
+    }, 1000);
+
 </script>
     <!-- Branches Section -->
     <section id="branches" class="py-20 bg-gradient-to-br from-light to-white">
@@ -1681,60 +1731,62 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Events Grid 1 -->
                 <div class="event-card bg-light p-6 rounded-2xl shadow-lg border border-gray-100 hover-lift">
-                    <img src="https://via.placeholder.com/600x400/0066cc/FFFFFF?text=Mindfulness+Workshop" alt="Mindfulness Workshop" class="w-full h-48 object-cover rounded-xl mb-6">
-                    <h3 class="text-xl font-bold text-dark mb-3">Annual Mindfulness Retreat</h3>
+                    <img src="assets\BARSHA BARAN UTSAB.jpg" alt="Mindfulness Workshop" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-xl font-bold text-dark mb-3">BARSHA BARAN UTSAB</h3>
                     <p class="text-gray-600 mb-4">
-                        A rejuvenating two-day retreat focused on deep mindfulness practices and stress reduction techniques.
+                        BARSHA BARAN UTSAB organised by Baishakhi Baithak & LIFE TIME  at Sova Bazar  Rajbari. 2007.
                     </p>
                     <div class="flex items-center text-gray-500 text-sm mb-2">
                         <i class="fas fa-calendar-alt mr-2"></i>
-                        <span>November 12-13, 2024</span>
+                        <span>November 12-13, 2007</span>
                     </div>
                     <div class="flex items-center text-gray-500 text-sm mb-4">
                         <i class="fas fa-map-marker-alt mr-2"></i>
-                        <span>The Serene Hills Resort, Darjeeling</span>
+                        <span>Sova Bazar ,Rajbari</span>
                     </div>
                 </div>
                 
                 <!-- Events Grid 2 -->
                 <div class="event-card bg-light p-6 rounded-2xl shadow-lg border border-gray-100 hover-lift">
-                    <img src="https://via.placeholder.com/600x400/00a8ff/FFFFFF?text=Corporate+Wellness+Summit" alt="Corporate Wellness Summit" class="w-full h-48 object-cover rounded-xl mb-6">
-                    <h3 class="text-xl font-bold text-dark mb-3">Corporate Mental Wellness Summit</h3>
+                    <img src="assets\Biswa Banga Sammalan.jpg" alt="Corporate Wellness Summit" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-xl font-bold text-dark mb-3">Biswa Banga Sammalan</h3>
                     <p class="text-gray-600 mb-4">
-                        Expert-led sessions on fostering mentally healthy workplaces and boosting employee productivity.
+                        A cultural event celebrating the rich heritage of Bengal through art, music, and literature.
+                        Speaker : Some Nath Dey  with Shyamal Sen (Chief Justices),Dr. Sunil Thakur, Sri Biswajiban Majudar, Md. Abdul Khakek (Bangladesh)
+                        On 30th August 2008 at Darbhanga Hall (C.U) 
                     </p>
                     <div class="flex items-center text-gray-500 text-sm mb-2">
                         <i class="fas fa-calendar-alt mr-2"></i>
-                        <span>October 5, 2024</span>
+                        <span>30th August 2008</span>
                     </div>
                     <div class="flex items-center text-gray-500 text-sm mb-4">
                         <i class="fas fa-map-marker-alt mr-2"></i>
-                        <span>Kolkata International Convention Centre</span>
+                        <span>Darbhanga Hall (C.U)</span>
                     </div>
                 </div>
                 
                 <!-- Events Grid 3 -->
                 <div class="event-card bg-light p-6 rounded-2xl shadow-lg border border-gray-100 hover-lift">
-                    <img src="https://via.placeholder.com/600x400/FFD700/000000?text=Youth+Empowerment" alt="Youth Empowerment Seminar" class="w-full h-48 object-cover rounded-xl mb-6">
-                    <h3 class="text-xl font-bold text-dark mb-3">Youth Mind Empowerment Seminar</h3>
+                    <img src="assets\EDUCATION FAIR – NETAJI INDOOR STADIUM.jpg" alt="Youth Empowerment Seminar" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-xl font-bold text-dark mb-3">EDUCATION FAIR – NETAJI INDOOR STADIUM</h3>
                     <p class="text-gray-600 mb-4">
-                        Interactive workshops for young adults on building resilience, managing anxiety, and goal setting.
+                        Interactive workshops for young adults on building resilience and goal setting.
                     </p>
                     <div class="flex items-center text-gray-500 text-sm mb-2">
                         <i class="fas fa-calendar-alt mr-2"></i>
-                        <span>September 18, 2024</span>
+                        <span>October 27, 2024</span>
                     </div>
                     <div class="flex items-center text-gray-500 text-sm mb-4">
                         <i class="fas fa-map-marker-alt mr-2"></i>
-                        <span>City Youth Centre, Park Street</span>
+                        <span>BOLPUR SANTINIKETAN</span>
                     </div>
                 </div>
                 <!-- Events Grid 4 -->
                 <div class="event-card bg-light p-6 rounded-2xl shadow-lg border border-gray-100 hover-lift">
-                    <img src="https://via.placeholder.com/600x400/0066cc/FFFFFF?text=Stress+Management+Talk" alt="Stress Management Talk" class="w-full h-48 object-cover rounded-xl mb-6">
-                    <h3 class="text-xl font-bold text-dark mb-3">Public Talk: Mastering Stress</h3>
+                    <img src="assets\LIFE TIME organised Yoga Sibir.jpg" alt="Stress Management Talk" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-xl font-bold text-dark mb-3">LIFE TIME organised Yoga Sibir</h3>
                     <p class="text-gray-600 mb-4">
-                        Our founder, Somenath Dey, shared insights on practical stress management techniques for daily life.
+                        ,Somenath Dey Founder of LIFE TIME organised Yoga Sibir at TALA PARK.
                     </p>
                     <div class="flex items-center text-gray-500 text-sm mb-2">
                         <i class="fas fa-calendar-alt mr-2"></i>
@@ -1742,39 +1794,40 @@
                     </div>
                     <div class="flex items-center text-gray-500 text-sm mb-4">
                         <i class="fas fa-map-marker-alt mr-2"></i>
-                        <span>National Library Auditorium, Kolkata</span>
+                        <span>TALA PARK, West Bengal</span>
                     </div>
                 </div>
                 <!-- Events Grid 5 -->
                 <div class="event-card bg-light p-6 rounded-2xl shadow-lg border border-gray-100 hover-lift">
-                    <img src="https://via.placeholder.com/600x400/00a8ff/FFFFFF?text=Community+Outreach" alt="Community Outreach Program" class="w-full h-48 object-cover rounded-xl mb-6">
-                    <h3 class="text-xl font-bold text-dark mb-3">Community Mental Health Outreach</h3>
+                    <img src="assets\LIFE TIME PATRIKA.jpg" alt="Community Outreach Program" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-xl font-bold text-dark mb-3">LIFE TIME PATRIKA</h3>
                     <p class="text-gray-600 mb-4">
-                        Free counseling sessions and awareness campaigns in local communities to promote mental well-being.
+                        LIFE TIME PATRIKA inaugurated by famous Actor Bimal Chakraborty & Others. On 14th April 2007
+
                     </p>
                     <div class="flex items-center text-gray-500 text-sm mb-2">
                         <i class="fas fa-calendar-alt mr-2"></i>
-                        <span>July 10-15, 2024</span>
+                        <span>14th April 2007</span>
                     </div>
                     <div class="flex items-center text-gray-500 text-sm mb-4">
                         <i class="fas fa-map-marker-alt mr-2"></i>
-                        <span>Various Community Centers, Kolkata</span>
+                        <span>Talapark, Kolkata</span>
                     </div>
                 </div>
                 <!-- Events Grid 6 -->
                 <div class="event-card bg-light p-6 rounded-2xl shadow-lg border border-gray-100 hover-lift">
-                    <img src="https://via.placeholder.com/600x400/FFD700/000000?text=Educator+Workshop" alt="Educator Workshop" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <img src="assets\social activity.jpg" alt="Educator Workshop" class="w-full h-48 object-cover rounded-xl mb-6">
                     <h3 class="text-xl font-bold text-dark mb-3">Mental Health for Educators Workshop</h3>
                     <p class="text-gray-600 mb-4">
-                        Training program for teachers and school counselors on supporting student mental health.
+                    Some Nath Dey with Social Worker Helen Manju Lee
                     </p>
                     <div class="flex items-center text-gray-500 text-sm mb-2">
                         <i class="fas fa-calendar-alt mr-2"></i>
-                        <span>June 20, 2024</span>
+                        <span>June 20, 2007</span>
                     </div>
                     <div class="flex items-center text-gray-500 text-sm mb-4">
                         <i class="fas fa-map-marker-alt mr-2"></i>
-                        <span>Online Webinar</span>
+                        <span>Kolkata , West Bengal</span>
                     </div>
                 </div>
             </div>
@@ -2234,7 +2287,7 @@
     </script>
 
 
-    <!-- Testimonials Section -->
+    <!-- Success Stories Section -->
     <section class="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
         <div class="container mx-auto px-6">
             <!-- Section Header -->
@@ -2242,83 +2295,214 @@
                 <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Success Stories</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Real transformations from our clients and community
+                    Trusted feedback from prestigious organizations we've served
                 </p>
             </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-quote-left text-white"></i>
-                        </div>
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+            
+            <!-- Reviews Carousel -->
+            <div class="relative overflow-hidden max-w-5xl mx-auto">
+                <div id="successCarousel" class="flex transition-transform duration-500 ease-in-out">
+                    <!-- Review 1 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
+                            <div class="flex items-center mb-6">
+                                <div class="flex text-yellow-400 text-xl mr-4">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-industry text-white"></i>
+                                </div>
+                            </div>
+                            <blockquote class="text-xl text-gray-700 mb-6 italic leading-relaxed">
+                                "Highly informative and inspiring — helped our teams plan their finances better."
+                            </blockquote>
+                            <cite class="text-blue-700 font-semibold text-lg">— Damodar Valley Corporation (D.V.C.)</cite>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-6 italic">
-                        "The mind management techniques taught by Somenath completely transformed my approach to stress and productivity. Highly recommended!"
-                    </p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mr-3">
-                            <i class="fas fa-user text-white text-sm"></i>
+                    
+                    <!-- Review 2 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
+                            <div class="flex items-center mb-6">
+                                <div class="flex text-yellow-400 text-xl mr-4">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-shield-alt text-white"></i>
+                                </div>
+                            </div>
+                            <blockquote class="text-xl text-gray-700 mb-6 italic leading-relaxed">
+                                "A rare combination of financial knowledge and psychological insight — deeply impactful."
+                            </blockquote>
+                            <cite class="text-green-700 font-semibold text-lg">— Kolkata Police</cite>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-dark">Rajesh Kumar</h4>
-                            <p class="text-sm text-gray-500">IT Professional, Bangalore</p>
+                    </div>
+                    
+                    <!-- Review 3 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
+                            <div class="flex items-center mb-6">
+                                <div class="flex text-yellow-400 text-xl mr-4">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-city text-white"></i>
+                                </div>
+                            </div>
+                            <blockquote class="text-xl text-gray-700 mb-6 italic leading-relaxed">
+                                "Clear, practical, and empowering — truly added value to our workforce."
+                            </blockquote>
+                            <cite class="text-orange-700 font-semibold text-lg">— Kolkata Municipal Corporation</cite>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 4 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
+                            <div class="flex items-center mb-6">
+                                <div class="flex text-yellow-400 text-xl mr-4">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-university text-white"></i>
+                                </div>
+                            </div>
+                            <blockquote class="text-xl text-gray-700 mb-6 italic leading-relaxed">
+                                "Somenath Dey's insights were both technically strong and easy to apply."
+                            </blockquote>
+                            <cite class="text-purple-700 font-semibold text-lg">— United Bank of India (UBI)</cite>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 5 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
+                            <div class="flex items-center mb-6">
+                                <div class="flex text-yellow-400 text-xl mr-4">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <div class="w-12 h-12 bg-teal-600 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-heartbeat text-white"></i>
+                                </div>
+                            </div>
+                            <blockquote class="text-xl text-gray-700 mb-6 italic leading-relaxed">
+                                "Brilliantly blended science, finance, and self-awareness — unique and beneficial."
+                            </blockquote>
+                            <cite class="text-teal-700 font-semibold text-lg">— World Federation of Homeopathy</cite>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 6 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
+                            <div class="flex items-center mb-6">
+                                <div class="flex text-yellow-400 text-xl mr-4">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-users text-white"></i>
+                                </div>
+                            </div>
+                            <blockquote class="text-xl text-gray-700 mb-6 italic leading-relaxed">
+                                "Life-changing sessions — simplified complex topics for young minds."
+                            </blockquote>
+                            <cite class="text-red-700 font-semibold text-lg">— Ambition Group, Sealdah</cite>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 7 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
+                            <div class="flex items-center mb-6">
+                                <div class="flex text-yellow-400 text-xl mr-4">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-shield text-white"></i>
+                                </div>
+                            </div>
+                            <blockquote class="text-xl text-gray-700 mb-6 italic leading-relaxed">
+                                "An inspiration to all of us in the insurance community."
+                            </blockquote>
+                            <cite class="text-indigo-700 font-semibold text-lg">— LIC of India</cite>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 8 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
+                            <div class="flex items-center mb-6">
+                                <div class="flex text-yellow-400 text-xl mr-4">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <div class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-newspaper text-white"></i>
+                                </div>
+                            </div>
+                            <blockquote class="text-xl text-gray-700 mb-6 italic leading-relaxed">
+                                "A refreshing perspective — relevant to both our professional and personal lives."
+                            </blockquote>
+                            <cite class="text-pink-700 font-semibold text-lg">— Press Club Kolkata</cite>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 9 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
+                            <div class="flex items-center mb-6">
+                                <div class="flex text-yellow-400 text-xl mr-4">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <div class="w-12 h-12 bg-cyan-600 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-palette text-white"></i>
+                                </div>
+                            </div>
+                            <blockquote class="text-xl text-gray-700 mb-6 italic leading-relaxed">
+                                "Incredible balance of science and self-discovery — deeply engaging."
+                            </blockquote>
+                            <cite class="text-cyan-700 font-semibold text-lg">— Kolkata Art and Craft Club</cite>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 10 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
+                            <div class="flex items-center mb-6">
+                                <div class="flex text-yellow-400 text-xl mr-4">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <div class="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-home text-white"></i>
+                                </div>
+                            </div>
+                            <blockquote class="text-xl text-gray-700 mb-6 italic leading-relaxed">
+                                "Rare to find someone who can connect the head and the heart so meaningfully."
+                            </blockquote>
+                            <cite class="text-yellow-700 font-semibold text-lg">— Dr. Agarwal Society</cite>
                         </div>
                     </div>
                 </div>
-
-                <!-- Testimonial 2 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-quote-left text-white"></i>
-                        </div>
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-6 italic">
-                        "Our corporate wellness program with Lifetime has significantly improved employee satisfaction and reduced stress levels across teams."
-                    </p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center mr-3">
-                            <i class="fas fa-user text-white text-sm"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-dark">Priya Sharma</h4>
-                            <p class="text-sm text-gray-500">HR Director, Tech Corp</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Founder Message -->
-                <div class="bg-gradient-to-br from-primary to-secondary p-8 rounded-2xl shadow-lg text-white hover-lift">
-                    <div class="text-center mb-6">
-                        <img src="assets/SOMENATH DEY PHOTO.jpg" alt="Somenath Dey" class="w-20 h-20 rounded-full object-cover mx-auto mb-4 border-3 border-white/30">
-                        <h3 class="text-xl font-bold">Message from Founder</h3>
-                        <p class="text-secondary-100 opacity-90">Somenath Dey</p>
-                    </div>
-                    <p class="text-center italic mb-4">
-                        "Every mind has infinite potential. Our mission is to unlock that potential through personalized, evidence-based approaches to mental wellness."
-                    </p>
-                    <div class="text-center">
-                        <div class="inline-flex items-center space-x-2 bg-white/20 rounded-full px-4 py-2">
-                            <i class="fas fa-heart text-accent"></i>
-                            <span class="text-sm">19+ Years of Service</span>
-                        </div>
-                    </div>
+                
+                <!-- Navigation Buttons -->
+                <button id="prevSuccess" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="nextSuccess" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Dots Indicator -->
+                <div class="flex justify-center mt-8 space-x-2" id="successDots">
+                    <button class="success-dot w-3 h-3 rounded-full bg-primary transition-all duration-300" data-slide="0"></button>
+                    <button class="success-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300" data-slide="1"></button>
+                    <button class="success-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300" data-slide="2"></button>
+                    <button class="success-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300" data-slide="3"></button>
+                    <button class="success-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300" data-slide="4"></button>
+                    <button class="success-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300" data-slide="5"></button>
+                    <button class="success-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300" data-slide="6"></button>
+                    <button class="success-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300" data-slide="7"></button>
+                    <button class="success-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300" data-slide="8"></button>
+                    <button class="success-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300" data-slide="9"></button>
                 </div>
             </div>
         </div>
