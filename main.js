@@ -387,7 +387,7 @@ function initAnimations() {
         x: 50, 
         delay: 0.5 
     });
-
+/*
     // Services cards with enhanced animation
     gsap.from(".service-card", {
         opacity: 0,
@@ -410,6 +410,19 @@ function initAnimations() {
             });
         }
     });
+*/
+// // Lighter version
+// gsap.from(".service-card", {
+//     opacity: 0,
+//     y: 40,
+//     duration: 0.5,
+//     ease: "power2.out",
+//     stagger: 0.1,
+//     scrollTrigger: {
+//         trigger: "#services",
+//         start: "top 85%"
+//     }
+// });
 
     // Team cards
     utils.scrollTriggerFade(".team-card", "#team", {
