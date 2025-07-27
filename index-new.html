@@ -99,6 +99,75 @@
             z-index: 96;
         }
         
+        /* Mobile video container optimizations */
+        @media (max-width: 768px) {
+            #videoContainer {
+                padding-bottom: 45% !important; /* Better mobile ratio */
+                max-width: 100%;
+                margin: 0 auto;
+                min-height: 200px; /* Ensure minimum height */
+            }
+            
+            .glass-effect {
+                padding: 1rem !important; /* Reduce padding on mobile */
+            }
+            
+            /* Ensure video thumbnail is properly sized and visible */
+            #videoContainer img {
+                object-fit: cover;
+                width: 100% !important;
+                height: 100% !important;
+                display: block !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+            
+            /* Ensure video container content is visible */
+            #videoContainer a {
+                display: block !important;
+                width: 100% !important;
+                height: 100% !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            #videoContainer {
+                padding-bottom: 50% !important; /* Slightly taller on very small screens */
+                min-height: 180px;
+            }
+        }
+        
+        /* Ensure video loads properly */
+        #videoContainer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            min-height: 200px;
+        }
+        
+        /* Ensure video images are visible */
+        #videoContainer img {
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+            z-index: 1 !important;
+        }
+        
+        /* Loading state improvements */
+        #videoContainer .animate-spin {
+            z-index: 10;
+            pointer-events: none; /* Don't block clicks */
+        }
+        
+        /* Ensure loading spinner can be hidden */
+        #videoContainer .bg-gray-900 {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        #videoContainer .bg-gray-900.hidden {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            display: none !important;
+        }
+        
         /* Add subtle animation to hamburger icon */
         #mobileMenuBtn i {
             transition: all 0.3s ease;
@@ -313,12 +382,12 @@
 
                 <!-- Visual Element -->
                 <div class="relative">
-                    <div class="glass-effect rounded-3xl p-8 float-animation">
-                        <div id="videoContainer" class="relative w-full pb-[56.25%] overflow-hidden rounded-2xl">
+                    <div class="glass-effect rounded-3xl p-4 md:p-8 float-animation">
+                        <div id="videoContainer" class="relative w-full pb-[56.25%] sm:pb-[45%] md:pb-[50%] lg:pb-[56.25%] overflow-hidden rounded-2xl">
                             <!-- Video content will be loaded by JavaScript based on device type -->
                             <!-- Loading indicator -->
                             <div class="absolute inset-0 flex items-center justify-center bg-gray-900 rounded-2xl">
-                                <div class="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+                                <div class="w-8 h-8 md:w-12 md:h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
                             </div>
                         </div>
                     </div>

@@ -641,7 +641,7 @@ function initInteractiveElements() {
     const parallaxElements = [
         { element: "#home .absolute.top-20.left-20", speed: 0.2 },
         { element: "#home .absolute.bottom-20.right-20", speed: 0.3 },
-        { element: "#home .absolute.top-1/2.left-1/2", speed: 0.1 },
+        { element: "#home .absolute.top-1\\/2.left-1\\/2", speed: 0.1 },
         { element: ".floating-contact", speed: -0.1 }
     ];
     
