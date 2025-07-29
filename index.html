@@ -15,6 +15,19 @@
     <link rel="preload" href="assets/SOMENATH DEY PHOTO.jpg" as="image">
     <link rel="preload" href="main.js" as="script">
     
+    <!--services-->
+    <link rel="preload" href="https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg" as="image">
+    <link rel="preload" href="https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg" as="image">
+    <link rel="preload" href="https://images.pexels.com/photos/1181472/pexels-photo-1181472.jpeg" as="image">
+    <link rel="preload" href="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg" as="image">
+    <link rel="preload" href="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" as="image">
+    <link rel="preload" href="https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg" as="image">
+    <link rel="preload" href="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg" as="image">
+    <link rel="preload" href="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg" as="image">
+    <link rel="preload" href="https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg" as="image">
+    <link rel="preload" href="https://images.pexels.com/photos/3184425/pexels-photo-3184425.jpeg" as="image">
+    <link rel="preload" href="https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg" as="image">
+    <link rel="preload" href="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg" as="image">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
@@ -209,14 +222,46 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+        .service-card {
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+
+        .carousel-track {
+            will-change: transform;
+        }
         .hover-lift {
             transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
                         box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             will-change: transform, box-shadow;
             transform: translateZ(0); /* Force GPU acceleration */
         }
+        /* Prevent initial carousel layout shift and lag */
+        .carousel-track {
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
 
+        .carousel-slide {
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+
+        /* Pre-position carousel on load */
+        #services {
+            contain: layout style paint;
+        }
+
+        /* Smooth initial render */
+        .carousel-container {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .carousel-container.loaded {
+            opacity: 1;
+        }
         /* New: Hero Section Background Image Layer */
         .hero-subtle-bg-image {
             background-image: url('https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg'); /* Your chosen Pexels image */
@@ -569,205 +614,424 @@
                 Comprehensive mental health solutions tailored to your unique needs
             </p>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid-container">
-            <!--Financial Hub-->
-            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                 style="background-image: url('https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg'); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-
-                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                        <i class="fas fa-money-bill-wave text-white text-4xl"></i>
+        
+        <!-- Carousel Container -->
+        <div class="relative">
+            <!-- Navigation Buttons -->
+            <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full carousel-nav-btn flex items-center justify-center shadow-lg">
+                <i class="fas fa-chevron-left text-gray-600"></i>
+            </button>
+            <button id="nextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full carousel-nav-btn flex items-center justify-center shadow-lg">
+                <i class="fas fa-chevron-right text-gray-600"></i>
+            </button>
+            
+            <!-- Carousel -->
+            <div class="carousel-container mx-12 py-8 md:py-12"></div>
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Financial Hub -->
+                    <div class="carousel-slide">
+                        <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift h-96"
+                             style="background-image: url('https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg'); background-size: cover; background-position: center;">
+                            <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+                            <div class="relative p-6 md:p-8 text-white h-full flex flex-col">
+                                <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                                    <i class="fas fa-money-bill-wave text-white text-4xl"></i>
+                                </div>
+                                <h3 class="text-3xl font-bold mb-4">Financial Hub</h3>
+                                <p class="text-xl text-white/90 mb-6 leading-relaxed">Comprehensive financial planning and investment solutions for your future</p>
+                                <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="financial-hub">
+                                    Learn More <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-3xl font-bold mb-4">Financial Hub</h3>
-                    <p class="text-xl text-white/90 mb-6 leading-relaxed">Comprehensive financial planning and investment solutions for your future</p>
-                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="financial-hub">
-                        Learn More <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
+
+                    <!-- Education Training -->
+                    <div class="carousel-slide">
+                        <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift h-96"
+                             style="background-image: url('https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg'); background-size: cover; background-position: center;">
+                            <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+                            <div class="relative p-6 md:p-8 text-white h-full flex flex-col">
+                                <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                                    <i class="fas fa-graduation-cap text-white text-4xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4">Education Training With George Telegraph Franchise Partner</h3>
+                                <p class="text-lg text-white/90 mb-6 leading-relaxed">Comprehensive educational programs and skill development courses</p>
+                                <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="education-training">
+                                    Learn More <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bilingual Communication -->
+                    <div class="carousel-slide">
+                        <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift h-96"
+                             style="background-image: url('https://images.pexels.com/photos/1181472/pexels-photo-1181472.jpeg'); background-size: cover; background-position: center;">
+                            <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+                            <div class="relative p-6 md:p-8 text-white h-full flex flex-col">
+                                <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                                    <i class="fas fa-tools text-white text-4xl"></i>
+                                </div>
+                                <h3 class="text-3xl font-bold mb-4">Bilingual Communication</h3>
+                                <p class="text-xl text-white/90 mb-6 leading-relaxed">Master fluent communication through our comprehensive program</p>
+                                <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="vocational-training">
+                                    Learn More <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Professional Training -->
+                    <div class="carousel-slide">
+                        <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift h-96"
+                             style="background-image: url('https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg'); background-size: cover; background-position: center;">
+                            <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+                            <div class="relative p-6 md:p-8 text-white h-full flex flex-col">
+                                <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                                    <i class="fas fa-briefcase text-white text-4xl"></i>
+                                </div>
+                                <h3 class="text-3xl font-bold mb-4">Professional Training</h3>
+                                <p class="text-xl text-white/90 mb-6 leading-relaxed">Advanced professional development programs for career growth</p>
+                                <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="professional-training">
+                                    Learn More <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Special Training -->
+                    <div class="carousel-slide">
+                        <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift h-96"
+                             style="background-image: url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg'); background-size: cover; background-position: center;">
+                            <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+                            <div class="relative p-6 md:p-8 text-white h-full flex flex-col">
+                                <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                                    <i class="fas fa-star text-white text-4xl"></i>
+                                </div>
+                                <h3 class="text-3xl font-bold mb-4">Special Training</h3>
+                                <p class="text-xl text-white/90 mb-6 leading-relaxed">Customized training solutions for specific industry needs</p>
+                                <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="special-training">
+                                    Learn More <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Corporate Training -->
+                    <div class="carousel-slide">
+                        <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift h-96"
+                             style="background-image: url('https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg'); background-size: cover; background-position: center;">
+                            <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+                            <div class="relative p-6 md:p-8 text-white h-full flex flex-col">
+                                <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                                    <i class="fas fa-building text-white text-4xl"></i>
+                                </div>
+                                <h3 class="text-3xl font-bold mb-4">Corporate Training</h3>
+                                <p class="text-xl text-white/90 mb-6 leading-relaxed">Enterprise-level training and development solutions</p>
+                                <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="corporate-training">
+                                    Learn More <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Consultancy -->
+                    <div class="carousel-slide">
+                        <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift h-96"
+                             style="background-image: url('https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg'); background-size: cover; background-position: center;">
+                            <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+                            <div class="relative p-6 md:p-8 text-white h-full flex flex-col">
+                                <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                                    <i class="fas fa-book text-white text-4xl"></i>
+                                </div>
+                                <h3 class="text-3xl font-bold mb-4">Education Consultancy</h3>
+                                <p class="text-xl text-white/90 mb-6 leading-relaxed">Strategic educational planning and advisory services</p>
+                                <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="education-consultancy">
+                                    Learn More <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job Vacancy -->
+                    <div class="carousel-slide">
+                        <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift h-96"
+                             style="background-image: url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg'); background-size: cover; background-position: center;">
+                            <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+                            <div class="relative p-6 md:p-8 text-white h-full flex flex-col">
+                                <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                                    <i class="fas fa-briefcase text-white text-4xl"></i>
+                                </div>
+                                <h3 class="text-3xl font-bold mb-4">Job Vacancy</h3>
+                                <p class="text-xl text-white/90 mb-6 leading-relaxed">Employment opportunities and recruitment services</p>
+                                <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="job-vacancy">
+                                    Learn More <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Investment Awareness -->
+                    <div class="carousel-slide">
+                        <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift h-96"
+                             style="background-image: url('https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg'); background-size: cover; background-position: center;">
+                            <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+                            <div class="relative p-6 md:p-8 text-white h-full flex flex-col">
+                                <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                                    <i class="fas fa-chart-line text-white text-4xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4">Investment Awareness Program</h3>
+                                <p class="text-lg text-white/90 mb-6 leading-relaxed">Financial literacy and investment education programs</p>
+                                <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="investment-awareness">
+                                    Learn More <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Career & Skill Development -->
+                    <div class="carousel-slide">
+                        <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift h-96"
+                             style="background-image: url('https://images.pexels.com/photos/3184425/pexels-photo-3184425.jpeg'); background-size: cover; background-position: center;">
+                            <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+                            <div class="relative p-6 md:p-8 text-white h-full flex flex-col">
+                                <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                                    <i class="fas fa-rocket text-white text-4xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4">Career & Skill Development</h3>
+                                <p class="text-lg text-white/90 mb-6 leading-relaxed">Professional growth and skill enhancement programs</p>
+                                <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="career-skill-development">
+                                    Learn More <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Digital Marketing -->
+                    <div class="carousel-slide">
+                        <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift h-96"
+                             style="background-image: url('https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg'); background-size: cover; background-position: center;">
+                            <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+                            <div class="relative p-6 md:p-8 text-white h-full flex flex-col">
+                                <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                                    <i class="fas fa-laptop-code text-white text-4xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4">Digital Marketing With AI</h3>
+                                <p class="text-lg text-white/90 mb-6 leading-relaxed">Comprehensive digital marketing solutions and training</p>
+                                <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="digital-marketing">
+                                    Learn More <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="carousel-slide">
+                        <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift h-96"
+                             style="background-image: url('https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg'); background-size: cover; background-position: center;">
+                            <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+                            <div class="relative p-6 md:p-8 text-white h-full flex flex-col">
+                                <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
+                                    <i class="fas fa-phone text-white text-4xl"></i>
+                                </div>
+                                <h3 class="text-3xl font-bold mb-4">24/7 Support</h3>
+                                <p class="text-xl text-white/90 mb-6 leading-relaxed">Round-the-clock crisis intervention and emergency mental health support</p>
+                                <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="support">
+                                    Learn More <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!--Education Training-->
-            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                 style="background-image: url('https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg'); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-
-                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                        <i class="fas fa-graduation-cap text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold mb-4">Education Training With George Telegraph Franchise Partner</h3>
-                    <p class="text-xl text-white/90 mb-6 leading-relaxed">Comprehensive educational programs and skill development courses</p>
-                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="education-training">
-                        Learn More <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
-                </div>
-            </div>
-            <!--Vocational Training-->
-            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                 style="background-image: url('https://images.pexels.com/photos/1181472/pexels-photo-1181472.jpeg'); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-
-
-                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                        <i class="fas fa-tools text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold mb-4">Bilingual Communication</h3>
-                    <p class="text-xl text-white/90 mb-6 leading-relaxed">Master fluent communication  through our comprehensive program</p>
-                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="vocational-training">
-                        Learn More <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
-                </div>
-            </div>
-            <!--Professional Training-->
-            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                 style="background-image: url('https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg'); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-
-                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                        <i class="fas fa-briefcase text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold mb-4">Professional Training</h3>
-                    <p class="text-xl text-white/90 mb-6 leading-relaxed">Advanced professional development programs for career growth</p>
-                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="professional-training">
-                        Learn More <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
-                </div>
-            </div>
-            <!--Special Training-->
-            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                 style="background-image: url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg'); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-
-                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                        <i class="fas fa-star text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold mb-4">Special Training</h3>
-                    <p class="text-xl text-white/90 mb-6 leading-relaxed">Customized training solutions for specific industry needs</p>
-                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="special-training">
-                        Learn More <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
-                </div>
-            </div>
-            <!--Corporate Training-->
-            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                 style="background-image: url('https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg'); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-
-                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                        <i class="fas fa-building text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold mb-4">Corporate Training</h3>
-                    <p class="text-xl text-white/90 mb-6 leading-relaxed">Enterprise-level training and development solutions</p>
-                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="corporate-training">
-                        Learn More <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
-                </div>
-            </div>
-            <!--Education Consultancy-->
-            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                 style="background-image: url('https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg'); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-
-                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                        <i class="fas fa-book text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold mb-4">Education Consultancy</h3>
-                    <p class="text-xl text-white/90 mb-6 leading-relaxed">Strategic educational planning and advisory services</p>
-                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="education-consultancy">
-                        Learn More <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
-                </div>
-            </div>
-            <!--Job Vacancy-->
-            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                 style="background-image: url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg'); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-
-                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                        <i class="fas fa-briefcase text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold mb-4">Job Vacancy</h3>
-                    <p class="text-xl text-white/90 mb-6 leading-relaxed">Employment opportunities and recruitment services</p>
-                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="job-vacancy">
-                        Learn More <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
-                </div>
-            </div>
-            <!--Investment Awareness-->
-            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                 style="background-image: url('https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg'); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-
-                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                        <i class="fas fa-chart-line text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold mb-4">Investment Awareness Program</h3>
-                    <p class="text-xl text-white/90 mb-6 leading-relaxed">Financial literacy and investment education programs</p>
-                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="investment-awareness">
-                        Learn More <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
-                </div>
-            </div>
-            <!--Career & Skill Development-->
-            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                 style="background-image: url('https://images.pexels.com/photos/3184425/pexels-photo-3184425.jpeg'); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-
-                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                        <i class="fas fa-rocket text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold mb-4">Career & Skill Development</h3>
-                    <p class="text-xl text-white/90 mb-6 leading-relaxed">Professional growth and skill enhancement programs</p>
-                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="career-skill-development">
-                        Learn More <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
-                </div>
-            </div>
-            <!--Digital Marketing-->
-            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                 style="background-image: url('https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg'); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-
-                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                        <i class="fas fa-laptop-code text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold mb-4">Digital Marketing With AI</h3>
-                    <p class="text-xl text-white/90 mb-6 leading-relaxed">Comprehensive digital marketing solutions and training</p>
-                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="digital-marketing">
-                        Learn More <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
-                </div>
-            </div>
-            <!--Support-->
-            <div class="service-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift"
-                 style="background-image: url('https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg'); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-
-                <div class="relative p-8 text-white min-h-[320px] flex flex-col">
-                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 drop-shadow-lg">
-                        <i class="fas fa-phone text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold mb-4">24/7 Support</h3>
-                    <div class="text-xl text-white/90 mb-6 leading-relaxed">Round-the-clock crisis intervention and emergency mental health support.</div>
-                    <button class="service-popup-btn text-white font-semibold hover:text-yellow-200 transition-colors mt-auto" data-service="support">
-                        Learn More <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
-                </div>
+            
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators" id="carouselIndicators">
+                <!-- Indicators will be generated by JavaScript -->
             </div>
         </div>
     </div>
-    </div>
 </section>
 
+<style>
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.carousel-container {
+    overflow: hidden;
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-slide {
+    min-width: calc(100% / 3);
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+}
+.carousel-nav-btn {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+.carousel-nav-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+}
+.carousel-nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.indicator.active {
+    background: #3B82F6;
+    transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .carousel-slide {
+        min-width: 50%;
+    }
+}
+@media (max-width: 768px) {
+    .carousel-slide {
+        min-width: 100%;
+    }
+}
+
+.text-primary { color: #3B82F6; }
+.text-secondary { color: #10B981; }
+.text-dark { color: #1F2937; }
+.bg-primary { background-color: #3B82F6; }
+.bg-secondary { background-color: #10B981; }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.getElementById('carouselTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const indicators = document.getElementById('carouselIndicators');
+    const slides = document.querySelectorAll('.carousel-slide');
+    
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    const slidesPerView = window.innerWidth >= 1024 ? 3 : (window.innerWidth >= 768 ? 2 : 1);
+    const maxIndex = Math.max(0, totalSlides - slidesPerView);
+    
+    // Create indicators
+    function createIndicators() {
+        indicators.innerHTML = '';
+        const indicatorCount = Math.ceil(totalSlides / slidesPerView);
+        for (let i = 0; i < indicatorCount; i++) {
+            const indicator = document.createElement('div');
+            indicator.className = `indicator ${i === 0 ? 'active' : ''}`;
+            indicator.addEventListener('click', () => goToSlide(i * slidesPerView));
+            indicators.appendChild(indicator);
+        }
+    }
+    
+    // Update carousel position
+    function updateCarousel() {
+        const slideWidth = 100 / slidesPerView;
+        track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+        
+        // Update indicators
+        const activeIndicatorIndex = Math.floor(currentIndex / slidesPerView);
+        document.querySelectorAll('.indicator').forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === activeIndicatorIndex);
+        });
+        
+        // Update button states
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex >= maxIndex;
+    }
+    
+    // Go to specific slide
+    function goToSlide(index) {
+        currentIndex = Math.max(0, Math.min(index, maxIndex));
+        updateCarousel();
+    }
+    
+    // Next slide
+    function nextSlide() {
+        if (currentIndex < maxIndex) {
+            currentIndex += slidesPerView;
+            if (currentIndex > maxIndex) currentIndex = maxIndex;
+            updateCarousel();
+        }
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        if (currentIndex > 0) {
+            currentIndex -= slidesPerView;
+            if (currentIndex < 0) currentIndex = 0;
+            updateCarousel();
+        }
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        const newSlidesPerView = window.innerWidth >= 1024 ? 3 : (window.innerWidth >= 768 ? 2 : 1);
+        if (newSlidesPerView !== slidesPerView) {
+            location.reload(); // Simple way to handle responsive changes
+        }
+    });
+    
+    // Auto-play (optional)
+    let autoPlay = setInterval(() => {
+        if (currentIndex >= maxIndex) {
+            currentIndex = 0;
+        } else {
+            nextSlide();
+        }
+    }, 5000);
+    
+    // Pause auto-play on hover
+    track.addEventListener('mouseenter', () => clearInterval(autoPlay));
+    track.addEventListener('mouseleave', () => {
+        autoPlay = setInterval(() => {
+            if (currentIndex >= maxIndex) {
+                currentIndex = 0;
+            } else {
+                nextSlide();
+            }
+        }, 5000);
+    });
+    
+    // Initialize
+    createIndicators();
+    updateCarousel();
+    setTimeout(() => {
+        document.querySelector('.carousel-container').classList.add('loaded');
+    }, 100);
+    });
+</script>
 <!--services popups: -->>
 <div id="servicePopupOverlay" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4">
 
@@ -2935,13 +3199,12 @@
                             <label class="block text-white font-medium mb-2">Service Interested In</label>
                             <select name="service" class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-secondary">
                                 <option value="text-black">Select a service</option>
-                                <option class="text-black" value="mind-management">Mutual funds</option>
-                                <option class="text-black" value="stress-management">Education training - Digital India and Accountst</option>
-                                <option class="text-black" value="group-therapy">LIC and Mediclaim</option>
-                                <option class="text-black" value="individual-counseling">Digital Marketing</option>
-                                <option class="text-black" value="corporate-wellness">Corporate Wellness</option>
-                                <option class="text-black" value="24-7-support">Mutual funds</option>
-                                <option class="text-black" value="mind-management">Mind & Stress Management</option>
+                                <option class="text-black" value="Mutual funds">Mutual funds</option>
+                                <option class="text-black" value="Education-training">Education training - Digital India and Accountst</option>
+                                <option class="text-black" value="LIC and Mediclain">LIC and Mediclaim</option>
+                                <option class="text-black" value="Digital Marketing">Digital Marketing</option>
+                                <option class="text-black" value="Corporate Wellness">Corporate Wellness</option>
+                                <option class="text-black" value="mind & stress management">Mind & Stress Management</option>
                             </select>
                         </div>
 
