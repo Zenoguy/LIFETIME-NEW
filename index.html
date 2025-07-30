@@ -1003,26 +1003,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Auto-play (optional)
-    let autoPlay = setInterval(() => {
-        if (currentIndex >= maxIndex) {
-            currentIndex = 0;
-        } else {
-            nextSlide();
-        }
-    }, 5000);
+    // // Auto-play (optional)
+    // let autoPlay = setInterval(() => {
+    //     if (currentIndex >= maxIndex) {
+    //         currentIndex = 0;
+    //     } else {
+    //         nextSlide();
+    //     }
+    // }, 5000);
     
-    // Pause auto-play on hover
-    track.addEventListener('mouseenter', () => clearInterval(autoPlay));
-    track.addEventListener('mouseleave', () => {
-        autoPlay = setInterval(() => {
-            if (currentIndex >= maxIndex) {
-                currentIndex = 0;
-            } else {
-                nextSlide();
-            }
-        }, 5000);
-    });
+    // // Pause auto-play on hover
+    // track.addEventListener('mouseenter', () => clearInterval(autoPlay));
+    // track.addEventListener('mouseleave', () => {
+    //     autoPlay = setInterval(() => {
+    //         if (currentIndex >= maxIndex) {
+    //             currentIndex = 0;
+    //         } else {
+    //             nextSlide();
+    //         }
+    //     }, 5000);
+    // });
     
     // Initialize
     createIndicators();
