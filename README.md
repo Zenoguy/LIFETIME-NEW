@@ -115,7 +115,7 @@ Update the CSS custom properties in `styles.css`:
 
 - **Email**: lifetimeworld07@gmail.com
 - **Phone**: +91 88 8981 0127 76
-- **Location**: Mumbai, Maharashtra, India
+- **Location**: kolkata west bengal, India
 
 ## 🚀 Deployment
 
