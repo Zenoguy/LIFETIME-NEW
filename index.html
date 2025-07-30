@@ -381,10 +381,11 @@
                         <!-- <span class="gradient-text">Mind</span> -->
                     </h1>
                     
-                        <p class="text-2xl text-yellow-400  mb-8 leading-relaxed">
+                        <h2 class="text-yellow-600 text-lg font-bold mb-6 leading-snug">
                             Wealth & Mind Management. <br>
                             Expert in Mutual Funds, LIC, MediClaim & Income Tax.
-                        </p>
+                        </h2>
+
 
                     <!-- Founder Intro -->
                     <div class="glass-effect rounded-2xl p-6 mb-8">
@@ -2160,121 +2161,214 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
         <!-- Events Section -->
-    <section id="events" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Our Events</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    A look back at our past workshops, seminars, and community engagements
-                </p>
+        <!-- Events Section -->
+        <section id="events" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Our Events</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        A look back at our past workshops, seminars, and community engagements
+                    </p>
+                </div>
+                
+                <div class="relative overflow-hidden">
+                    <!-- Navigation Arrows -->
+                    <button id="eventsPrevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110">
+                        <i class="fas fa-chevron-left text-gray-700"></i>
+                    </button>
+                    <button id="eventsNextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110">
+                        <i class="fas fa-chevron-right text-gray-700"></i>
+                    </button>
+                    
+                    <div id="eventsCarousel" class="flex transition-transform duration-700 ease-in-out">
+                        <!-- Event Card 1 -->
+                        <div class="group bg-light p-6 rounded-2xl shadow-lg border border-gray-100 w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4 mx-2 transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:border-primary/20">
+                            <div class="overflow-hidden rounded-xl mb-4">
+                                <img src="assets/BARSHA BARAN UTSAB.jpg" alt="Barsha Baran Utsab" 
+                                    class="w-full h-48 object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+                            </div>
+                            <h3 class="text-lg font-bold text-dark mb-2">BARSHA BARAN UTSAB</h3>
+                            <p class="text-gray-600 mb-3 text-sm line-clamp-2">
+                                BARSHA BARAN UTSAB organised by Baishakhi Baithak & LIFE TIME at Sova Bazar Rajbari.
+                            </p>
+                            <div class="flex items-center text-gray-500 text-xs mb-1">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                <span>November 12-13, 2007</span>
+                            </div>
+                            <div class="flex items-center text-gray-500 text-xs">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span>Sova Bazar, Rajbari</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Event Card 2 -->
+                        <div class="group bg-light p-6 rounded-2xl shadow-lg border border-gray-100 w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4 mx-2 transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:border-primary/20">
+                            <div class="overflow-hidden rounded-xl mb-4">
+                                <img src="assets/Biswa Banga Sammalan.jpg" alt="Biswa Banga Sammalan" 
+                                    class="w-full h-48 object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+                            </div>
+                            <h3 class="text-lg font-bold text-dark mb-2">Biswa Banga Sammalan</h3>
+                            <p class="text-gray-600 mb-3 text-sm line-clamp-3">
+                                A cultural event celebrating the rich heritage of Bengal through art, music, and literature.
+                            </p>
+                            <div class="flex items-center text-gray-500 text-xs mb-1">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                <span>30th August 2008</span>
+                            </div>
+                            <div class="flex items-center text-gray-500 text-xs">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span>Darbhanga Hall (C.U)</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Event Card 3 -->
+                        <div class="group bg-light p-6 rounded-2xl shadow-lg border border-gray-100 w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4 mx-2 transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:border-primary/20">
+                            <div class="overflow-hidden rounded-xl mb-4">
+                                <img src="assets/EDUCATION FAIR – NETAJI INDOOR STADIUM.jpg" alt="Education Fair" 
+                                    class="w-full h-48 object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+                            </div>
+                            <h3 class="text-lg font-bold text-dark mb-2">EDUCATION FAIR</h3>
+                            <p class="text-gray-600 mb-3 text-sm line-clamp-3">
+                                Interactive workshops for young adults on building resilience and goal setting.
+                            </p>
+                            <div class="flex items-center text-gray-500 text-xs mb-1">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                <span>October 27, 2024</span>
+                            </div>
+                            <div class="flex items-center text-gray-500 text-xs">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span>Bolpur Santiniketan</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Event Card 4 -->
+                        <div class="group bg-light p-6 rounded-2xl shadow-lg border border-gray-100 w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4 mx-2 transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:border-primary/20">
+                            <div class="overflow-hidden rounded-xl mb-4">
+                                <img src="assets/LIFE TIME organised Yoga Sibir.jpg" alt="Yoga Sibir" 
+                                    class="w-full h-48 object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+                            </div>
+                            <h3 class="text-lg font-bold text-dark mb-2">Yoga Sibir</h3>
+                            <p class="text-gray-600 mb-3 text-sm line-clamp-3">
+                                Somenath Dey Founder of LIFE TIME organised Yoga Sibir at Tala Park.
+                            </p>
+                            <div class="flex items-center text-gray-500 text-xs mb-1">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                <span>August 2, 2024</span>
+                            </div>
+                            <div class="flex items-center text-gray-500 text-xs">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span>Tala Park, West Bengal</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Event Card 5 -->
+                        <div class="group bg-light p-6 rounded-2xl shadow-lg border border-gray-100 w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4 mx-2 transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:border-primary/20">
+                            <div class="overflow-hidden rounded-xl mb-4">
+                                <img src="assets/LIFE TIME PATRIKA.jpg" alt="Lifetime Patrika" 
+                                    class="w-full h-48 object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+                            </div>
+                            <h3 class="text-lg font-bold text-dark mb-2">LIFE TIME PATRIKA</h3>
+                            <p class="text-gray-600 mb-3 text-sm line-clamp-3">
+                                LIFE TIME PATRIKA inaugurated by famous Actor Bimal Chakraborty & Others.
+                            </p>
+                            <div class="flex items-center text-gray-500 text-xs mb-1">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                <span>14th April 2007</span>
+                            </div>
+                            <div class="flex items-center text-gray-500 text-xs">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span>Tala Park, Kolkata</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Event Card 6 -->
+                        <div class="group bg-light p-6 rounded-2xl shadow-lg border border-gray-100 w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4 mx-2 transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:border-primary/20">
+                            <div class="overflow-hidden rounded-xl mb-4">
+                                <img src="assets/ltevent.jpeg" alt="George Telegraph Institute" 
+                                    class="w-full h-48 object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+                            </div>
+                            <h3 class="text-lg font-bold text-dark mb-2">GEORGE TELEGRAPH TRAINING</h3>
+                            <p class="text-gray-600 mb-3 text-sm line-clamp-3">
+                                Inauguration of GEORGE TELEGRAPH TRAINING INSTITUTE by Somenath Dey.
+                            </p>
+                            <div class="flex items-center text-gray-500 text-xs mb-1">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                <span>27 June, 2025</span>
+                            </div>
+                            <div class="flex items-center text-gray-500 text-xs">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span>Rishra, Hooghly</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Event Card 7 -->
+                        <div class="group bg-light p-6 rounded-2xl shadow-lg border border-gray-100 w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4 mx-2 transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:border-primary/20">
+                            <div class="overflow-hidden rounded-xl mb-4">
+                                <img src="assets/social activity.jpg" alt="Social Activity" 
+                                    class="w-full h-48 object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+                            </div>
+                            <h3 class="text-lg font-bold text-dark mb-2">Social Activity</h3>
+                            <p class="text-gray-600 mb-3 text-sm line-clamp-3">
+                                Some Nath Dey with Social Worker Helen Manju Lee
+                            </p>
+                            <div class="flex items-center text-gray-500 text-xs mb-1">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                <span>June 20, 2007</span>
+                            </div>
+                            <div class="flex items-center text-gray-500 text-xs">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span>Kolkata, West Bengal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Events Grid 1 -->
-                <div class="event-card bg-light p-6 rounded-2xl shadow-lg border border-gray-100 hover-lift">
-                    <img src="assets\BARSHA BARAN UTSAB.jpg" alt="Mindfulness Workshop" class="w-full h-48 object-cover rounded-xl mb-6">
-                    <h3 class="text-xl font-bold text-dark mb-3">BARSHA BARAN UTSAB</h3>
-                    <p class="text-gray-600 mb-4">
-                        BARSHA BARAN UTSAB organised by Baishakhi Baithak & LIFE TIME  at Sova Bazar  Rajbari. 2007.
-                    </p>
-                    <div class="flex items-center text-gray-500 text-sm mb-2">
-                        <i class="fas fa-calendar-alt mr-2"></i>
-                        <span>November 12-13, 2007</span>
-                    </div>
-                    <div class="flex items-center text-gray-500 text-sm mb-4">
-                        <i class="fas fa-map-marker-alt mr-2"></i>
-                        <span>Sova Bazar ,Rajbari</span>
-                    </div>
-                </div>
-                
-                <!-- Events Grid 2 -->
-                <div class="event-card bg-light p-6 rounded-2xl shadow-lg border border-gray-100 hover-lift">
-                    <img src="assets\Biswa Banga Sammalan.jpg" alt="Corporate Wellness Summit" class="w-full h-48 object-cover rounded-xl mb-6">
-                    <h3 class="text-xl font-bold text-dark mb-3">Biswa Banga Sammalan</h3>
-                    <p class="text-gray-600 mb-4">
-                        A cultural event celebrating the rich heritage of Bengal through art, music, and literature.
-                        Speaker : Some Nath Dey  with Shyamal Sen (Chief Justices),Dr. Sunil Thakur, Sri Biswajiban Majudar, Md. Abdul Khakek (Bangladesh)
-                        On 30th August 2008 at Darbhanga Hall (C.U) 
-                    </p>
-                    <div class="flex items-center text-gray-500 text-sm mb-2">
-                        <i class="fas fa-calendar-alt mr-2"></i>
-                        <span>30th August 2008</span>
-                    </div>
-                    <div class="flex items-center text-gray-500 text-sm mb-4">
-                        <i class="fas fa-map-marker-alt mr-2"></i>
-                        <span>Darbhanga Hall (C.U)</span>
-                    </div>
-                </div>
-                
-                <!-- Events Grid 3 -->
-                <div class="event-card bg-light p-6 rounded-2xl shadow-lg border border-gray-100 hover-lift">
-                    <img src="assets\EDUCATION FAIR – NETAJI INDOOR STADIUM.jpg" alt="Youth Empowerment Seminar" class="w-full h-48 object-cover rounded-xl mb-6">
-                    <h3 class="text-xl font-bold text-dark mb-3">EDUCATION FAIR – NETAJI INDOOR STADIUM</h3>
-                    <p class="text-gray-600 mb-4">
-                        Interactive workshops for young adults on building resilience and goal setting.
-                    </p>
-                    <div class="flex items-center text-gray-500 text-sm mb-2">
-                        <i class="fas fa-calendar-alt mr-2"></i>
-                        <span>October 27, 2024</span>
-                    </div>
-                    <div class="flex items-center text-gray-500 text-sm mb-4">
-                        <i class="fas fa-map-marker-alt mr-2"></i>
-                        <span>BOLPUR SANTINIKETAN</span>
-                    </div>
-                </div>
-                <!-- Events Grid 4 -->
-                <div class="event-card bg-light p-6 rounded-2xl shadow-lg border border-gray-100 hover-lift">
-                    <img src="assets\LIFE TIME organised Yoga Sibir.jpg" alt="Stress Management Talk" class="w-full h-48 object-cover rounded-xl mb-6">
-                    <h3 class="text-xl font-bold text-dark mb-3">LIFE TIME organised Yoga Sibir</h3>
-                    <p class="text-gray-600 mb-4">
-                        ,Somenath Dey Founder of LIFE TIME organised Yoga Sibir at TALA PARK.
-                    </p>
-                    <div class="flex items-center text-gray-500 text-sm mb-2">
-                        <i class="fas fa-calendar-alt mr-2"></i>
-                        <span>August 2, 2024</span>
-                    </div>
-                    <div class="flex items-center text-gray-500 text-sm mb-4">
-                        <i class="fas fa-map-marker-alt mr-2"></i>
-                        <span>TALA PARK, West Bengal</span>
-                    </div>
-                </div>
-                <!-- Events Grid 5 -->
-                <div class="event-card bg-light p-6 rounded-2xl shadow-lg border border-gray-100 hover-lift">
-                    <img src="assets\LIFE TIME PATRIKA.jpg" alt="Community Outreach Program" class="w-full h-48 object-cover rounded-xl mb-6">
-                    <h3 class="text-xl font-bold text-dark mb-3">LIFE TIME PATRIKA</h3>
-                    <p class="text-gray-600 mb-4">
-                        LIFE TIME PATRIKA inaugurated by famous Actor Bimal Chakraborty & Others. On 14th April 2007
-
-                    </p>
-                    <div class="flex items-center text-gray-500 text-sm mb-2">
-                        <i class="fas fa-calendar-alt mr-2"></i>
-                        <span>14th April 2007</span>
-                    </div>
-                    <div class="flex items-center text-gray-500 text-sm mb-4">
-                        <i class="fas fa-map-marker-alt mr-2"></i>
-                        <span>Talapark, Kolkata</span>
-                    </div>
-                </div>
-                <!-- Events Grid 6 -->
-                <div class="event-card bg-light p-6 rounded-2xl shadow-lg border border-gray-100 hover-lift">
-                    <img src="assets\social activity.jpg" alt="Educator Workshop" class="w-full h-48 object-cover rounded-xl mb-6">
-                    <h3 class="text-xl font-bold text-dark mb-3">Mental Health for Educators Workshop</h3>
-                    <p class="text-gray-600 mb-4">
-                    Some Nath Dey with Social Worker Helen Manju Lee
-                    </p>
-                    <div class="flex items-center text-gray-500 text-sm mb-2">
-                        <i class="fas fa-calendar-alt mr-2"></i>
-                        <span>June 20, 2007</span>
-                    </div>
-                    <div class="flex items-center text-gray-500 text-sm mb-4">
-                        <i class="fas fa-map-marker-alt mr-2"></i>
-                        <span>Kolkata , West Bengal</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const carousel = document.getElementById('eventsCarousel');
+                    const prevBtn = document.getElementById('eventsPrevBtn');
+                    const nextBtn = document.getElementById('eventsNextBtn');
+                    
+                    if (!carousel) return;
+                    
+                    let currentIndex = 0;
+                    const cards = carousel.children;
+                    const totalCards = cards.length;
+                    
+                    function getVisibleCards() {
+                        return window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+                    }
+                    
+                    function updateCarousel() {
+                        const visibleCards = getVisibleCards();
+                        const cardWidth = 100 / visibleCards;
+                        carousel.style.transform = `translateX(-${currentIndex * cardWidth}%)`;
+                    }
+                    
+                    function next() {
+                        const visibleCards = getVisibleCards();
+                        const maxIndex = totalCards - visibleCards;
+                        currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+                        updateCarousel();
+                    }
+                    
+                    function prev() {
+                        const visibleCards = getVisibleCards();
+                        const maxIndex = totalCards - visibleCards;
+                        currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+                        updateCarousel();
+                    }
+                    
+                    if (nextBtn) nextBtn.onclick = next;
+                    if (prevBtn) prevBtn.onclick = prev;
+                    
+                    setInterval(next, 3000);
+                    updateCarousel();
+                });
+            </script>
+        </section>
     <!-- Why Choose Us Section -->
     <section id="why-choose-us" class="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
         <div class="container mx-auto px-4">
@@ -3218,7 +3312,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <a href="#" class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-all duration-300">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="#" class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-all duration-300">
+                            <a href="https://www.youtube.com/@lifetimeworld" class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-all duration-300">
                                 <i class="fab fa-youtube"></i>
                             </a>
                             <a href="https://www.youtube.com/@lifetimeworld" class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-all duration-300">
@@ -3417,7 +3511,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Floating Contact Buttons -->
     <div class="floating-contact fixed bottom-24 right-8 flex flex-col space-y-4 z-30">
         <!-- WhatsApp Button -->
-        <a href="https://wa.me/918981012776?text=Hi! I'm interested in learning more about your mind management services." 
+        <a href="https://wa.me/918981012776?text=Hi! I'm interested in learning more about your wealth and mind management services." 
            class="whatsapp-float bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110" 
            target="_blank" rel="noopener" title="Chat on WhatsApp">
             <i class="fab fa-whatsapp text-xl"></i>
@@ -3453,3 +3547,40 @@ document.addEventListener('DOMContentLoaded', function() {
     -->
 </body>
 </html>
+            
+            <script>
+                // Events Carousel Auto-slide
+                document.addEventListener('DOMContentLoaded', function() {
+                    const eventsCarousel = document.getElementById('eventsCarousel');
+                    if (!eventsCarousel) return;
+                    
+                    const eventCards = eventsCarousel.querySelectorAll('.event-card');
+                    const totalEvents = eventCards.length;
+                    let currentEventSlide = 0;
+                    
+                    function getCardsPerView() {
+                        if (window.innerWidth >= 1024) return 3; // lg: 3 cards
+                        if (window.innerWidth >= 768) return 2;  // md: 2 cards
+                        return 1; // mobile: 1 card
+                    }
+                    
+                    function updateEventsCarousel() {
+                        const cardsPerView = getCardsPerView();
+                        const slideWidth = 100 / cardsPerView;
+                        eventsCarousel.style.transform = `translateX(-${currentEventSlide * slideWidth}%)`;
+                    }
+                    
+                    function nextEventSlide() {
+                        const cardsPerView = getCardsPerView();
+                        const maxSlides = totalEvents - cardsPerView;
+                        currentEventSlide = currentEventSlide >= maxSlides ? 0 : currentEventSlide + 1;
+                        updateEventsCarousel();
+                    }
+                    
+                    // Auto-slide every 4 seconds
+                    setInterval(nextEventSlide, 4000);
+                    
+                    // Handle window resize
+                    window.addEventListener('resize', updateEventsCarousel);
+                });
+            </script>
