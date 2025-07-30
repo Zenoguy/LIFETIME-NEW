@@ -918,7 +918,19 @@
         min-width: 100%;
     }
 }
-
+/* Hide arrow buttons on mobile */
+@media (max-width: 767px) {
+    #prevBtn,
+    #nextBtn {
+        display: none !important;
+    }
+    
+    /* Remove horizontal margins from carousel container on mobile since no arrows */
+    .carousel-container {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
 .text-primary { color: #3B82F6; }
 .text-secondary { color: #10B981; }
 .text-dark { color: #1F2937; }
