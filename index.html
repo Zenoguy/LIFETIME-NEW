@@ -605,7 +605,7 @@
             </div>
         </div>
     </section>
-    <!-- Services Section -->
+   <!-- Services Section -->
 <section id="services" class="py-20 bg-white">
     <div class="container mx-auto px-6">
         <div class="text-center mb-16">
@@ -627,7 +627,7 @@
             </button>
             
             <!-- Carousel -->
-            <div class="carousel-container mx-12 py-8 md:py-12"></div>
+            <div class="carousel-container mx-12 py-8 md:py-12">
                 <div class="carousel-track" id="carouselTrack">
                     <!-- Financial Hub -->
                     <div class="carousel-slide">
@@ -937,6 +937,13 @@
 .text-dark { color: #1F2937; }
 .bg-primary { background-color: #3B82F6; }
 .bg-secondary { background-color: #10B981; }
+
+/* Button pointer events */
+.service-popup-btn {
+    pointer-events: auto;
+    position: relative;
+    z-index: 20;
+}
 </style>
 
 <script>
@@ -1008,6 +1015,16 @@ document.addEventListener('DOMContentLoaded', function() {
     nextBtn.addEventListener('click', nextSlide);
     prevBtn.addEventListener('click', prevSlide);
     
+    // Add click handlers for service buttons
+    document.querySelectorAll('.service-popup-btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event bubbling
+            const service = this.getAttribute('data-service');
+            console.log(`Opening ${service} details...`); // Log to console instead
+            // Add your popup/modal logic here
+        });
+    });
+    
     // Handle window resize
     window.addEventListener('resize', function() {
         const newSlidesPerView = window.innerWidth >= 1024 ? 3 : (window.innerWidth >= 768 ? 2 : 1);
@@ -1015,36 +1032,57 @@ document.addEventListener('DOMContentLoaded', function() {
             location.reload(); // Simple way to handle responsive changes
         }
     });
-    // Touch/Swipe functionality
+
+    // Improved Touch/Swipe functionality
     let startX = 0;
     let currentX = 0;
     let isDragging = false;
     let startTime = 0;
+    let isButton = false;
 
-    // Touch start
+    // Touch start - only handle if not touching a button
     track.addEventListener('touchstart', (e) => {
+        // Check if the touch started on a button or interactive element
+        const target = e.target.closest('button, a, [onclick]');
+        if (target) {
+            isButton = true;
+            return; // Don't handle swipe if touching a button
+        }
+        
+        isButton = false;
         startX = e.touches[0].clientX;
         startTime = Date.now();
         isDragging = true;
         track.style.transition = 'none'; // Disable transition during drag
     }, { passive: true });
 
-    // Touch move
+    // Touch move - only if not on a button
     track.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
+        if (!isDragging || isButton) return;
+        
         currentX = e.touches[0].clientX;
         const deltaX = currentX - startX;
         
-        // Visual feedback during swipe
-        const slideWidth = 100 / slidesPerView;
-        const currentTransform = -currentIndex * slideWidth;
-        const swipeOffset = (deltaX / track.offsetWidth) * 100;
-        track.style.transform = `translateX(${currentTransform + swipeOffset}%)`;
-    }, { passive: true });
+        // Only prevent default if we're actually swiping (not just tapping)
+        if (Math.abs(deltaX) > 10) {
+            e.preventDefault();
+            
+            // Visual feedback during swipe
+            const slideWidth = 100 / slidesPerView;
+            const currentTransform = -currentIndex * slideWidth;
+            const swipeOffset = (deltaX / track.offsetWidth) * 100;
+            track.style.transform = `translateX(${currentTransform + swipeOffset}%)`;
+        }
+    });
 
     // Touch end
     track.addEventListener('touchend', (e) => {
-        if (!isDragging) return;
+        if (!isDragging || isButton) {
+            isDragging = false;
+            isButton = false;
+            return;
+        }
+        
         isDragging = false;
         
         const endTime = Date.now();
@@ -1075,40 +1113,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Reset values
         startX = 0;
         currentX = 0;
-    }, { passive: true });
+        isButton = false;
+    }, { passive: false });
 
-    // Prevent default touch behavior on carousel
-    track.addEventListener('touchstart', (e) => {
-        e.preventDefault();
-    });
-    // // Auto-play (optional)
-    // let autoPlay = setInterval(() => {
-    //     if (currentIndex >= maxIndex) {
-    //         currentIndex = 0;
-    //     } else {
-    //         nextSlide();
-    //     }
-    // }, 5000);
-    
-    // // Pause auto-play on hover
-    // track.addEventListener('mouseenter', () => clearInterval(autoPlay));
-    // track.addEventListener('mouseleave', () => {
-    //     autoPlay = setInterval(() => {
-    //         if (currentIndex >= maxIndex) {
-    //             currentIndex = 0;
-    //         } else {
-    //             nextSlide();
-    //         }
-    //     }, 5000);
-    // });
-    
     // Initialize
     createIndicators();
     updateCarousel();
     setTimeout(() => {
         document.querySelector('.carousel-container').classList.add('loaded');
     }, 100);
-    });
+});
 </script>
 <!--services popups: -->>
 <div id="servicePopupOverlay" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4">
@@ -2601,7 +2615,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                         <div class="text-white">
                             <h3 class="text-lg font-bold mb-1">Special Training Session</h3>
-                            <p class="text-sm opacity-80">Graphology and Mind Management.</p>
+                            <p class="text-sm opacity-80">LIC, Mutal Funds and Mind Management.</p>
                         </div>
                     </div>
                 </div>
